@@ -1,11 +1,14 @@
 class Game:
     def __init__(self, player1, player2):
         self.player1 = player1
+        self.player1.player = 1
         self.player2 = player2
+        self.player2.player = 2
         self.players = [player1, player2]
         self.board = [0 for _ in range(9)]
         self.next_player = 1
         self.moves = 0
+        
 
     def check_move_validity(self, move):
         if self.board[move] != 0:
