@@ -1,13 +1,7 @@
 import random
 from random_player import RandomPlayer
-
-
-class Player:
-    def __init__(self, strategy):
-        self.strategy = strategy
-
-    def choose_move(self, board):
-        return self.strategy(board)
+from player import Player
+from tic_tac_toe import Game
 
 
 def strategy(board):
@@ -42,25 +36,20 @@ def strategy(board):
 
     if board == [0 for _ in range(9)]:
         return 4
-    elif board[4] == 0:
-        return 4
     elif board[0] == 0:
         return 0
     elif board[2] == 0:
         return 2
-    elif board[6] == 0:
-        return 6
-    elif board[8] == 0:
-        return 8
     elif board[1] == 0:
         return 1
+    elif board[8] == 0:
+        return 8
     elif board[5] == 0:
         return 5
-
-    # elif board[4] == board[0]:
-    #     return 6
-    # elif board[4] == board[2]:
-    #     return 0
+    elif board[6] == 0:
+        return 6
+    elif board[4] == 0:
+        return 4
 
     random_move = random.randrange(0, 9)
     while board[random_move] != 0:
@@ -68,18 +57,18 @@ def strategy(board):
     return random_move
 
 
-from tic_tac_toe import Game
 
 custom_player = Player(strategy)
 random_player = RandomPlayer()
 outcomes = {'Tie': 0, 'custom': 0, 'random': 0}
-for i in range(1000000):
+for i in range(100000):
     if i % 2 == 0:
         game = Game(custom_player, random_player)
         player_order = {'Tie': 'Tie', 1: 'custom', 2: 'random'}
     else:
         game = Game(random_player, custom_player)
         player_order = {'Tie': 'Tie', 1: 'random', 2: 'custom'}
+
 
     game.run()
     outcomes[player_order[game.winner]] += 1
