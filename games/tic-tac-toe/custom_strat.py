@@ -1,7 +1,4 @@
 import random
-from random_player import RandomPlayer
-from player import Player
-from tic_tac_toe import Game
 
 
 def strategy(board):
