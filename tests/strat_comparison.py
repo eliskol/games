@@ -9,16 +9,19 @@ from custom_strat import strategy as elias_strat
 from jeff import *
 from ben import ben_strat
 from celeste import *
+from christine import *
 
 random_player = RandomPlayer()
 elias_player = Player(elias_strat)
 jeff_player = Player(jeff_strat)
 ben_player = Player(ben_strat)
 celeste_player = Player(celeste_strat)
+christine_player = Player(christine_strat)
+
 
 outcomes = {'Tie': 0, 1: 0, 2: 0}
 for i in range(100):
-    game = Game(celeste_player, ben_player)
+    game = Game(christine_player, celeste_player)
     game.run()
     outcomes[game.winner] += 1
 print(outcomes)
