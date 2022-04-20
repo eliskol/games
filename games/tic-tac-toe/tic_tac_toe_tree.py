@@ -1,6 +1,26 @@
-from tic_tac_toe import Game
-# class TicTacToeTree:
-#     def __init__(self):
+class Queue:
+
+    def __init__(self, contents=None):
+
+        if contents is None:
+            self.contents = []
+
+        else:
+            self.contents = contents
+
+    def print(self):
+
+        for item in self.contents:
+
+            print(item)
+
+    def enqueue(self, item_to_queue):
+
+        self.contents.append(item_to_queue)
+
+    def dequeue(self):
+
+        return self.contents.pop(0)
 
 
 class Node:
@@ -11,6 +31,8 @@ class Node:
             self.turn = 1 if self.state.count(1) == self.state.count(2) else 2
         else:
             self.turn = None
+        self.children = []
+        self.parent = None
 
     def determine_winner(self):
 
@@ -29,3 +51,45 @@ class Node:
             return 'Tie'
 
         return None
+
+
+class TicTacToeTree:
+    def __init__(self):
+        self.generate_tree()
+
+    def generate_tree(self):
+        first_node = Node([0 for _ in range(9)])
+
+        queue = Queue([first_node])
+
+        while queue.contents != []:
+
+            dequeued_node = queue.dequeue()
+
+            if dequeued_node.winner is not None:
+                continue
+
+            dequeued_node_board_state = dequeued_node.state
+            next_player = dequeued_node.turn
+            possible_moves = self.possible_moves(dequeued_node_board_state)
+
+            for move in possible_moves:
+                new_board_state = list(dequeued_node_board_state)
+                new_board_state[move] = next_player
+                new_node = Node(new_board_state)
+                new_node.parent = dequeued_node
+                dequeued_node.children.append(new_node)
+
+                queue.enqueue(new_node)
+
+        self.root = first_node
+
+    def possible_moves(self, board_state):
+        possible_moves = []
+        for i in range(9):
+            if board_state[i] == 0:
+                possible_moves.append(i)
+        return possible_moves
+
+
+bruh = TicTacToeTree()
