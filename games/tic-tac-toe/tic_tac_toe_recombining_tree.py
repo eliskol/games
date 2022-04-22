@@ -33,7 +33,7 @@ class Node:
         else:
             self.turn = None
         self.children = []
-        self.parent = None
+        self.parents = []
 
     def determine_winner(self):
 
@@ -54,13 +54,14 @@ class Node:
         return None
 
 
-class TicTacToeTree:
+class TicTacToeRecombiningTree:
     def __init__(self):
         self.generate_tree()
 
     def generate_tree(self):
         start_time = time.time()
         first_node = Node([0 for _ in range(9)])
+        created_game_states = {tuple(first_node.state): first_node}
 
         queue = Queue([first_node])
         a_variable = 1
@@ -75,16 +76,26 @@ class TicTacToeTree:
             dequeued_node_board_state = dequeued_node.state
             next_player = dequeued_node.turn
             possible_moves = self.possible_moves(dequeued_node_board_state)
-            # move possible moves to node class
+
             for move in possible_moves:
                 a_variable += 1
                 new_board_state = list(dequeued_node_board_state)
                 new_board_state[move] = next_player
-                new_node = Node(new_board_state)
-                new_node.parent = dequeued_node
-                dequeued_node.children.append(new_node)
 
-                queue.enqueue(new_node)
+                if tuple(new_board_state) in created_game_states:
+                    new_node = created_game_states[tuple(new_board_state)]
+                    new_node.parents.append(dequeued_node)
+                    dequeued_node.children.append(new_node)
+
+                else:
+                    new_node = Node(new_board_state)
+                    new_node.parents.append(dequeued_node)
+                    dequeued_node.children.append(new_node)
+                    queue.enqueue(new_node)
+                    created_game_states[tuple(new_board_state)] = new_node
+
+
+
                 print(a_variable)
         print('finished generating!')
         print(time.time() - start_time)
@@ -98,7 +109,7 @@ class TicTacToeTree:
         return possible_moves
 
 
-bruh = TicTacToeTree()
+bruh = TicTacToeRecombiningTree()
 leaf_node_count = 0
 root_node = bruh.root
 queue = Queue([root_node])
