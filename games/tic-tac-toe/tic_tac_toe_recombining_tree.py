@@ -34,6 +34,7 @@ class Node:
             self.turn = None
         self.children = []
         self.parents = []
+        self.possible_moves = self.find_possible_moves()
 
     def determine_winner(self):
 
@@ -52,6 +53,13 @@ class Node:
             return 'Tie'
 
         return None
+
+    def find_possible_moves(self):
+        possible_moves = []
+        for i in range(9):
+            if self.state[i] == 0:
+                possible_moves.append(i)
+        return possible_moves
 
 
 class TicTacToeRecombiningTree:
@@ -75,7 +83,7 @@ class TicTacToeRecombiningTree:
 
             dequeued_node_board_state = dequeued_node.state
             next_player = dequeued_node.turn
-            possible_moves = self.possible_moves(dequeued_node_board_state)
+            possible_moves = dequeued_node.possible_moves
 
             for move in possible_moves:
                 a_variable += 1
