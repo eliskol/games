@@ -31,23 +31,24 @@ class Game:
         player_that_made_move = self.previous_player
 
         for i in range(0, 6):
-            for j in range(0, 2):
-                if self.board[i][j] == self.board[i][j + 1] == self.board[i][j + 2] == self.board[i][j + 3] == player_that_made_move:
-                    return player_that_made_move
+            for j in range(0, 4):
+                print(j)
+                if self.board[i][j] == self.board[i][j + 1] == self.board[i][j + 2] == self.board[i][j + 3] != 0:
+                    return self.board[i][j]
 
 
         for i in range(0, 3):
-            for j in range(0, 5):
-                if self.board[i][j] == self.board[i + 1][j] == self.board[i + 2][j] == self.board[i + 3][j] == player_that_made_move:
-                    return player_that_made_move
+            for j in range(0, 7):
+                if self.board[i][j] == self.board[i + 1][j] == self.board[i + 2][j] == self.board[i + 3][j] != 0:
+                    return self.board[i][j]
 
         for i in range(0, 3):
-            for j in range(0, 2):
-                if self.board[i][j] == self.board[i + 1][j + 1] == self.board[i + 2][j + 2] == self.board[i + 3][j + 3] == player_that_made_move:
-                    return player_that_made_move
+            for j in range(0, 4):
+                if self.board[i][j] == self.board[i + 1][j + 1] == self.board[i + 2][j + 2] == self.board[i + 3][j + 3] != 0:
+                    return self.board[i][j]
 
-                elif self.board[5 - i][j] == self.board[5 - (i + 1)][j + 1] == self.board[5 - (i + 2)][j + 2] == self.board[5 - (i + 3)][j + 3] == player_that_made_move:
-                    return player_that_made_move
+                elif self.board[5 - i][j] == self.board[5 - (i + 1)][j + 1] == self.board[5 - (i + 2)][j + 2] == self.board[5 - (i + 3)][j + 3] != 0:
+                    return self.board[i][j]
 
         
         if any(0 in row for row in self.board):
@@ -110,4 +111,4 @@ b = InputPlayer()
 bruh = Game(a, b)
 bruh.run(log=True)
 print('winner: ', bruh.winner)
-# bruh.print_board()
+# bruh.print_board()x
