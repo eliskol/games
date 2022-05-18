@@ -7,13 +7,6 @@ class Game:
         self.moves = 0
         self.board = [[0 for _ in range(7)] for _ in range(6)]
 
-
-    def check_move_validity(self, move):
-        for row in self.board:
-            if row[move] == 0:
-                return True
-        return False
-
     def print_board(self):
         for row in reversed(self.board):
             print(row)
