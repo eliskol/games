@@ -80,12 +80,11 @@ class Game:
         snake_head_coords = self.snake[-1]
         last_segment = self.snake.pop(0)
         move = self.player.choose_move(self.board)
-        print(move)
         creates_collision = self.check_collision(move)
 
         if creates_collision is True:
-            print('you died!')
             return self.score
+            # print('you died!')
         
         else:
             if move == 'a':
@@ -106,23 +105,40 @@ class Game:
             self.score += 1
             self.place_berry()
             self.snake.insert(0, last_segment)
-            print('berry eaten!')
+            # if self.log is True:
+                # print('berry eaten!')
 
         self.render_snake()
         self.num_moves += 1
 
-    def run_game(self):
-        self.print_board()
+    def run_game(self, log=False):
+        self.log = log
+        if self.log is True:
+            self.print_board()
         while self.game_over is False:
             self.make_move()
-            self.print_board()
-        print('you died!!')
-        print(self.score)
-        print(self.num_moves)
+            if self.log is True:
+                self.print_board()
+        # print('you died!!')
+        # print(self.score)
+        # print(self.num_moves)
+        return {'score': self.score, 'moves': self.num_moves}
 
 from input_strat import InputPlayer
 from basic_winner_strat import Winner
+import time
 
-bruj = Winner()
-bruh = Game(bruj)
-bruh.run_game()
+totals = {'score': 0, 'moves': 0}
+beginning = time.time()
+for i in range(1000):
+    bruj = Winner()
+    bruh = Game(bruj)
+    result = bruh.run_game()
+    totals['score'] += result['score']
+    totals['moves'] += result['moves']
+    if i % 50 == 0:
+        print(i)
+print(time.time() - beginning)
+
+averages = {'score': totals['score'] / 1000, 'moves': totals['moves'] / 1000}
+print(averages)
