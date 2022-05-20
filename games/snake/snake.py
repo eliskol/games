@@ -128,6 +128,7 @@ from input_strat import InputPlayer
 from basic_winner_strat import Winner
 import time
 
+
 totals = {'score': 0, 'moves': 0}
 beginning = time.time()
 for i in range(1000):
@@ -146,3 +147,5 @@ print('avg time per game:', time_taken / 1000)
 averages = {'score': totals['score'] / 1000, 'moves': totals['moves'] / 1000}
 print(averages)
 print('moves per second:', averages['moves'] / (time_taken / 1000))
+
+# todo -- rewrite rendering function
