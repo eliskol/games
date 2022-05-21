@@ -2,7 +2,7 @@ import time
 
 class Winner:
     def choose_move(self, board):
-        time.sleep(0.0001)
+        # time.sleep(0.0001)
         for row in board:
             if 'e' in row:
                 self.head_coords = (board.index(row), row.index('e'))

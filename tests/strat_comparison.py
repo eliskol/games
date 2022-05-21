@@ -21,7 +21,7 @@ christine_player = Player(christine_strat)
 
 outcomes = {'Tie': 0, 1: 0, 2: 0}
 for i in range(100):
-    game = Game(christine_player, celeste_player)
+    game = Game(christine_player, jeff_player)
     game.run()
     outcomes[game.winner] += 1
 print(outcomes)

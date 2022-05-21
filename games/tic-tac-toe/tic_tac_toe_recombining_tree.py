@@ -73,6 +73,7 @@ class TicTacToeRecombiningTree:
 
         queue = Queue([first_node])
         a_variable = 1
+        leaf_node_count = 0
 
         while queue.contents != []:
 
@@ -107,6 +108,7 @@ class TicTacToeRecombiningTree:
                 print(a_variable)
         print('finished generating!')
         print(time.time() - start_time)
+        print(leaf_node_count)
         self.root = first_node
 
     def possible_moves(self, board_state):
@@ -118,14 +120,14 @@ class TicTacToeRecombiningTree:
 
 
 bruh = TicTacToeRecombiningTree()
-leaf_node_count = 0
-root_node = bruh.root
-queue = Queue([root_node])
-while queue.contents != []:
-    current_node = queue.dequeue()
-    for child_node in current_node.children:
-        if child_node.children == []:
-            leaf_node_count += 1
-        # print(leaf_node_count)
-        queue.enqueue(child_node)
-print(leaf_node_count)
+# leaf_node_count = 0
+# root_node = bruh.root
+# queue = Queue([root_node])
+# while queue.contents != []:
+#     current_node = queue.dequeue()
+#     for child_node in current_node.children:
+#         if child_node.children == []:
+#             leaf_node_count += 1
+#         # print(leaf_node_count)
+#         queue.enqueue(child_node)
+# print(leaf_node_count)
