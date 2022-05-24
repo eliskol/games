@@ -25,10 +25,8 @@ class Game:
 
         for i in range(0, 6):
             for j in range(0, 4):
-                print(j)
                 if self.board[i][j] == self.board[i][j + 1] == self.board[i][j + 2] == self.board[i][j + 3] != 0:
                     return self.board[i][j]
-
 
         for i in range(0, 3):
             for j in range(0, 7):
@@ -41,17 +39,15 @@ class Game:
                     return self.board[i][j]
 
                 elif self.board[5 - i][j] == self.board[5 - (i + 1)][j + 1] == self.board[5 - (i + 2)][j + 2] == self.board[5 - (i + 3)][j + 3] != 0:
-                    return self.board[i][j]
+                    return self.board[5 - i][j]
 
-        
         if any(0 in row for row in self.board):
             pass
         else:
             return 'Tie'
-        
+
         return None
 
-    
     def drop_token(self, player, column):
         for row in range(6):
             if self.board[row][column] == 0:
@@ -84,24 +80,3 @@ class Game:
             # print(self.next_player)
             self.make_move()
             self.winner = self.determine_winner()
-
-
-
-from random_player import RandomPlayer
-
-
-class InputPlayer:
-    def choose_move(self, board):
-        for row in reversed(board):
-            print(row)
-        print("Which column would you like to drop down?")
-        move = input()
-        return int(move)
-
-a = InputPlayer()
-b = InputPlayer()
-
-bruh = Game(a, b)
-bruh.run(log=True)
-print('winner: ', bruh.winner)
-# bruh.print_board()x
