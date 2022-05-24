@@ -1,3 +1,6 @@
+from input_strat import InputPlayer
+import time
+from basic_winner_strat import Winner
 import random
 
 
@@ -28,13 +31,13 @@ class Game:
         while self.board[random_coords[0]][random_coords[1]] != ' ':
             random_coords = (random.randrange(0, 10), random.randrange(0, 10))
 
-        self.board[random_coords[0]][random_coords[1]] = 'b' 
-        self.berry = random_coords           
+        self.board[random_coords[0]][random_coords[1]] = 'b'
+        self.berry = random_coords
 
     def check_collision(self, move):
         snake_head_coords = self.snake[-1]
-        
-        if move == 'a': 
+
+        if move == 'a':
             if snake_head_coords[1] == 0:
                 self.game_over = True
                 return True
@@ -85,19 +88,22 @@ class Game:
         if creates_collision is True:
             return self.score
             # print('you died!')
-        
+
         else:
             if move == 'a':
-                self.snake.append((snake_head_coords[0], snake_head_coords[1] - 1))
+                self.snake.append(
+                    (snake_head_coords[0], snake_head_coords[1] - 1))
             elif move == 's':
-                self.snake.append((snake_head_coords[0] - 1, snake_head_coords[1]))
+                self.snake.append(
+                    (snake_head_coords[0] - 1, snake_head_coords[1]))
             elif move == 'd':
-                self.snake.append((snake_head_coords[0], snake_head_coords[1] + 1))
+                self.snake.append(
+                    (snake_head_coords[0], snake_head_coords[1] + 1))
             elif move == 'w':
-                self.snake.append((snake_head_coords[0] + 1, snake_head_coords[1]))
+                self.snake.append(
+                    (snake_head_coords[0] + 1, snake_head_coords[1]))
             else:
                 return
-
 
         self.board[last_segment[0]][last_segment[1]] = ' '
 
@@ -106,7 +112,7 @@ class Game:
             self.place_berry()
             self.snake.insert(0, last_segment)
             # if self.log is True:
-                # print('berry eaten!')
+            # print('berry eaten!')
 
         self.render_snake()
         self.num_moves += 1
@@ -123,10 +129,6 @@ class Game:
         # print(self.score)
         # print(self.num_moves)
         return {'score': self.score, 'moves': self.num_moves}
-
-from input_strat import InputPlayer
-from basic_winner_strat import Winner
-import time
 
 
 totals = {'score': 0, 'moves': 0}
