@@ -131,23 +131,10 @@ class Game:
         return {'score': self.score, 'moves': self.num_moves}
 
 
-totals = {'score': 0, 'moves': 0}
-beginning = time.time()
-for i in range(1000):
-    bruj = Winner()
-    bruh = Game(bruj)
-    result = bruh.run_game()
-    totals['score'] += result['score']
-    totals['moves'] += result['moves']
-    if i % 50 == 0:
-        print(i)
-time_taken = time.time() - beginning
-print('total time taken:', time_taken)
-print('avg time per game:', time_taken / 1000)
-
-
-averages = {'score': totals['score'] / 1000, 'moves': totals['moves'] / 1000}
-print(averages)
-print('moves per second:', averages['moves'] / (time_taken / 1000))
-
+'''
+from input_strat import InputPlayer
+brh = InputPlayer()
+game = Game(brh)
+game.run_game(log=True)
 # todo -- rewrite rendering function
+'''
