@@ -70,6 +70,7 @@ class TicTacToeRecombiningTree:
         start_time = time.time()
         first_node = Node([0 for _ in range(9)])
         created_game_states = {tuple(first_node.state): first_node}
+        terminal_state_nodes = []
 
         queue = Queue([first_node])
         a_variable = 1
@@ -80,6 +81,8 @@ class TicTacToeRecombiningTree:
             dequeued_node = queue.dequeue()
 
             if dequeued_node.winner is not None:
+                if dequeued_node not in terminal_state_nodes:
+                    terminal_state_nodes.append(dequeued_node)
                 continue
 
             dequeued_node_board_state = dequeued_node.state
@@ -105,11 +108,13 @@ class TicTacToeRecombiningTree:
 
 
 
-                print(a_variable)
-        print('finished generating!')
-        print(time.time() - start_time)
-        print(leaf_node_count)
+        #         print(a_variable)
+        # print('finished generating!')
+        # print(time.time() - start_time)
+        # print(leaf_node_count)
         self.root = first_node
+        self.node_dict = created_game_states
+        self.terminal_state_nodes = terminal_state_nodes
 
     def possible_moves(self, board_state):
         possible_moves = []
