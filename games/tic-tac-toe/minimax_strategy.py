@@ -46,10 +46,10 @@ class MinimaxStrategy:
         board = tuple(board) # in order to look up in self.node_dict; lists aren't hashable
         current_node = self.node_dict[board]
         if self.player == 1:
-            goal_node = max([child_node for child_node in current_node.children],
+            goal_node = max(current_node.children,
                             key=lambda node: node.minimax_value)
         else:
-            goal_node = min([child_node for child_node in current_node.children],
+            goal_node = min(current_node.children,
                             key=lambda node: node.minimax_value)
 
         for i in range(9):
