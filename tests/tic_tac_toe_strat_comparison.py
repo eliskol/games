@@ -10,6 +10,8 @@ from jeff import *
 from ben import ben_strat
 from celeste import *
 from christine import *
+from minimax_strategy import MinimaxStrategy
+
 
 random_player = RandomPlayer()
 elias_player = Player(elias_strat)
@@ -17,11 +19,12 @@ jeff_player = Player(jeff_strat)
 ben_player = Player(ben_strat)
 celeste_player = Player(celeste_strat)
 christine_player = Player(christine_strat)
-
+bruh = MinimaxStrategy()
+bruh2 = MinimaxStrategy()
 
 outcomes = {'Tie': 0, 1: 0, 2: 0}
-for i in range(100):
-    game = Game(christine_player, jeff_player)
+for i in range(1000):
+    game = Game(bruh2, bruh)
     game.run()
     outcomes[game.winner] += 1
 print(outcomes)
