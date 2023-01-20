@@ -2,8 +2,9 @@ from tic_tac_toe_recombining_tree import TicTacToeRecombiningTree
 from tic_tac_toe_recombining_tree import Queue
 import time
 
-class MinimaxStrategy:
-    def __init__(self):
+
+class HeuristicMinimaxStrategy:
+    def __init__(self, n):
         self.generate_tree()
         self.time = self.propagate_minimax_values()
 
@@ -20,7 +21,8 @@ class MinimaxStrategy:
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
-            game_state_to_propagate = tuple(game_states_to_propagate.dequeue()) #tuple because the keys in self.node_dict can't be lists
+            # tuple because the keys in self.node_dict can't be lists
+            game_state_to_propagate = tuple(game_states_to_propagate.dequeue())
             current_node = self.node_dict[game_state_to_propagate]
             if hasattr(current_node, 'minimax_value'):
                 continue
@@ -46,7 +48,8 @@ class MinimaxStrategy:
         return end - start
 
     def choose_move(self, board):
-        board = tuple(board) # in order to look up in self.node_dict; lists aren't hashable
+        # in order to look up in self.node_dict; lists aren't hashable
+        board = tuple(board)
         current_node = self.node_dict[board]
         if self.player == 1:
             goal_node = max(current_node.children,
