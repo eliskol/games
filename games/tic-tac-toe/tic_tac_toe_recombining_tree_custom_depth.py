@@ -126,25 +126,36 @@ class TicTacToeRecombiningTreeCustomDepth:
     def generate_tree_using_cache(self, first_game_state, n):
         # traverse the existing tree starting from first_game_state
         first_node = self.node_dict(first_game_state)
-        first_node.depth = 0
-        created_nodes = []
-        for node in self.node_dict:
+        created_game_states = {tuple(first_game_state): first_node}
+        for current_node in self.node_dict:
+            current_board_state = current_node.state
             index_of_all_filled_in_spaces_of_first_node = [i for i in range(9) if first_node.state[i] != 0]
             for i in index_of_all_filled_in_spaces_of_first_node:
-                if first_node.state[i] == node.state[i]:
+                if first_node.state[i] == current_node.state[i]:
                     is_a_possible_child = True
                 else:
                     is_a_possible_child = False
                     break
-            if is_a_possible_child is True:
-                created_nodes.append(node)
-                if node.is_terminal_state and node.winner is None:
-                    possible_moves = node.possible_moves
-                    for move in possible_moves:
-                        new_game_state = list(node.state)
-                        new_game_state[move] = node.turn
-                        if tuple(new_game_state) in created_nodes:
-                            
+            if is_a_possible_child is False:
+                continue
+
+            current_node.depth -= 1 #because we're starting from a 
+            created_game_states[tuple(current_board_state)] = current_node
+            if current_node.is_terminal_state and current_node.winner is None:
+                possible_moves = current_node.possible_moves
+                for move in possible_moves:
+                    new_board_state = list(current_node.state)
+                    new_board_state[move] = current_node.turn
+                    if tuple(new_board_state) in created_nodes:
+                        # not sure if this block will even need to run
+                        new_node = created_nodes[tuple(new_board_state)]
+                        new_node.parents.append(current_node)
+                        current_node.children.append(new_node)
+                    else:
+                        new_node = Node(new_board_state)
+                        new_node.parents.append(current_node)
+                        current_node.children.append(new_node)
+                        created_nodes[tuple(new_board_state)] = new_node
 
 
 
