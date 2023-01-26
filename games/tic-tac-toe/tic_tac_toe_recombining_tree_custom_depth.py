@@ -37,6 +37,7 @@ class Node:
         self.children = []
         self.parents = []
         self.possible_moves = self.find_possible_moves()
+        self.is_terminal_node = False # false by default, gets set to true during tree generation
 
     def determine_winner(self):
 
@@ -84,13 +85,13 @@ class TicTacToeRecombiningTreeCustomDepth:
 
             if dequeued_node.depth == n:
                 terminal_state_nodes.append(dequeued_node)
-                dequeued_node.is_terminal_state = True
+                dequeued_node.is_terminal_node = True
                 continue
 
             if dequeued_node.winner is not None:
                 if dequeued_node not in terminal_state_nodes:
                     terminal_state_nodes.append(dequeued_node)
-                    dequeued_node.is_terminal_state = True
+                    dequeued_node.is_terminal_node = True
                 continue
 
             dequeued_node_board_state = dequeued_node.state
@@ -104,8 +105,8 @@ class TicTacToeRecombiningTreeCustomDepth:
 
                 if tuple(new_board_state) in created_game_states:
                     new_node = created_game_states[tuple(new_board_state)]
-                    new_node.parents.append(dequeued_node)
-                    dequeued_node.children.append(new_node)
+                    # new_node.parents.append(dequeued_node)
+                    # dequeued_node.children.append(new_node)
 
                 else:
                     new_node = Node(new_board_state)
@@ -123,12 +124,13 @@ class TicTacToeRecombiningTreeCustomDepth:
         self.node_dict = created_game_states
         self.terminal_state_nodes = terminal_state_nodes
 
-    def generate_tree_using_cache(self, first_game_state, n):
+    def _generate_tree_using_cache(self, first_game_state):
+        # transferring this poorly written function to a new, better written one
         # traverse the existing tree starting from first_game_state
-        first_node = self.node_dict(first_game_state)
+        first_node = self.node_dict[tuple(first_game_state)]
         created_game_states = {tuple(first_game_state): first_node}
-        for current_node in self.node_dict:
-            current_board_state = current_node.state
+        for current_board_state in self.node_dict:
+            current_node = self.node_dict[current_board_state]
             index_of_all_filled_in_spaces_of_first_node = [i for i in range(9) if first_node.state[i] != 0]
             for i in index_of_all_filled_in_spaces_of_first_node:
                 if first_node.state[i] == current_node.state[i]:
@@ -139,25 +141,98 @@ class TicTacToeRecombiningTreeCustomDepth:
             if is_a_possible_child is False:
                 continue
 
-            current_node.depth -= 1 #because we're starting from a 
+            current_node.depth -= 2 #because we're starting from a
             created_game_states[tuple(current_board_state)] = current_node
-            if current_node.is_terminal_state and current_node.winner is None:
+            if current_node.is_terminal_node and current_node.winner is None:
                 possible_moves = current_node.possible_moves
                 for move in possible_moves:
                     new_board_state = list(current_node.state)
                     new_board_state[move] = current_node.turn
-                    if tuple(new_board_state) in created_nodes:
-                        # not sure if this block will even need to run
-                        new_node = created_nodes[tuple(new_board_state)]
+                    if tuple(new_board_state) in created_game_states:
+                        new_node = created_game_states[tuple(new_board_state)]
                         new_node.parents.append(current_node)
                         current_node.children.append(new_node)
                     else:
                         new_node = Node(new_board_state)
                         new_node.parents.append(current_node)
                         current_node.children.append(new_node)
-                        created_nodes[tuple(new_board_state)] = new_node
+                        created_game_states[tuple(new_board_state)] = new_node
+                    new_node.depth = current_node.depth + 1
+                    new_node_possible_moves = new_node.possible_moves
+                    for new_move in new_node_possible_moves: #won't run if the game has a winner/is tied because possible_moves = []
+                        second_new_board_state = list(new_node.state)
+                        second_new_board_state[new_move] = new_node.turn
+                        if second_new_board_state == [1, 2, 1, 2, 1, 2, 2, 1, 1]:
+                            pass
+                        if tuple(second_new_board_state) in created_game_states:
+                            second_new_node = created_game_states[tuple(second_new_board_state)]
+                        else:
+                            second_new_node = Node(second_new_board_state)
+                            created_game_states[tuple(second_new_board_state)] = second_new_node
+
+                        second_new_node.parents.append(new_node)
+                        new_node.children.append(second_new_node)
+                        second_new_node.depth = new_node.depth + 1
 
 
+        self.root = first_node
+
+    def generate_tree_using_cache(self, starting_game_state):
+        self.prune_tree(starting_game_state)
+        node_dict = self.node_dict
+        last_layer = []
+        for game_state in node_dict:
+            current_node = node_dict[game_state]
+            current_node.depth -= 2
+            if current_node.is_terminal_node:
+                last_layer.append(current_node)
+        new_layer_nodes = self.create_new_layer(last_layer)
+        second_new_layer_nodes = self.create_new_layer(new_layer_nodes)
+        self.root = node_dict[tuple(starting_game_state)]
+
+    def prune_tree(self, new_state):
+        new_node = self.node_dict[tuple(new_state)]
+        node_dict = {tuple(new_state): new_node}
+        for current_board_state in self.node_dict:
+            current_node = self.node_dict[current_board_state]
+            index_of_all_filled_in_spaces_of_first_node = [i for i in range(9) if new_node.state[i] != 0]
+            for i in index_of_all_filled_in_spaces_of_first_node:
+                if new_node.state[i] == current_node.state[i]:
+                    is_a_possible_child = True
+                else:
+                    is_a_possible_child = False
+                    break
+            if is_a_possible_child is False:
+                continue
+
+            node_dict[tuple(current_board_state)] = current_node
+
+        self.node_dict = node_dict
+
+    def create_new_layer(self, current_layer):
+        new_layer_nodes = []
+        for current_node in current_layer:
+            if current_node.winner is not None:
+                continue
+            current_board_state = current_node.state
+            possible_moves = current_node.possible_moves
+            for move in possible_moves:
+                new_board_state = list(current_board_state)
+                new_board_state[move] = current_node.turn
+
+                if tuple(new_board_state) in self.node_dict:
+                    new_node = self.node_dict[tuple(new_board_state)]
+                    new_node.parents.append(current_node)
+                    current_node.children.append(new_node)
+                else:
+                    new_node = Node(new_board_state)
+                    new_node.is_terminal_node = True
+                    new_node.parents.append(current_node)
+                    current_node.children.append(new_node)
+                    self.node_dict[tuple(new_board_state)] = new_node
+                    new_layer_nodes.append(new_node)
+
+        return new_layer_nodes
 
     def possible_moves(self, board_state):
         possible_moves = []
@@ -168,8 +243,10 @@ class TicTacToeRecombiningTreeCustomDepth:
 
 
 # bruh = TicTacToeRecombiningTreeCustomDepth([0, 1, 2, 0, 1, 2, 0, 0, 0], 1)
-bruh = TicTacToeRecombiningTreeCustomDepth([0 for i in range(9)], 2)
+bruh = TicTacToeRecombiningTreeCustomDepth([1, 0, 0, 0, 0, 0, 0, 0, 0], 6)
 print(len(bruh.node_dict))
+print('hi')
+bruh.generate_tree_using_cache([1, 2, 1, 0, 0, 0, 0, 0, 0])
 print('hi')
 # leaf_node_count = 0
 # root_node = bruh.root
