@@ -1,23 +1,27 @@
-from tic_tac_toe_recombining_tree import TicTacToeRecombiningTree
+from tic_tac_toe_recombining_tree_custom_depth import TicTacToeRecombiningTreeCustomDepth
 from tic_tac_toe_recombining_tree import Queue
 import time
 
 
 class HeuristicMinimaxStrategy:
     def __init__(self, n):
-        self.generate_tree()
+        self.generate_tree([0 for _ in range(9)], n)
         self.time = self.propagate_minimax_values()
+        self.n = n
 
-    def generate_tree(self):
-        self.tree = TicTacToeRecombiningTree()
+    def generate_tree(self, board_state, n=9):
+        if not hasattr(self, "tree"):
+            self.tree = TicTacToeRecombiningTreeCustomDepth(board_state, n)
+        else:
+            self.tree.generate_tree_using_cache(board_state)
         self.node_dict = self.tree.node_dict
-        self.terminal_state_nodes = self.tree.terminal_state_nodes
+        self.terminal_nodes = self.tree.terminal_nodes
 
     def propagate_minimax_values(self):
         start = time.time()
         game_states_to_propagate = Queue()
-        for node in self.terminal_state_nodes:
-            node.minimax_value = {1: 1, 2: -1, 'Tie': 0}[node.winner]
+        for node in self.terminal_nodes:
+            node.minimax_value = {1: 1, 2: -1, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
@@ -48,6 +52,11 @@ class HeuristicMinimaxStrategy:
         return end - start
 
     def choose_move(self, board):
+        self.current_board_state = board
+        if board != [0 for _ in range(9)]:
+            self.generate_tree(board)
+            self.propagate_minimax_values()
+
         # in order to look up in self.node_dict; lists aren't hashable
         board = tuple(board)
         current_node = self.node_dict[board]
@@ -61,3 +70,41 @@ class HeuristicMinimaxStrategy:
         for i in range(9):
             if board[i] != goal_node.state[i]:
                 return i
+
+    def calculate_heuristic_value(self, board):
+        total = 0
+        for i in [0, 3, 6]:  # rows
+            if board[i] == board[i + 1] != 0 and board[i + 2] == 0:
+                total += {1: 1, 2: -1}[board[i]]  # add 1 if its player 1, subtract 1 if its player 2
+            if board[i + 1] == board[i + 2] != 0 and board[i] == 0:
+                total += {1: 1, 2: -1}[board[i + 1]]  # see above comment
+            if board[i] == board[i + 2] != 0 and board[i + 1] == 0:
+                total += {1: 1, 2: -1}[board[i]]  # see above comment
+        for i in [0, 1, 2]:  # cols
+            if board[i] == board[i + 3] != 0 and board[i + 6] == 0:
+                total += {1: 1, 2: -1}[board[i]]  # see above above comment
+            if board[i + 3] == board[i + 6] != 0 and board[i] == 0:
+                total += {1: 1, 2: -1}[board[i + 3]]  # see above comment
+            if board[i] == board[i + 6] != 0 and board[i + 3] == 0:
+                total += {1: 1, 2: -1}[board[i]]  # see above comment
+
+        # diagonal
+        if board[0] == board[4] != 0 and board[8] == 0:
+            total += {1: 1, 2: -1}[board[0]]  # see above above comment
+        if board[4] == board[8] != 0 and board[0] == 0:
+            total += {1: 1, 2: -1}[board[4]]  # see above comment
+        if board[0] == board[8] != 0 and board[4] == 0:
+            total += {1: 1, 2: -1}[board[0]]  # see above comment
+
+        # anti-diagonal
+        if board[2] == board[4] != 0 and board[6] == 0:
+            total += {1: 1, 2: -1}[board[2]]  # see above comment
+        if board[2] == board[6] != 0 and board[4] == 0:
+            total += {1: 1, 2: -1}[board[2]]  # see above comment
+        if board[4] == board[8] != 0 and board[0] == 0:
+            total += {1: 1, 2: -1}[board[4]] # see above comment
+
+        total /= 8
+        if total == 0.5:
+            return 0
+        return 1 if total > 0.5 else 2

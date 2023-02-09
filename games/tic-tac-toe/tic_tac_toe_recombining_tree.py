@@ -123,16 +123,3 @@ class TicTacToeRecombiningTree:
                 possible_moves.append(i)
         return possible_moves
 
-
-bruh = TicTacToeRecombiningTree()
-# leaf_node_count = 0
-# root_node = bruh.root
-# queue = Queue([root_node])
-# while queue.contents != []:
-#     current_node = queue.dequeue()
-#     for child_node in current_node.children:
-#         if child_node.children == []:
-#             leaf_node_count += 1
-#         # print(leaf_node_count)
-#         queue.enqueue(child_node)
-# print(leaf_node_count)

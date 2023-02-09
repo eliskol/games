@@ -75,7 +75,7 @@ class TicTacToeRecombiningTreeCustomDepth:
         first_node = Node(first_game_state)
         first_node.depth = 0
         created_game_states = {tuple(first_node.state): first_node}
-        terminal_state_nodes = []
+        terminal_nodes = []
 
         queue = Queue([first_node])
         a_variable = 1
@@ -85,13 +85,13 @@ class TicTacToeRecombiningTreeCustomDepth:
             dequeued_node = queue.dequeue()
 
             if dequeued_node.depth == n:
-                terminal_state_nodes.append(dequeued_node)
+                terminal_nodes.append(dequeued_node)
                 dequeued_node.is_terminal_node = True
                 continue
 
             if dequeued_node.winner is not None:
-                if dequeued_node not in terminal_state_nodes:
-                    terminal_state_nodes.append(dequeued_node)
+                if dequeued_node not in terminal_nodes:
+                    terminal_nodes.append(dequeued_node)
                     dequeued_node.is_terminal_node = True
                 continue
 
@@ -106,8 +106,8 @@ class TicTacToeRecombiningTreeCustomDepth:
 
                 if tuple(new_board_state) in created_game_states:
                     new_node = created_game_states[tuple(new_board_state)]
-                    # new_node.parents.append(dequeued_node)
-                    # dequeued_node.children.append(new_node)
+                    new_node.parents.append(dequeued_node)
+                    dequeued_node.children.append(new_node)
 
                 else:
                     new_node = Node(new_board_state)
@@ -123,7 +123,9 @@ class TicTacToeRecombiningTreeCustomDepth:
         # print(leaf_node_count)
         self.root = first_node
         self.node_dict = created_game_states
-        self.terminal_nodes = terminal_state_nodes
+        self.terminal_nodes = terminal_nodes
+        print((0 for _ in range(9)) in created_game_states)
+        print((0 for _ in range(9)) in self.node_dict)
 
     def _generate_tree_using_cache(self, first_game_state):
         # transferring this poorly written function to a new, better written one
@@ -201,6 +203,7 @@ class TicTacToeRecombiningTreeCustomDepth:
         terminal_nodes += second_new_layer_nodes
         self.terminal_nodes = terminal_nodes
         self.root = node_dict[tuple(starting_game_state)]
+        self.node_dict = node_dict
 
     def prune_tree(self, new_state):
         new_node = self.node_dict[tuple(new_state)]
@@ -209,6 +212,7 @@ class TicTacToeRecombiningTreeCustomDepth:
             current_node = self.node_dict[current_board_state]
             index_of_all_filled_in_spaces_of_first_node = [
                 i for i in range(9) if new_node.state[i] != 0]
+            is_a_possible_child = True
             for i in index_of_all_filled_in_spaces_of_first_node:
                 if new_node.state[i] == current_node.state[i]:
                     is_a_possible_child = True
@@ -216,6 +220,10 @@ class TicTacToeRecombiningTreeCustomDepth:
                     is_a_possible_child = False
                     break
             if is_a_possible_child is False:
+                for child_node in current_node.children:
+                    child_node.parents.remove(current_node)
+                for parent_node in current_node.parents:
+                    parent_node.children.remove(current_node)
                 continue
 
             node_dict[tuple(current_board_state)] = current_node
@@ -253,22 +261,3 @@ class TicTacToeRecombiningTreeCustomDepth:
             if board_state[i] == 0:
                 possible_moves.append(i)
         return possible_moves
-
-
-# bruh = TicTacToeRecombiningTreeCustomDepth([0, 1, 2, 0, 1, 2, 0, 0, 0], 1)
-bruh = TicTacToeRecombiningTreeCustomDepth([1, 0, 0, 0, 0, 0, 0, 0, 0], 6)
-print(len(bruh.node_dict))
-print('hi')
-bruh.generate_tree_using_cache([1, 2, 1, 0, 0, 0, 0, 0, 0])
-print('hi')
-# leaf_node_count = 0
-# root_node = bruh.root
-# queue = Queue([root_node])
-# while queue.contents != []:
-#     current_node = queue.dequeue()
-#     for child_node in current_node.children:
-#         if child_node.children == []:
-#             leaf_node_count += 1
-#         # print(leaf_node_count)
-#         queue.enqueue(child_node)
-# print(leaf_node_count)
