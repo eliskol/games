@@ -115,6 +115,7 @@ class TicTacToeRecombiningTree:
         self.root = first_node
         self.node_dict = created_game_states
         self.terminal_state_nodes = terminal_state_nodes
+        print(len(self.node_dict))
 
     def possible_moves(self, board_state):
         possible_moves = []
@@ -123,3 +124,5 @@ class TicTacToeRecombiningTree:
                 possible_moves.append(i)
         return possible_moves
 
+bruh = TicTacToeRecombiningTree()
+print((0 for _ in range(9)) in bruh.node_dict)

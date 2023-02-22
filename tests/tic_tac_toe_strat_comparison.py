@@ -22,11 +22,11 @@ celeste_player = Player(celeste_strat)
 christine_player = Player(christine_strat)
 bruh = MinimaxStrategy()
 bruh2 = MinimaxStrategy()
-heuristic_minimax_player = HeuristicMinimaxStrategy(9)
 
 outcomes = {'Tie': 0, 1: 0, 2: 0}
-for i in range(1000):
-    game = Game(heuristic_minimax_player, bruh)
+for i in range(50):
+    heuristic_minimax_player = HeuristicMinimaxStrategy(2)
+    game = Game(heuristic_minimax_player, random_player)
     game.run()
     outcomes[game.winner] += 1
 print(outcomes)

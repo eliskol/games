@@ -124,8 +124,7 @@ class TicTacToeRecombiningTreeCustomDepth:
         self.root = first_node
         self.node_dict = created_game_states
         self.terminal_nodes = terminal_nodes
-        print((0 for _ in range(9)) in created_game_states)
-        print((0 for _ in range(9)) in self.node_dict)
+        # print((0 for _ in range(9)) in self.node_dict)
 
     def _generate_tree_using_cache(self, first_game_state):
         # transferring this poorly written function to a new, better written one
@@ -244,11 +243,13 @@ class TicTacToeRecombiningTreeCustomDepth:
                 if tuple(new_board_state) in self.node_dict:
                     new_node = self.node_dict[tuple(new_board_state)]
                     new_node.parents.append(current_node)
+                    new_node.depth = current_node.depth
                     current_node.children.append(new_node)
                 else:
                     new_node = Node(new_board_state)
                     new_node.is_terminal_node = True
                     new_node.parents.append(current_node)
+                    new_node.depth = current_node.depth
                     current_node.children.append(new_node)
                     self.node_dict[tuple(new_board_state)] = new_node
                     new_layer_nodes.append(new_node)
