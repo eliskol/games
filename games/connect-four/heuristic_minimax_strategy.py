@@ -11,7 +11,7 @@ class HeuristicMinimaxStrategy:
 
     def generate_tree(self, board_state, n=9):
         if not hasattr(self, "tree"):
-            self.tree = TicTacToeRecombiningTreeCustomDepth(board_state, n)
+            self.tree = ConnectFourRecombiningTreeCustomDepth(board_state, n)
         else:
             self.tree.generate_tree_using_cache(board_state)
         self.node_dict = self.tree.node_dict
