@@ -4,6 +4,10 @@ import time
 # todo: update generate_tree_using_cache
 # note: getting "ghost" games appearing -- have no parents, and technically impossible game states:
 # e.g. [[1, 2, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 2], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+# how to get rid of ghost games: rewrite prune_tree to use a traversal starting at the new game state
+# instead of using the template method
+# (template method doesn't account for previous moves determining future moves)
+
 
 class Queue:
 
@@ -172,23 +176,11 @@ class ConnectFourRecombiningTreeCustomDepth:
     def prune_tree(self, template_state):
         template_node = self.node_dict[self.deeptuple(template_state)]
         node_dict = {self.deeptuple(template_state): template_node}
-        for current_board_state in self.node_dict:
-            current_node = self.node_dict[current_board_state]
-            index_of_all_filled_in_spaces_of_template_state = self.find_filled_in_spaces(template_state)
-            is_a_possible_child = False  # needs to be false by default in order to prune out the empty board
-            for (i, j) in index_of_all_filled_in_spaces_of_template_state:
-                is_a_possible_child = True
-                if template_node.state[i][j] != current_node.state[i][j]:
-                    is_a_possible_child = False
-                    break
-            if is_a_possible_child is False:
-                for child_node in current_node.children:
-                    child_node.parents.remove(current_node)
-                for parent_node in current_node.parents:
-                    parent_node.children.remove(current_node)
-                continue
+        queue = Queue([template_node])
 
-            node_dict[self.deeptuple(current_board_state)] = current_node
+        while queue.contents != []:
+
+
 
         self.node_dict = node_dict
 
@@ -226,7 +218,7 @@ class ConnectFourRecombiningTreeCustomDepth:
                 possible_moves.append(i)
         return possible_moves
 
-    def drop_token(self, player, board, column):
+    def drop_token(self, player: int, board, column) -> list:
         for row in range(6):
             if board[row][column] == 0:
                 board[row][column] = player
