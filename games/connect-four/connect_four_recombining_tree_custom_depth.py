@@ -1,7 +1,7 @@
 import time
 
 
-# todo: update prune_tree, and generate_tree_using_cache and create_layer
+# todo: update generate_tree_using_cache
 
 class Queue:
 
@@ -33,41 +33,38 @@ class Node:
         self.state = board_state
         self.winner = self.determine_winner()
         if self.winner is None:
-            self.turn = 1 if sum(row.count(1) for row in self.state) == sum(row.count(2) for row in self.state) else 2  # need to update this
+            self.turn = 1 if sum(row.count(1) for row in self.state) == sum(row.count(2) for row in self.state) else 2
         else:
             self.turn = None
         self.children = []
         self.parents = []
         self.possible_moves = self.find_possible_moves()
-        # false by default, gets set to true during tree generation
-        self.is_terminal_node = False
+        self.is_terminal_node = False  # false by default, gets set to true during tree generation
 
     def determine_winner(self):
 
-        if self.board == [[0 for _ in range(7)] for _ in range(6)]:
+        if self.state == [[0 for _ in range(7)] for _ in range(6)]:
             return None
-
-        player_that_made_move = self.previous_player
 
         for i in range(0, 6):
             for j in range(0, 4):
-                if self.board[i][j] == self.board[i][j + 1] == self.board[i][j + 2] == self.board[i][j + 3] != 0:
-                    return self.board[i][j]
+                if self.state[i][j] == self.state[i][j + 1] == self.state[i][j + 2] == self.state[i][j + 3] != 0:
+                    return self.state[i][j]
 
         for i in range(0, 3):
             for j in range(0, 7):
-                if self.board[i][j] == self.board[i + 1][j] == self.board[i + 2][j] == self.board[i + 3][j] != 0:
-                    return self.board[i][j]
+                if self.state[i][j] == self.state[i + 1][j] == self.state[i + 2][j] == self.state[i + 3][j] != 0:
+                    return self.state[i][j]
 
         for i in range(0, 3):
             for j in range(0, 4):
-                if self.board[i][j] == self.board[i + 1][j + 1] == self.board[i + 2][j + 2] == self.board[i + 3][j + 3] != 0:
-                    return self.board[i][j]
+                if self.state[i][j] == self.state[i + 1][j + 1] == self.state[i + 2][j + 2] == self.state[i + 3][j + 3] != 0:
+                    return self.state[i][j]
 
-                elif self.board[5 - i][j] == self.board[5 - (i + 1)][j + 1] == self.board[5 - (i + 2)][j + 2] == self.board[5 - (i + 3)][j + 3] != 0:
-                    return self.board[5 - i][j]
+                elif self.state[5 - i][j] == self.state[5 - (i + 1)][j + 1] == self.state[5 - (i + 2)][j + 2] == self.state[5 - (i + 3)][j + 3] != 0:
+                    return self.state[5 - i][j]
 
-        if any(0 in row for row in self.board):
+        if any(0 in row for row in self.state):
             pass
         else:
             return 'Tie'
@@ -75,7 +72,7 @@ class Node:
         return None
 
     def check_move_validity(self, move):
-        for row in self.board:
+        for row in self.state:
             if row[move] == 0:
                 return True
         return False
@@ -123,11 +120,11 @@ class ConnectFourRecombiningTreeCustomDepth:
 
             for move in possible_moves:
                 a_variable += 1
-                new_board_state = list(dequeued_node_board_state)
-                self.drop_token(next_player, new_board_state, move)
+                new_board_state = self.deeplist(dequeued_node_board_state)
+                new_board_state = self.drop_token(next_player, new_board_state, move)
 
                 if self.deeptuple(new_board_state) in created_game_states:
-                    new_node = created_game_states[tuple(new_board_state)]
+                    new_node = created_game_states[self.deeptuple(new_board_state)]
                     new_node.parents.append(dequeued_node)
                     dequeued_node.children.append(new_node)
 
@@ -170,18 +167,16 @@ class ConnectFourRecombiningTreeCustomDepth:
         self.root = node_dict[self.deeptuple(starting_game_state)]
         self.node_dict = node_dict
 
-    def prune_tree(self, new_state):
-        new_node = self.node_dict[self.deeptuple(new_state)]
-        node_dict = {self.deeptuple(new_state): new_node}
+    def prune_tree(self, template_state):
+        template_node = self.node_dict[self.deeptuple(template_state)]
+        node_dict = {self.deeptuple(template_state): template_node}
         for current_board_state in self.node_dict:
             current_node = self.node_dict[current_board_state]
-            index_of_all_filled_in_spaces_of_first_node = [
-                i for i in range(9) if new_node.state[i] != 0] # need to update this bit
-            is_a_possible_child = True
-            for i in index_of_all_filled_in_spaces_of_first_node:
-                if new_node.state[i] == current_node.state[i]:
-                    is_a_possible_child = True
-                else:
+            index_of_all_filled_in_spaces_of_template_state = self.find_filled_in_spaces(template_state)
+            is_a_possible_child = False  # needs to be false by default in order to prune out the empty board
+            for (i, j) in index_of_all_filled_in_spaces_of_template_state:
+                is_a_possible_child = True
+                if template_node.state[i][j] != current_node.state[i][j]:
                     is_a_possible_child = False
                     break
             if is_a_possible_child is False:
@@ -203,8 +198,8 @@ class ConnectFourRecombiningTreeCustomDepth:
             current_board_state = current_node.state
             possible_moves = current_node.possible_moves
             for move in possible_moves:
-                new_board_state = list(current_board_state)
-                new_board_state[move] = current_node.turn
+                new_board_state = self.deeplist(current_board_state)
+                new_board_state = self.drop_token(current_node.turn, new_board_state, move)
 
                 if self.deeptuple(new_board_state) in self.node_dict:
                     new_node = self.node_dict[self.deeptuple(new_board_state)]
@@ -234,6 +229,38 @@ class ConnectFourRecombiningTreeCustomDepth:
             if board[row][column] == 0:
                 board[row][column] = player
                 break
+        return board
 
     def deeptuple(self, board):
         return tuple(tuple(row) for row in board)
+
+    def find_filled_in_spaces(self, board):
+        filled_in_spaces = []
+        for i in range(6):
+            for j in range(7):
+                if board[i][j] != 0:
+                    filled_in_spaces.append((i, j))
+        return filled_in_spaces
+
+    def deeplist(self, board):
+        return list(list(row) for row in board)
+
+
+i = 5
+bruh = ConnectFourRecombiningTreeCustomDepth([[0 for _ in range(7)]
+                                              for _ in range(6)], i)
+print('depth of ', i, 'has', len(bruh.node_dict), 'nodes')
+game_state = [[0 for _ in range(7)] for _ in range(5)]
+game_state.insert(0, [1, 2, 0, 0, 0, 0, 0])
+bruh.generate_tree_using_cache(game_state)
+
+print(len(bruh.node_dict))
+
+bruh2 = ConnectFourRecombiningTreeCustomDepth(game_state, 5)
+print(len(bruh2.node_dict))
+
+for game_state_tuple in bruh.node_dict:
+    if game_state_tuple not in bruh2.node_dict:
+        for row in game_state_tuple[::-1]:
+            print(row)
+        print()
