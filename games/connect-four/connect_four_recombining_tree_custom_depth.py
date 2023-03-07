@@ -2,6 +2,8 @@ import time
 
 
 # todo: update generate_tree_using_cache
+# note: getting "ghost" games appearing -- have no parents, and technically impossible game states:
+# e.g. [[1, 2, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 2], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
 
 class Queue:
 
