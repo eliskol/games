@@ -1,16 +1,17 @@
 from connect_four_recombining_tree_custom_depth import ConnectFourRecombiningTreeCustomDepth
 from connect_four_recombining_tree_custom_depth import Queue
 import time
+import random
 
 
 class HeuristicMinimaxStrategy:
     def __init__(self, n):
-        self.generate_tree([0 for _ in range(9)], n)
+        self.generate_tree([[0 for _ in range(7)] for _ in range(6)], n)
         self.time = self.propagate_minimax_values()
         self.n = n
 
-    def generate_tree(self, board_state, n=9):
-        if not hasattr(self, "tree"):
+    def generate_tree(self, board_state, n=5):
+        if not hasattr(self, "tree") or board_state == [[0 for _ in range(7)] for _ in range(6)]:
             self.tree = ConnectFourRecombiningTreeCustomDepth(board_state, n)
         else:
             self.tree.generate_tree_using_cache(board_state)
@@ -27,7 +28,7 @@ class HeuristicMinimaxStrategy:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
             # tuple because the keys in self.node_dict can't be lists
-            game_state_to_propagate = tuple(game_states_to_propagate.dequeue())
+            game_state_to_propagate = self.tree.deeptuple(game_states_to_propagate.dequeue())
             current_node = self.node_dict[game_state_to_propagate]
             if hasattr(current_node, 'minimax_value'):
                 continue
@@ -59,7 +60,7 @@ class HeuristicMinimaxStrategy:
             self.propagate_minimax_values()
 
         # in order to look up in self.node_dict; lists aren't hashable
-        board = tuple(board)
+        board = self.tree.deeptuple(board)
         current_node = self.node_dict[board]
         if self.player == 1:
             goal_node = max(current_node.children,
@@ -68,45 +69,11 @@ class HeuristicMinimaxStrategy:
             goal_node = min(current_node.children,
                             key=lambda node: node.minimax_value)
 
+
+        # update the following code:
         for i in range(9):
             if board[i] != goal_node.state[i]:
                 return i
 
     def calculate_heuristic_value(self, board):
-        total = 0
-        for i in [0, 3, 6]:  # rows
-            if board[i] == board[i + 1] != 0 and board[i + 2] == 0:
-                # add 1 if its player 1, subtract 1 if its player 2
-                total += {1: 1, 2: -1}[board[i]]
-            if board[i + 1] == board[i + 2] != 0 and board[i] == 0:
-                total += {1: 1, 2: -1}[board[i + 1]]  # see above comment
-            if board[i] == board[i + 2] != 0 and board[i + 1] == 0:
-                total += {1: 1, 2: -1}[board[i]]  # see above comment
-        for i in [0, 1, 2]:  # cols
-            if board[i] == board[i + 3] != 0 and board[i + 6] == 0:
-                total += {1: 1, 2: -1}[board[i]]  # see above above comment
-            if board[i + 3] == board[i + 6] != 0 and board[i] == 0:
-                total += {1: 1, 2: -1}[board[i + 3]]  # see above comment
-            if board[i] == board[i + 6] != 0 and board[i + 3] == 0:
-                total += {1: 1, 2: -1}[board[i]]  # see above comment
-
-        # diagonal
-        if board[0] == board[4] != 0 and board[8] == 0:
-            total += {1: 1, 2: -1}[board[0]]  # see above above comment
-        if board[4] == board[8] != 0 and board[0] == 0:
-            total += {1: 1, 2: -1}[board[4]]  # see above comment
-        if board[0] == board[8] != 0 and board[4] == 0:
-            total += {1: 1, 2: -1}[board[0]]  # see above comment
-
-        # anti-diagonal
-        if board[2] == board[4] != 0 and board[6] == 0:
-            total += {1: 1, 2: -1}[board[2]]  # see above comment
-        if board[2] == board[6] != 0 and board[4] == 0:
-            total += {1: 1, 2: -1}[board[2]]  # see above comment
-        if board[4] == board[8] != 0 and board[0] == 0:
-            total += {1: 1, 2: -1}[board[4]]  # see above comment
-
-        total /= 8
-        if total == 0.5:
-            return 0
-        return 1 if total > 0.5 else 2
+        return random.random()
