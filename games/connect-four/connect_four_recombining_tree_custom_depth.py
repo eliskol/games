@@ -1,14 +1,6 @@
 import time
 
 
-# todo: update generate_tree_using_cache
-# note: getting "ghost" games appearing -- have no parents, and technically impossible game states:
-# e.g. [[1, 2, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 2], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
-# how to get rid of ghost games: rewrite prune_tree to use a traversal starting at the new game state
-# instead of using the template method
-# (template method doesn't account for previous moves determining future moves)
-
-
 class Queue:
 
     def __init__(self, contents=None):
@@ -114,10 +106,9 @@ class ConnectFourRecombiningTreeCustomDepth:
                 dequeued_node.is_terminal_node = True
                 continue
 
-            if dequeued_node.winner is not None:
-                if dequeued_node not in terminal_nodes:
-                    terminal_nodes.append(dequeued_node)
-                    dequeued_node.is_terminal_node = True
+            if dequeued_node.winner is not None and dequeued_node.is_terminal_node is False:
+                terminal_nodes.append(dequeued_node)
+                dequeued_node.is_terminal_node = True
                 continue
 
             dequeued_node_board_state = dequeued_node.state
@@ -154,16 +145,12 @@ class ConnectFourRecombiningTreeCustomDepth:
     def generate_tree_using_cache(self, starting_game_state):
         self.prune_tree(starting_game_state)
         node_dict = self.node_dict
-        last_layer = []
+        bottom_layer_nodes = self.bottom_layer_nodes
         terminal_nodes = []
-        for game_state in node_dict:
-            current_node = node_dict[game_state]
-            current_node.depth -= 2
-            if current_node.is_terminal_node:
-                last_layer.append(current_node)
-                if current_node.winner is not None:
-                    terminal_nodes.append(current_node)
-        new_layer_nodes = self.create_new_layer(last_layer)
+        for terminal_node in self.terminal_nodes:
+            if terminal_node.winner is not None:  # if the game is over
+                terminal_nodes.append(terminal_node)
+        new_layer_nodes = self.create_new_layer(bottom_layer_nodes)
         for current_node in new_layer_nodes:
             if current_node.winner is not None:
                 terminal_nodes.append(current_node)
@@ -177,16 +164,30 @@ class ConnectFourRecombiningTreeCustomDepth:
         template_node = self.node_dict[self.deeptuple(template_state)]
         node_dict = {self.deeptuple(template_state): template_node}
         queue = Queue([template_node])
+        terminal_nodes = []
+        bottom_layer_nodes = []
 
         while queue.contents != []:
+            dequeued_node = queue.dequeue()
+            if dequeued_node.is_terminal_node:
+                terminal_nodes.append(dequeued_node)
+                if dequeued_node.winner is None:
+                    bottom_layer_nodes.append(dequeued_node)  # excludes nodes that have already finished the game
 
-
+            for child_node in dequeued_node.children:
+                child_node_state = child_node.state
+                tuple_of_child_node_state = self.deeptuple(child_node_state)
+                if tuple_of_child_node_state not in node_dict:
+                    node_dict[tuple_of_child_node_state] = child_node
+                    queue.enqueue(child_node)
 
         self.node_dict = node_dict
+        self.terminal_nodes = terminal_nodes
+        self.bottom_layer_nodes = bottom_layer_nodes
 
-    def create_new_layer(self, current_layer):
+    def create_new_layer(self, layer):
         new_layer_nodes = []
-        for current_node in current_layer:
+        for current_node in layer:
             if current_node.winner is not None:
                 continue
             current_board_state = current_node.state
@@ -238,23 +239,3 @@ class ConnectFourRecombiningTreeCustomDepth:
 
     def deeplist(self, board):
         return list(list(row) for row in board)
-
-
-i = 5
-bruh = ConnectFourRecombiningTreeCustomDepth([[0 for _ in range(7)]
-                                              for _ in range(6)], i)
-print('depth of ', i, 'has', len(bruh.node_dict), 'nodes')
-game_state = [[0 for _ in range(7)] for _ in range(5)]
-game_state.insert(0, [1, 2, 0, 0, 0, 0, 0])
-bruh.generate_tree_using_cache(game_state)
-
-print(len(bruh.node_dict))
-
-bruh2 = ConnectFourRecombiningTreeCustomDepth(game_state, 5)
-print(len(bruh2.node_dict))
-
-for game_state_tuple in bruh.node_dict:
-    if game_state_tuple not in bruh2.node_dict:
-        for row in game_state_tuple[::-1]:
-            print(row)
-        print()
