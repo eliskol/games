@@ -159,6 +159,7 @@ class ConnectFourRecombiningTreeCustomDepth:
         self.terminal_nodes = terminal_nodes
         self.root = node_dict[self.deeptuple(starting_game_state)]
         self.node_dict = node_dict
+        self.previous_game_state = starting_game_state  # to help debug
 
     def prune_tree(self, template_state):
         template_node = self.node_dict[self.deeptuple(template_state)]
@@ -180,6 +181,8 @@ class ConnectFourRecombiningTreeCustomDepth:
                 if tuple_of_child_node_state not in node_dict:
                     node_dict[tuple_of_child_node_state] = child_node
                     queue.enqueue(child_node)
+
+                node_dict[tuple_of_child_node_state].parents = [parent for parent in node_dict[tuple_of_child_node_state].parents if self.deeptuple(parent.state) in node_dict]
 
         self.node_dict = node_dict
         self.terminal_nodes = terminal_nodes
@@ -207,6 +210,7 @@ class ConnectFourRecombiningTreeCustomDepth:
                     new_node.parents.append(current_node)
                     new_node.depth = current_node.depth
                     current_node.children.append(new_node)
+                    current_node.is_terminal_node = False
                     self.node_dict[self.deeptuple(new_board_state)] = new_node
                     new_layer_nodes.append(new_node)
 
@@ -219,7 +223,7 @@ class ConnectFourRecombiningTreeCustomDepth:
                 possible_moves.append(i)
         return possible_moves
 
-    def drop_token(self, player: int, board, column) -> list:
+    def drop_token(self, player, board, column):
         for row in range(6):
             if board[row][column] == 0:
                 board[row][column] = player
