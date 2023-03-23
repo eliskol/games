@@ -5,13 +5,14 @@ import random
 
 
 class HeuristicMinimaxStrategy:
-    def __init__(self, n):
+    def __init__(self, n, random):
+        self.random = random
         self.generate_tree([[0 for _ in range(7)] for _ in range(6)], n)
         self.time = self.propagate_minimax_values()
         self.n = n
 
-    def generate_tree(self, board_state, n=5):
-        if not hasattr(self, "tree") or board_state == [[0 for _ in range(7)] for _ in range(6)]:
+    def generate_tree(self, board_state, n):
+        if not hasattr(self, "tree") or board_state == [[0 for _ in range(7)] for _ in range(6)] or sum([row.count(1) for row in board_state]) == 1 or self.n == 1:
             self.tree = ConnectFourRecombiningTreeCustomDepth(board_state, n)
         else:
             self.tree.generate_tree_using_cache(board_state)
@@ -22,8 +23,12 @@ class HeuristicMinimaxStrategy:
         start = time.time()
         game_states_to_propagate = Queue()
         for node in self.terminal_nodes:
-            node.minimax_value = {
-                1: 1, 2: -1, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
+            if self.random:
+                node.minimax_value = 1 - 2 * random.random()
+            else:
+                node.minimax_value = {
+1: 1, 2: -1, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
+            # node.minimax_value = self.calculate_heuristic_value(node.state)
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
@@ -54,10 +59,15 @@ class HeuristicMinimaxStrategy:
         return end - start
 
     def choose_move(self, board):
+        start = time.time()
+        # move = random.randrange(0, 7)
+        # while 0 not in [board[i][move] for i in range(6)]:
+        #     move = random.randrange(0, 7)
+        # return move
+
         self.current_board_state = board
-        if board != [0 for _ in range(9)]:
-            self.generate_tree(board)
-            self.propagate_minimax_values()
+        self.generate_tree(board, self.n)
+        self.propagate_minimax_values()
 
         # in order to look up in self.node_dict; lists aren't hashable
         board = self.tree.deeptuple(board)
@@ -69,11 +79,41 @@ class HeuristicMinimaxStrategy:
             goal_node = min(current_node.children,
                             key=lambda node: node.minimax_value)
 
-
-        # update the following code:
-        for i in range(9):
-            if board[i] != goal_node.state[i]:
-                return i
+        for j in range(7):  # check for which column was changed i.e. i want to move in
+            if [board[i][j] for i in range(6)] != [goal_node.state[i][j] for i in range(6)]:
+                end = time.time()
+                if end - start >= 1:
+                    print(end - start)
+                return j
 
     def calculate_heuristic_value(self, board):
-        return random.random()
+        heuristic_value = 0
+
+        filled_in_spaces = []
+
+        for i in range(6):
+            current_row = board[i]
+            for j in range(3):
+                if current_row[j] == current_row[j + 4] == 0 and current_row[j + 1] == current_row[j + 2] == current_row[j + 3] != 0:
+                    heuristic_value += {1: 0.9, 2: -0.9}[current_row[j + 1]]
+            for j in range(4):
+                if current_row[j] == current_row[j + 3] == 0 and current_row[j + 1] == current_row[j + 2] != 0:
+                    heuristic_value += {1: 0.8, 2: -0.8}[current_row[j + 1]]
+                if current_row[j] == current_row[j + 3] != 0 and current_row[j + 1] == current_row[j + 2] == 0:
+                    heuristic_value += {1: 0.8, 2: -0.8}[current_row[j]]
+
+
+        return heuristic_value
+
+
+# game_state = [[0 for _ in range(7)] for _ in range(5)]
+# game_state.insert(0, [1, 1, 0, 0, 0, 2, 2])
+
+# bruh = HeuristicMinimaxStrategy(2)
+# bruh.tree = ConnectFourRecombiningTreeCustomDepth(game_state, 2)
+# # bruh.generate_tree(game_state, bruh.n)
+
+# game_state = [[0 for _ in range(7)] for _ in range(5)]
+# game_state.insert(0, [1, 1, 1, 0, 2, 2, 2])
+
+# print(bruh.choose_move(game_state))
