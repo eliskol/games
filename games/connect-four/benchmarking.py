@@ -24,3 +24,5 @@ for _ in range(10000):
 print('comprehension', sum(comprehension_times) / len(comprehension_times))
 print('filter', sum(filter_times) / len(filter_times))
 print('filter' if sum(comprehension_times) / len(comprehension_times) > sum(filter_times) / len(filter_times) else 'comp')
+
+# list comprehension is faster, but it probably won't matter; the times are on the scale of 1e-6
