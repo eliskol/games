@@ -10,23 +10,19 @@ from heuristic_minimax_strategy import HeuristicMinimaxStrategy
 from last_minute_player import LastMinutePlayer
 from input_player import InputPlayer
 
-toLog = False
-random_player = RandomPlayer()
-random_heuristic_player = HeuristicMinimaxStrategy(4, True)
-last_minute_player = LastMinutePlayer()
-custom_player = HeuristicMinimaxStrategy(3, False)
-custom_player2 = HeuristicMinimaxStrategy(2, False)
-input_player = InputPlayer()
+toLog = True
 
+first_player = RandomPlayer()
+second_player = RandomPlayer()
 
 outcomes = {'Tie': 0, 'c': 0, 'r': 0}
-for i in range(100):
+for i in range(1):
     if i % 2 == 0:
-        game = Game(custom_player, custom_player2)
+        game = Game(first_player, second_player)
         game.run(log=toLog)
         player_order = {'Tie': 'Tie', 1: 'c', 2: 'r'}
     elif i % 2 == 1:
-        game = Game(custom_player2, custom_player)
+        game = Game(second_player, first_player)
         game.run(log=toLog)
         player_order = {'Tie': 'Tie', 1: 'r', 2: 'c'}
     outcomes[player_order[game.winner]] += 1
