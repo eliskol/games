@@ -88,20 +88,13 @@ class HeuristicMinimaxStrategy:
 
     def calculate_heuristic_value(self, board):
         heuristic_value = 0
+        indexes = [[i, j] for i in range(6) for j in range(7)]
 
-        filled_in_spaces = []
+        filled_in_spaces = [[i, j]
+                            for [i, j] in indexes if board[i][j] != 0]
 
-        for i in range(6):
-            current_row = board[i]
-            for j in range(3):
-                if current_row[j] == current_row[j + 4] == 0 and current_row[j + 1] == current_row[j + 2] == current_row[j + 3] != 0:
-                    heuristic_value += {1: 0.9, 2: -0.9}[current_row[j + 1]]
-            for j in range(4):
-                if current_row[j] == current_row[j + 3] == 0 and current_row[j + 1] == current_row[j + 2] != 0:
-                    heuristic_value += {1: 0.8, 2: -0.8}[current_row[j + 1]]
-                if current_row[j] == current_row[j + 3] != 0 and current_row[j + 1] == current_row[j + 2] == 0:
-                    heuristic_value += {1: 0.8, 2: -0.8}[current_row[j]]
-
+        for [i, j] in filled_in_spaces:
+            # the things to check depends on the coordinates
 
         return heuristic_value
 
