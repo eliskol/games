@@ -60,6 +60,9 @@ class HeuristicMinimaxStrategy:
 
     def choose_move(self, board):
         start = time.time()
+
+        if board == [[0 for _ in range(7)] for _ in range(6)] or sum([row.count(1) for row in board]) == 1:  # i should check if i should only go middle if the other player hasn't yet
+            return 3  # middle is the best starting move apparently
         # move = random.randrange(0, 7)
         # while 0 not in [board[i][move] for i in range(6)]:
         #     move = random.randrange(0, 7)
