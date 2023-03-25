@@ -12,8 +12,8 @@ from input_player import InputPlayer
 
 toLog = True
 
-first_player = RandomPlayer()
-second_player = RandomPlayer()
+first_player = HeuristicMinimaxStrategy(5)
+second_player = HeuristicMinimaxStrategy(2)
 
 outcomes = {'Tie': 0, 'c': 0, 'r': 0}
 for i in range(1):
