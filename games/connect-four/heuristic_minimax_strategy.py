@@ -5,14 +5,14 @@ import random
 
 
 class HeuristicMinimaxStrategy:
-    def __init__(self, n, random):
+    def __init__(self, n, random=False):
         self.random = random
         self.generate_tree([[0 for _ in range(7)] for _ in range(6)], n)
         self.time = self.propagate_minimax_values()
         self.n = n
 
     def generate_tree(self, board_state, n):
-        if not hasattr(self, "tree") or board_state == [[0 for _ in range(7)] for _ in range(6)] or sum([row.count(1) for row in board_state]) == 1 or self.n == 1:
+        if (not hasattr(self, "tree")) or board_state == [[0 for _ in range(7)] for _ in range(6)] or sum([row.count(1) for row in board_state]) == 1 != sum([row.count(2) for row in board_state]) or self.n == 1:
             self.tree = ConnectFourRecombiningTreeCustomDepth(board_state, n)
         else:
             self.tree.generate_tree_using_cache(board_state)
@@ -27,7 +27,7 @@ class HeuristicMinimaxStrategy:
                 node.minimax_value = 1 - 2 * random.random()
             else:
                 node.minimax_value = {
-1: 1, 2: -1, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
+1: 9999, 2: -9999, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
             # node.minimax_value = self.calculate_heuristic_value(node.state)
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
@@ -61,15 +61,16 @@ class HeuristicMinimaxStrategy:
     def choose_move(self, board):
         start = time.time()
 
-        if board == [[0 for _ in range(7)] for _ in range(6)] or sum([row.count(1) for row in board]) == 1:  # i should check if i should only go middle if the other player hasn't yet
-            return 3  # middle is the best starting move apparently
+        self.current_board_state = board
+        self.generate_tree(board, self.n)
+
+        # if board == [[0 for _ in range(7)] for _ in range(6)] or sum([row.count(1) for row in board]) == 1:  # i should check if i should only go middle if the other player hasn't yet
+            # return 3  # middle is the best starting move apparently
         # move = random.randrange(0, 7)
         # while 0 not in [board[i][move] for i in range(6)]:
         #     move = random.randrange(0, 7)
         # return move
 
-        self.current_board_state = board
-        self.generate_tree(board, self.n)
         self.propagate_minimax_values()
 
         # in order to look up in self.node_dict; lists aren't hashable
@@ -97,8 +98,29 @@ class HeuristicMinimaxStrategy:
                             for [i, j] in indexes if board[i][j] != 0]
 
         for [i, j] in filled_in_spaces:
-            # the things to check depends on the coordinates
 
+            # checking horizontally:
+            if j <= 4:
+                if board[i][j] == board[i][j + 1] == board[i][j + 2]:  # three in a row
+                    if j <= 3 and board[i][j + 3] == 0 or j >= 1 and board[i][j - 1] == 0:
+                        heuristic_value += {1: 0.9, 2: -0.9}[board[i][j]]
+            if j <= 5:
+                if board[i][j] == board[i][j + 1]:  # two in a row
+                    if j <= 4 and board[i][j + 2] == 0 or j >= 1 and board[i][j - 1] == 0:
+                        heuristic_value += {1: 0.3, 2: -0.3}[board[i][j]]
+
+            if j <= 6:
+                if j <= 5 and board[i][j + 1] == 0 or j >= 1 and board[i][j - 1] == 0:
+                    heuristic_value += {1: 0.1, 2: -0.1}[board[i][j]]
+
+            # checking vertically:
+            if i <= 2:
+                if board[i][j] == board[i + 1][j] == board[i + 2][j] and board[i + 3][j] == 0: # three in a row
+                    heuristic_value += {1: 0.9, 2: -0.9}[board[i][j]]
+                elif board[i][j] == board[i + 1][j] and board[i + 2][j] == 0: # two in a row
+                    heuristic_value += {1: 0.3, 2: -0.3}[board[i][j]]
+                elif board[i + 1][j] == 0:
+                    heuristic_value += {1: 0.1, 2: -0.1}[board[i][j]]
         return heuristic_value
 
 
