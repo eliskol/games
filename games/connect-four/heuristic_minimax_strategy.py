@@ -63,15 +63,12 @@ class HeuristicMinimaxStrategy:
 
         self.current_board_state = board
         self.generate_tree(board, self.n)
-
-        # if board == [[0 for _ in range(7)] for _ in range(6)] or sum([row.count(1) for row in board]) == 1:  # i should check if i should only go middle if the other player hasn't yet
-            # return 3  # middle is the best starting move apparently
-        # move = random.randrange(0, 7)
-        # while 0 not in [board[i][move] for i in range(6)]:
-        #     move = random.randrange(0, 7)
-        # return move
-
         self.propagate_minimax_values()
+
+        if board == [[0 for _ in range(7)] for _ in range(6)]:
+            return 3
+        elif sum([row.count(1) for row in board]) == 1 != sum([row.count(2) for row in board]):
+            return 2
 
         # in order to look up in self.node_dict; lists aren't hashable
         board = self.tree.deeptuple(board)
@@ -91,6 +88,7 @@ class HeuristicMinimaxStrategy:
                 return j
 
     def calculate_heuristic_value(self, board):
+        return self.alternate_heuristic_value(board)
         heuristic_value = 0
         indexes = [[i, j] for i in range(6) for j in range(7)]
 
@@ -102,8 +100,11 @@ class HeuristicMinimaxStrategy:
             # checking horizontally:
             if j <= 4:
                 if board[i][j] == board[i][j + 1] == board[i][j + 2]:  # three in a row
-                    if j <= 3 and board[i][j + 3] == 0 or j >= 1 and board[i][j - 1] == 0:
+                    if j <= 3 and board[i][j + 3] == 0:
                         heuristic_value += {1: 0.9, 2: -0.9}[board[i][j]]
+                    if j >= 1 and board[i][j - 1] == 0:
+                        heuristic_value += {1: 0.9, 2: -0.9}[board[i][j]]
+
             if j <= 5:
                 if board[i][j] == board[i][j + 1]:  # two in a row
                     if j <= 4 and board[i][j + 2] == 0 or j >= 1 and board[i][j - 1] == 0:
@@ -123,15 +124,32 @@ class HeuristicMinimaxStrategy:
                     heuristic_value += {1: 0.1, 2: -0.1}[board[i][j]]
         return heuristic_value
 
-
-# game_state = [[0 for _ in range(7)] for _ in range(5)]
-# game_state.insert(0, [1, 1, 0, 0, 0, 2, 2])
-
-# bruh = HeuristicMinimaxStrategy(2)
-# bruh.tree = ConnectFourRecombiningTreeCustomDepth(game_state, 2)
-# # bruh.generate_tree(game_state, bruh.n)
-
-# game_state = [[0 for _ in range(7)] for _ in range(5)]
-# game_state.insert(0, [1, 1, 1, 0, 2, 2, 2])
-
-# print(bruh.choose_move(game_state))
+    def alternate_heuristic_value(self, board):
+        heuristic_value = 0
+        for i in range(6):
+            for j in range(4):
+                slice = board[i][j:j + 4]
+                if (slice.count(1) == 3 or slice.count(2) == 3) and slice.count(0) == 1:
+                    heuristic_value += {3: 0.9, 0: -0.9}[slice.count(1)]
+            for j in range(5):
+                slice = board[i][j:j + 3]
+                if (slice.count(1) == 2 or slice.count(2) == 2) and slice.count(0) == 1:
+                    heuristic_value += {2: 0.3, 0: -0.3}[slice.count(1)]
+            for j in range(6):
+                slice = board[i][j:j + 2]
+                if (slice.count(1) == 1 or slice.count(2) == 1) and slice.count(0) == 1:
+                    heuristic_value += {1: 0.1, 0: -0.1}[slice.count(1)]
+        for j in range(7):
+            for i in range(3):
+                slice = [board[i + k][j] for k in range(4)]
+                if (slice.count(1) == 3 or slice.count(2) == 3) and slice[-1] == 0:
+                    heuristic_value += {3: 0.9, 0: -0.9}[slice.count(1)]
+            for i in range(4):
+                slice = [board[i + k][j] for k in range(3)]
+                if (slice.count(1) == 2 or slice.count(2) == 2) and slice[-1] == 0:
+                    heuristic_value += {2: 0.3, 0: -0.3}[slice.count(1)]
+            for i in range(5):
+                slice = [board[i + k][j] for k in range(2)]
+                if (slice.count(1) == 1 or slice.count(2) == 1) and slice[-1] == 0:
+                    heuristic_value += {1: 0.1, 0: -0.1}[slice.count(1)]
+        return heuristic_value
