@@ -5,8 +5,7 @@ import random
 
 
 class HeuristicMinimaxStrategy:
-    def __init__(self, n, random=False):
-        self.random = random
+    def __init__(self, n):
         self.generate_tree([[0 for _ in range(7)] for _ in range(6)], n)
         self.time = self.propagate_minimax_values()
         self.n = n
@@ -23,17 +22,15 @@ class HeuristicMinimaxStrategy:
         start = time.time()
         game_states_to_propagate = Queue()
         for node in self.terminal_nodes:
-            if self.random:
-                node.minimax_value = 1 - 2 * random.random()
-            else:
-                node.minimax_value = {
-1: 9999, 2: -9999, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
+            node.minimax_value = {
+                1: 9999, 2: -9999, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
             # node.minimax_value = self.calculate_heuristic_value(node.state)
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
             # tuple because the keys in self.node_dict can't be lists
-            game_state_to_propagate = self.tree.deeptuple(game_states_to_propagate.dequeue())
+            game_state_to_propagate = self.tree.deeptuple(
+                game_states_to_propagate.dequeue())
             current_node = self.node_dict[game_state_to_propagate]
             if hasattr(current_node, 'minimax_value'):
                 continue
@@ -116,9 +113,10 @@ class HeuristicMinimaxStrategy:
 
             # checking vertically:
             if i <= 2:
-                if board[i][j] == board[i + 1][j] == board[i + 2][j] and board[i + 3][j] == 0: # three in a row
+                # three in a row
+                if board[i][j] == board[i + 1][j] == board[i + 2][j] and board[i + 3][j] == 0:
                     heuristic_value += {1: 0.9, 2: -0.9}[board[i][j]]
-                elif board[i][j] == board[i + 1][j] and board[i + 2][j] == 0: # two in a row
+                elif board[i][j] == board[i + 1][j] and board[i + 2][j] == 0:  # two in a row
                     heuristic_value += {1: 0.3, 2: -0.3}[board[i][j]]
                 elif board[i + 1][j] == 0:
                     heuristic_value += {1: 0.1, 2: -0.1}[board[i][j]]
