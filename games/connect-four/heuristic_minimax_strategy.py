@@ -63,8 +63,10 @@ class HeuristicMinimaxStrategy:
         self.propagate_minimax_values()
 
         if board == [[0 for _ in range(7)] for _ in range(6)]:
+            self.player = 1
             return 3
         elif sum([row.count(1) for row in board]) == 1 != sum([row.count(2) for row in board]):
+            self.player = 2
             return 2
 
         # in order to look up in self.node_dict; lists aren't hashable
