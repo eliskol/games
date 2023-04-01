@@ -1,7 +1,6 @@
-from connect_four_recombining_tree_custom_depth import ConnectFourRecombiningTreeCustomDepth
+from connect_four_recombining_tree_custom_depth import ConnectFourRecombiningTreeCustomDepth, Node
 from connect_four_recombining_tree_custom_depth import Queue
 import time
-import random
 
 
 class HeuristicMinimaxStrategy:
@@ -24,7 +23,6 @@ class HeuristicMinimaxStrategy:
         for node in self.terminal_nodes:
             node.minimax_value = {
                 1: 9999, 2: -9999, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
-            # node.minimax_value = self.calculate_heuristic_value(node.state)
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
@@ -86,32 +84,45 @@ class HeuristicMinimaxStrategy:
                     print(end - start)
                 return j
 
-    def calculate_heuristic_value(self, board):
+    def calculate_heuristic_value(self, board: list[list[int]]):
+        test = Node(board)
+        if test.winner is not None:
+            print('this should not print:', test.winner)
         heuristic_value = 0
         for i in range(6):
             for j in range(4):
-                slice = board[i][j:j + 4]
-                if (slice.count(1) == 3 or slice.count(2) == 3) and slice.count(0) == 1:
-                    heuristic_value += {3: 0.9, 0: -0.9}[slice.count(1)]
+                horizontal = board[i][j:j + 4]
+                if (horizontal.count(1) == 3 or horizontal.count(2) == 3) and horizontal.count(0) == 1:
+                    heuristic_value += {3: 0.9, 0: -0.9}[horizontal.count(1)]
             for j in range(5):
-                slice = board[i][j:j + 3]
-                if (slice.count(1) == 2 or slice.count(2) == 2) and slice.count(0) == 1:
-                    heuristic_value += {2: 0.3, 0: -0.3}[slice.count(1)]
+                horizontal = board[i][j:j + 3]
+                if (horizontal.count(1) == 2 or horizontal.count(2) == 2) and horizontal.count(0) == 1:
+                    heuristic_value += {2: 0.3, 0: -0.3}[horizontal.count(1)]
             for j in range(6):
-                slice = board[i][j:j + 2]
-                if (slice.count(1) == 1 or slice.count(2) == 1) and slice.count(0) == 1:
-                    heuristic_value += {1: 0.1, 0: -0.1}[slice.count(1)]
+                horizontal = board[i][j:j + 2]
+                if (horizontal.count(1) == 1 or horizontal.count(2) == 1) and horizontal.count(0) == 1:
+                    heuristic_value += {1: 0.1, 0: -0.1}[horizontal.count(1)]
         for j in range(7):
             for i in range(3):
-                slice = [board[i + k][j] for k in range(4)]
-                if (slice.count(1) == 3 or slice.count(2) == 3) and slice[-1] == 0:
-                    heuristic_value += {3: 0.9, 0: -0.9}[slice.count(1)]
+                vertical = [board[i + k][j] for k in range(4)]
+                if (vertical.count(1) == 3 or vertical.count(2) == 3) and vertical[-1] == 0:
+                    heuristic_value += {3: 0.9, 0: -0.9}[vertical.count(1)]
             for i in range(4):
-                slice = [board[i + k][j] for k in range(3)]
-                if (slice.count(1) == 2 or slice.count(2) == 2) and slice[-1] == 0:
-                    heuristic_value += {2: 0.3, 0: -0.3}[slice.count(1)]
+                vertical = [board[i + k][j] for k in range(3)]
+                if (vertical.count(1) == 2 or vertical.count(2) == 2) and vertical[-1] == 0:
+                    heuristic_value += {2: 0.3, 0: -0.3}[vertical.count(1)]
             for i in range(5):
-                slice = [board[i + k][j] for k in range(2)]
-                if (slice.count(1) == 1 or slice.count(2) == 1) and slice[-1] == 0:
-                    heuristic_value += {1: 0.1, 0: -0.1}[slice.count(1)]
+                vertical = [board[i + k][j] for k in range(2)]
+                if (vertical.count(1) == 1 or vertical.count(2) == 1) and vertical[-1] == 0:
+                    heuristic_value += {1: 0.1, 0: -0.1}[vertical.count(1)]
+        for i in range(0, 3):
+            for j in range(0, 4):
+                positive_diagonal = [board[i + k][j + k] for k in range(4)]
+                negative_diagonal = [board[5 - (i + k)][j + k] for k in range(4)]
+                if positive_diagonal.count(0) == 0 and (positive_diagonal.count(1) == 0 or positive_diagonal.count(2) == 0):
+                    heuristic_value += {True: [0, 0.1, 0.3, 0.9, 9999][positive_diagonal.count(1)], False: [0, -0.1, -0.3, -0.9, -9999][positive_diagonal.count(2)]}[
+                        positive_diagonal.count(2) == 0]  # what is wrong with me
+                if negative_diagonal.count(0) == 0 and (negative_diagonal.count(1) == 0 or negative_diagonal.count(2) == 0):
+                    heuristic_value += {True: [0, 0.1, 0.3, 0.9, 9999][negative_diagonal.count(1)], False: [0, -0.1, -0.3, -0.9, -9999][negative_diagonal.count(2)]}[
+                        negative_diagonal.count(2) == 0]  # what is wrong with me
         return heuristic_value
