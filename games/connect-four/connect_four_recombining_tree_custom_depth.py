@@ -40,7 +40,6 @@ class Node:
         self.is_terminal_node = False  # false by default, gets set to true during tree generation
 
     def determine_winner(self):
-
         if self.state == [[0 for _ in range(7)] for _ in range(6)]:
             return None
 
@@ -88,14 +87,12 @@ class ConnectFourRecombiningTreeCustomDepth:
         self.generate_tree(first_game_state, n)
 
     def generate_tree(self, first_game_state, n):
-        start_time = time.time()
         first_node = Node(first_game_state)
         first_node.depth = 0
         created_game_states = {self.deeptuple(first_game_state): first_node}
         terminal_nodes = []
 
         queue = Queue([first_node])
-        a_variable = 1
 
         while queue.contents != []:
 
@@ -116,7 +113,6 @@ class ConnectFourRecombiningTreeCustomDepth:
             possible_moves = dequeued_node.possible_moves
 
             for move in possible_moves:
-                a_variable += 1
                 new_board_state = self.deeplist(dequeued_node_board_state)
                 new_board_state = self.drop_token(next_player, new_board_state, move)
 
@@ -133,14 +129,9 @@ class ConnectFourRecombiningTreeCustomDepth:
                     queue.enqueue(new_node)
                     created_game_states[self.deeptuple(new_board_state)] = new_node
 
-        #         print(a_variable)
-        # print('finished generating!')
-        # print(time.time() - start_time)
-        # print(leaf_node_count)
         self.root = first_node
         self.node_dict = created_game_states
         self.terminal_nodes = terminal_nodes
-        # print((0 for _ in range(9)) in self.node_dict)
 
     def generate_tree_using_cache(self, starting_game_state):
         self.prune_tree(starting_game_state)
