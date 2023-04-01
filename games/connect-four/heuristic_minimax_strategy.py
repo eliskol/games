@@ -22,7 +22,7 @@ class HeuristicMinimaxStrategy:
         game_states_to_propagate = Queue()
         for node in self.terminal_nodes:
             node.minimax_value = {
-                1: 9999, 2: -9999, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
+                1: 9999, 2: -9999, 'Tie': 0}[node.winner] if node.winner is not None else self.calculate_heuristic_value(node.state)
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
@@ -85,9 +85,6 @@ class HeuristicMinimaxStrategy:
                 return j
 
     def calculate_heuristic_value(self, board: list[list[int]]):
-        test = Node(board)
-        if test.winner is not None:
-            print('this should not print:', test.winner)
         heuristic_value = 0
         for i in range(6):
             for j in range(4):
