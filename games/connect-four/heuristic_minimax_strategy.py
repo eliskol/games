@@ -87,44 +87,6 @@ class HeuristicMinimaxStrategy:
                 return j
 
     def calculate_heuristic_value(self, board):
-        return self.alternate_heuristic_value(board)
-        heuristic_value = 0
-        indexes = [[i, j] for i in range(6) for j in range(7)]
-
-        filled_in_spaces = [[i, j]
-                            for [i, j] in indexes if board[i][j] != 0]
-
-        for [i, j] in filled_in_spaces:
-
-            # checking horizontally:
-            if j <= 4:
-                if board[i][j] == board[i][j + 1] == board[i][j + 2]:  # three in a row
-                    if j <= 3 and board[i][j + 3] == 0:
-                        heuristic_value += {1: 0.9, 2: -0.9}[board[i][j]]
-                    if j >= 1 and board[i][j - 1] == 0:
-                        heuristic_value += {1: 0.9, 2: -0.9}[board[i][j]]
-
-            if j <= 5:
-                if board[i][j] == board[i][j + 1]:  # two in a row
-                    if j <= 4 and board[i][j + 2] == 0 or j >= 1 and board[i][j - 1] == 0:
-                        heuristic_value += {1: 0.3, 2: -0.3}[board[i][j]]
-
-            if j <= 6:
-                if j <= 5 and board[i][j + 1] == 0 or j >= 1 and board[i][j - 1] == 0:
-                    heuristic_value += {1: 0.1, 2: -0.1}[board[i][j]]
-
-            # checking vertically:
-            if i <= 2:
-                # three in a row
-                if board[i][j] == board[i + 1][j] == board[i + 2][j] and board[i + 3][j] == 0:
-                    heuristic_value += {1: 0.9, 2: -0.9}[board[i][j]]
-                elif board[i][j] == board[i + 1][j] and board[i + 2][j] == 0:  # two in a row
-                    heuristic_value += {1: 0.3, 2: -0.3}[board[i][j]]
-                elif board[i + 1][j] == 0:
-                    heuristic_value += {1: 0.1, 2: -0.1}[board[i][j]]
-        return heuristic_value
-
-    def alternate_heuristic_value(self, board):
         heuristic_value = 0
         for i in range(6):
             for j in range(4):
