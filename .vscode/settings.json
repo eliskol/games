@@ -73,5 +73,9 @@
     "python.linting.enabled": true,
     "python.linting.pycodestyleEnabled": true,
     "python.linting.banditEnabled": false,
-    "python.linting.pylintEnabled": false
+    "python.linting.pylintEnabled": false,
+    "python.analysis.extraPaths": [
+        "./games/connect-four",
+        "./games/connect-four/celeste-strat"
+    ]
 }
