@@ -4,7 +4,8 @@ import time
 
 
 class HeuristicMinimaxStrategy:
-    def __init__(self, n):
+    def __init__(self, n, old=False):
+        self.old = old
         self.generate_tree([[0 for _ in range(7)] for _ in range(6)], n)
         self.time = self.propagate_minimax_values()
         self.n = n
@@ -22,7 +23,8 @@ class HeuristicMinimaxStrategy:
         game_states_to_propagate = Queue()
         for node in self.terminal_nodes:
             node.minimax_value = {
-                1: 9999, 2: -9999, 'Tie': 0}[node.winner] if node.winner is not None else self.calculate_heuristic_value(node.state)
+                1: 9999, 2: -9999, 'Tie': 0}[node.winner] if node.winner is not None else (
+                    self.calculate_heuristic_value(node.state) if not self.old else self.old_calculate_heuristic_value(node.state))
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
@@ -91,6 +93,54 @@ class HeuristicMinimaxStrategy:
                 horizontal = board[i][j:j + 4]
                 if (horizontal.count(1) == 3 or horizontal.count(2) == 3) and horizontal.count(0) == 1:
                     heuristic_value += {3: 0.9, 0: -0.9}[horizontal.count(1)]
+                elif (horizontal.count(1) == 2 or horizontal.count(2) == 2) and horizontal.count(0) == 2:
+                    heuristic_value += {2: 0.3, 0: -0.3}[horizontal.count(1)]
+                elif (horizontal.count(1) == 1 or horizontal.count(2) == 1) and horizontal.count(0) == 3:
+                    heuristic_value += {1: 0.1, 0: -0.1}[horizontal.count(1)]
+            # for j in range(5):
+            #     horizontal = board[i][j:j + 3]
+            #     if (horizontal.count(1) == 2 or horizontal.count(2) == 2) and horizontal.count(0) == 1:
+            #         heuristic_value += {2: 0.3, 0: -0.3}[horizontal.count(1)]
+            # for j in range(6):
+            #     horizontal = board[i][j:j + 2]
+            #     if (horizontal.count(1) == 1 or horizontal.count(2) == 1) and horizontal.count(0) == 1:
+            #         heuristic_value += {1: 0.1, 0: -0.1}[horizontal.count(1)]
+        for j in range(7):
+            for i in range(3):
+                vertical = [board[i + k][j] for k in range(4)]
+                if (vertical.count(1) == 3 or vertical.count(2) == 3) and vertical[-1] == 0:
+                    heuristic_value += {3: 0.9, 0: -0.9}[vertical.count(1)]
+                elif (vertical.count(1) == 2 or vertical.count(2) == 2) and vertical[-2] == 0:
+                    heuristic_value += {2: 0.3, 0: -0.3}[vertical.count(1)]
+                elif (vertical.count(1) == 1 or vertical.count(2) == 1) and vertical[-3] == 0:
+                    heuristic_value += {1: 0.1, 0: -0.1}[vertical.count(1)]
+            # for i in range(4):
+            #     vertical = [board[i + k][j] for k in range(3)]
+            #     if (vertical.count(1) == 2 or vertical.count(2) == 2) and vertical[-1] == 0:
+            #         heuristic_value += {2: 0.3, 0: -0.3}[vertical.count(1)]
+            # for i in range(5):
+            #     vertical = [board[i + k][j] for k in range(2)]
+            #     if (vertical.count(1) == 1 or vertical.count(2) == 1) and vertical[-1] == 0:
+            #         heuristic_value += {1: 0.1, 0: -0.1}[vertical.count(1)]
+        for i in range(0, 3):
+            for j in range(0, 4):
+                positive_diagonal = [board[i + k][j + k] for k in range(4)]
+                negative_diagonal = [board[5 - (i + k)][j + k] for k in range(4)]
+                if positive_diagonal.count(0) == 0 and (positive_diagonal.count(1) == 0 or positive_diagonal.count(2) == 0):
+                    heuristic_value += {True: [0, 0.1, 0.3, 0.9][positive_diagonal.count(1)], False: [0, -0.1, -0.3, -0.9][positive_diagonal.count(2)]}[
+                        positive_diagonal.count(2) == 0]  # what is wrong with me
+                if negative_diagonal.count(0) == 0 and (negative_diagonal.count(1) == 0 or negative_diagonal.count(2) == 0):
+                    heuristic_value += {True: [0, 0.1, 0.3, 0.9][negative_diagonal.count(1)], False: [0, -0.1, -0.3, -0.9][negative_diagonal.count(2)]}[
+                        negative_diagonal.count(2) == 0]  # what is wrong with me
+        return heuristic_value
+
+    def old_calculate_heuristic_value(self, board: list[list[int]]):
+        heuristic_value = 0
+        for i in range(6):
+            for j in range(4):
+                horizontal = board[i][j:j + 4]
+                if (horizontal.count(1) == 3 or horizontal.count(2) == 3) and horizontal.count(0) == 1:
+                    heuristic_value += {3: 0.9, 0: -0.9}[horizontal.count(1)]
             for j in range(5):
                 horizontal = board[i][j:j + 3]
                 if (horizontal.count(1) == 2 or horizontal.count(2) == 2) and horizontal.count(0) == 1:
@@ -115,7 +165,8 @@ class HeuristicMinimaxStrategy:
         for i in range(0, 3):
             for j in range(0, 4):
                 positive_diagonal = [board[i + k][j + k] for k in range(4)]
-                negative_diagonal = [board[5 - (i + k)][j + k] for k in range(4)]
+                negative_diagonal = [
+                    board[5 - (i + k)][j + k] for k in range(4)]
                 if positive_diagonal.count(0) == 0 and (positive_diagonal.count(1) == 0 or positive_diagonal.count(2) == 0):
                     heuristic_value += {True: [0, 0.1, 0.3, 0.9, 9999][positive_diagonal.count(1)], False: [0, -0.1, -0.3, -0.9, -9999][positive_diagonal.count(2)]}[
                         positive_diagonal.count(2) == 0]  # what is wrong with me

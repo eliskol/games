@@ -16,11 +16,11 @@ end_game = None
 
 toLog = False
 
-first_player = HeuristicMinimaxStrategy(5)
-second_player = HeuristicMinimaxStrategy(4)
+first_player = HeuristicMinimaxStrategy(4, False)
+second_player = HeuristicMinimaxStrategy(4, True)
 
 outcomes = {'Tie': 0, 'c': 0, 'r': 0}
-for i in range(10):
+for i in range(100):
     if i % 2 == 0:
         game = Game(first_player, second_player)
         game.run(log=toLog)
