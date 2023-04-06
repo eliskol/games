@@ -16,6 +16,11 @@ class HeuristicMinimaxStrategy:
             self.tree.generate_tree_using_cache(board_state)
         self.node_dict = self.tree.node_dict
         self.terminal_nodes = self.tree.terminal_nodes
+        # this fixes 3-ply sucking; old minimax values were being retained for some reason, so the new ones weren't being propagated to all nodes
+        # i should probably figure out a better way to implement this, but it works for now
+        for state in self.node_dict:
+            if state not in self.terminal_nodes and hasattr(self.node_dict[state], "minimax_value"):
+                del self.node_dict[state].minimax_value
 
     def propagate_minimax_values(self):
         start = time.time()
