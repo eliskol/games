@@ -63,7 +63,7 @@ class HeuristicMinimaxStrategy:
 
         self.current_board_state = board
         self.generate_tree(board, self.n)
-        self.propagate_minimax_values()
+        propagation_time = self.propagate_minimax_values()
 
         if board == [[0 for _ in range(7)] for _ in range(6)]:
             self.player = 1
@@ -87,6 +87,7 @@ class HeuristicMinimaxStrategy:
                 end = time.time()
                 if end - start >= 1:
                     print(end - start)
+                    print('propagation', propagation_time)
                 return j
 
     def calculate_heuristic_value(self, board: list[list[int]]):
