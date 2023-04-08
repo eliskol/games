@@ -87,6 +87,7 @@ class ConnectFourRecombiningTreeCustomDepth:
         self.generate_tree(first_game_state, n)
 
     def generate_tree(self, first_game_state, n):
+        start_time = time.time()
         first_node = Node(first_game_state)
         first_node.depth = 0
         created_game_states = {self.deeptuple(first_game_state): first_node}
@@ -120,15 +121,19 @@ class ConnectFourRecombiningTreeCustomDepth:
                     new_node = created_game_states[self.deeptuple(new_board_state)]
                     new_node.parents.append(dequeued_node)
                     dequeued_node.children.append(new_node)
+                    continue
 
-                else:
-                    new_node = Node(new_board_state)
-                    new_node.depth = dequeued_node.depth + 1
-                    new_node.parents.append(dequeued_node)
-                    dequeued_node.children.append(new_node)
-                    queue.enqueue(new_node)
-                    created_game_states[self.deeptuple(new_board_state)] = new_node
+                # continue seems to be slightly faster than the regular if/else, not sure if its a fluke
+                # else:
+                new_node = Node(new_board_state)
+                new_node.depth = dequeued_node.depth + 1
+                new_node.parents.append(dequeued_node)
+                dequeued_node.children.append(new_node)
+                queue.enqueue(new_node)
+                created_game_states[self.deeptuple(new_board_state)] = new_node
 
+        end_time = time.time()
+        # print(end_time - start_time)
         self.root = first_node
         self.node_dict = created_game_states
         self.terminal_nodes = terminal_nodes
