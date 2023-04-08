@@ -24,6 +24,7 @@ class HeuristicMinimaxStrategy:
                 del self.node_dict[state].minimax_value
 
     def propagate_minimax_values(self):
+        need_to_update_cache = False
         try:
             with open('heuristic_values.pickle', 'rb') as f:
                 self.calculated_heuristic_values = pickle.load(f)
@@ -38,10 +39,12 @@ class HeuristicMinimaxStrategy:
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
             if self.tree.deeptuple(node.state) not in self.calculated_heuristic_values:
+                need_to_update_cache = True
+                print('adding to pickle')
                 self.calculated_heuristic_values[self.tree.deeptuple(node.state)] = node.minimax_value
-
-        with open('heuristic_values.pickle', 'wb') as f:
-            pickle.dump(self.calculated_heuristic_values, f, pickle.HIGHEST_PROTOCOL)
+        if need_to_update_cache:
+            with open('heuristic_values.pickle', 'wb') as f:
+                pickle.dump(self.calculated_heuristic_values, f, pickle.HIGHEST_PROTOCOL)
 
         while game_states_to_propagate.contents != []:
             # tuple because the keys in self.node_dict can't be lists
@@ -107,6 +110,7 @@ class HeuristicMinimaxStrategy:
         tuple_of_board = self.tree.deeptuple(board)
         if tuple_of_board in self.calculated_heuristic_values:
             return self.calculated_heuristic_values[tuple_of_board]
+        print('encountered new game state, calculating heuristic value')
         return self.calculate_heuristic_value(board)
 
     def calculate_heuristic_value(self, board: list[list[int]]):
