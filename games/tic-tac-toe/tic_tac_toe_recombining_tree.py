@@ -112,6 +112,8 @@ class TicTacToeRecombiningTree:
         # print('finished generating!')
         # print(time.time() - start_time)
         # print(leaf_node_count)
+        end_time = time.time()
+        print(end_time - start_time)
         self.root = first_node
         self.node_dict = created_game_states
         self.terminal_state_nodes = terminal_state_nodes
@@ -125,4 +127,3 @@ class TicTacToeRecombiningTree:
         return possible_moves
 
 bruh = TicTacToeRecombiningTree()
-print((0 for _ in range(9)) in bruh.node_dict)
