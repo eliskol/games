@@ -37,14 +37,14 @@ class HeuristicMinimaxStrategy:
             current_node = self.node_dict[game_state_to_propagate]
             if hasattr(current_node, 'minimax_value'):
                 continue
-            proceed = True
+            children_all_have_values = True
             minimax_values_of_children = []
             for child_node in current_node.children:
                 if not hasattr(child_node, 'minimax_value'):
-                    proceed = False
+                    children_all_have_values = False
                     break
                 minimax_values_of_children.append(child_node.minimax_value)
-            if proceed is False:
+            if children_all_have_values is False:
                 continue
             if current_node.turn == 1:
                 current_node.minimax_value = max(minimax_values_of_children)
