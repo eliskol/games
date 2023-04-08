@@ -16,14 +16,14 @@ end_game = None
 
 toLog = False
 
-first_player = HeuristicMinimaxStrategy(2)
+first_player = HeuristicMinimaxStrategy(4)
 second_player = HeuristicMinimaxStrategy(5)
 
 # trying to figure out why predefined player wins here
 # thinking its bc minimax values are off
 
 outcomes = {'Tie': 0, 'c': 0, 'r': 0}
-for i in range(2):
+for i in range(10):
     if i % 2 == 0:
         game = Game(first_player, second_player)
         game.run(log=toLog)
