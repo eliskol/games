@@ -6,6 +6,7 @@ import pickle
 
 class HeuristicMinimaxStrategy:
     def __init__(self, n):
+        self.need_to_update_cache = True
         self.generate_tree([[0 for _ in range(7)] for _ in range(6)], n)
         self.time = self.propagate_minimax_values()
         self.n = n
@@ -24,12 +25,13 @@ class HeuristicMinimaxStrategy:
                 del self.node_dict[state].minimax_value
 
     def propagate_minimax_values(self):
-        need_to_update_cache = False
-        try:
-            with open('heuristic_values.pickle', 'rb') as f:
-                self.calculated_heuristic_values = pickle.load(f)
-        except FileNotFoundError:
-            self.calculated_heuristic_values = {}
+        if self.need_to_update_cache:
+            try:
+                with open('heuristic_values.pickle', 'rb') as f:
+                    self.calculated_heuristic_values = pickle.load(f)
+            except FileNotFoundError:
+                self.calculated_heuristic_values = {}
+        self.need_to_update_cache = False
 
         start = time.time()
         game_states_to_propagate = Queue()
@@ -39,10 +41,10 @@ class HeuristicMinimaxStrategy:
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
             if self.tree.deeptuple(node.state) not in self.calculated_heuristic_values:
-                need_to_update_cache = True
+                self.need_to_update_cache = True
                 print('adding to pickle')
                 self.calculated_heuristic_values[self.tree.deeptuple(node.state)] = node.minimax_value
-        if need_to_update_cache:
+        if self.need_to_update_cache:
             with open('heuristic_values.pickle', 'wb') as f:
                 pickle.dump(self.calculated_heuristic_values, f, pickle.HIGHEST_PROTOCOL)
 
