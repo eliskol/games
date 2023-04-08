@@ -1,0 +1,66 @@
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     16/1    0.000    0.000  155.136  155.136 {built-in method builtins.exec}
+        1    0.000    0.000  155.136  155.136 connect_four_strat_testing.py:1(<module>)
+       10    0.001    0.000  154.043   15.404 connect_four.py:77(run)
+      380    0.004    0.000  154.027    0.405 connect_four.py:59(make_move)
+      380    0.013    0.000  154.021    0.405 heuristic_minimax_strategy.py:77(choose_move)
+      382   16.137    0.042  134.089    0.351 heuristic_minimax_strategy.py:26(propagate_minimax_values)
+      382  115.797    0.303  115.797    0.303 {built-in method _pickle.load}
+      382    3.619    0.009   20.900    0.055 heuristic_minimax_strategy.py:13(generate_tree)
+      360    0.010    0.000   14.790    0.041 connect_four_recombining_tree_custom_depth.py:141(generate_tree_using_cache)
+      720    1.025    0.001   14.635    0.020 connect_four_recombining_tree_custom_depth.py:187(create_new_layer)
+   210660    0.489    0.000   10.375    0.000 connect_four_recombining_tree_custom_depth.py:30(__init__)
+   210660    5.742    0.000    7.019    0.000 connect_four_recombining_tree_custom_depth.py:42(determine_winner)
+  1290942    1.652    0.000    4.702    0.000 connect_four_recombining_tree_custom_depth.py:229(deeptuple)
+  9036594    3.050    0.000    3.050    0.000 connect_four_recombining_tree_custom_depth.py:230(<genexpr>)
+       22    0.000    0.000    2.422    0.110 connect_four_recombining_tree_custom_depth.py:86(__init__)
+       22    0.181    0.008    2.422    0.110 connect_four_recombining_tree_custom_depth.py:89(generate_tree)
+   305270    0.691    0.000    1.880    0.000 connect_four_recombining_tree_custom_depth.py:240(deeplist)
+   417280    0.451    0.000    1.587    0.000 {built-in method builtins.sum}
+   210660    0.663    0.000    1.281    0.000 connect_four_recombining_tree_custom_depth.py:77(find_possible_moves)
+  2136890    1.190    0.000    1.190    0.000 connect_four_recombining_tree_custom_depth.py:241(<genexpr>)
+   210660    0.631    0.000    1.133    0.000 connect_four_recombining_tree_custom_depth.py:43(<listcomp>)
+        2    0.000    0.000    0.992    0.496 heuristic_minimax_strategy.py:8(__init__)
+   166380    0.279    0.000    0.628    0.000 heuristic_minimax_strategy.py:109(assign_heuristic_value)
+  1457750    0.329    0.000    0.538    0.000 connect_four_recombining_tree_custom_depth.py:34(<genexpr>)
+  1474620    0.497    0.000    0.497    0.000 connect_four_recombining_tree_custom_depth.py:71(check_move_validity)
+  2503680    0.424    0.000    0.424    0.000 {method 'count' of 'list' objects}
+  2810831    0.260    0.000    0.260    0.000 {method 'append' of 'list' objects}
+   305270    0.233    0.000    0.233    0.000 connect_four_recombining_tree_custom_depth.py:222(drop_token)
+   923882    0.202    0.000    0.202    0.000 {built-in method builtins.hasattr}
+   357900    0.107    0.000    0.179    0.000 connect_four_recombining_tree_custom_depth.py:24(dequeue)
+      360    0.044    0.000    0.144    0.000 connect_four_recombining_tree_custom_depth.py:160(prune_tree)
+   357518    0.108    0.000    0.138    0.000 connect_four_recombining_tree_custom_depth.py:20(enqueue)
+   208608    0.064    0.000    0.112    0.000 {built-in method builtins.any}
+     24/9    0.000    0.000    0.100    0.011 <frozen importlib._bootstrap>:1022(_find_and_load)
+     24/9    0.000    0.000    0.100    0.011 <frozen importlib._bootstrap>:987(_find_and_load_unlocked)
+     21/9    0.000    0.000    0.098    0.011 <frozen importlib._bootstrap>:664(_load_unlocked)
+     15/9    0.000    0.000    0.098    0.011 <frozen importlib._bootstrap_external>:877(exec_module)
+   428106    0.080    0.000    0.080    0.000 connect_four_recombining_tree_custom_depth.py:64(<genexpr>)
+       15    0.000    0.000    0.075    0.005 <frozen importlib._bootstrap_external>:950(get_code)
+   357900    0.072    0.000    0.072    0.000 {method 'pop' of 'list' objects}
+    10570    0.021    0.000    0.061    0.000 connect_four_recombining_tree_custom_depth.py:181(<listcomp>)
+       16    0.000    0.000    0.056    0.004 <frozen importlib._bootstrap_external>:1070(get_data)
+       16    0.055    0.003    0.055    0.003 {method 'read' of '_io.BufferedReader' objects}
+    30/10    0.000    0.000    0.052    0.005 <frozen importlib._bootstrap>:233(_call_with_frames_removed)
+        1    0.000    0.000    0.034    0.034 heuristic_minimax_strategy.py:1(<module>)
+        1    0.000    0.000    0.023    0.023 pickle.py:1(<module>)
+      382    0.019    0.000    0.019    0.000 {built-in method io.open}
+       21    0.000    0.000    0.017    0.001 <frozen importlib._bootstrap>:564(module_from_spec)
+        6    0.000    0.000    0.016    0.003 <frozen importlib._bootstrap_external>:1174(create_module)
+        6    0.016    0.003    0.016    0.003 {built-in method _imp.create_dynamic}
+      390    0.013    0.000    0.016    0.000 connect_four.py:22(determine_winner)
+        1    0.000    0.000    0.015    0.015 random_heuristic_strategy.py:1(<module>)
+        1    0.000    0.000    0.015    0.015 <frozen importlib._bootstrap_external>:1094(_cache_bytecode)
+        1    0.000    0.000    0.015    0.015 <frozen importlib._bootstrap_external>:1099(set_data)
+        1    0.000    0.000    0.015    0.015 <frozen importlib._bootstrap_external>:185(_write_atomic)
+        1    0.014    0.014    0.014    0.014 {built-in method posix.replace}
+    27155    0.013    0.000    0.013    0.000 {built-in method builtins.min}
+    25871    0.012    0.000    0.013    0.000 {built-in method builtins.max}
+      399    0.010    0.000    0.010    0.000 {method '__exit__' of '_io._IOBase' objects}
+       22    0.000    0.000    0.005    0.000 <frozen importlib._bootstrap>:921(_find_spec)
+       22    0.000    0.000    0.004    0.000 <frozen importlib._bootstrap_external>:1431(find_spec)
+       22    0.000    0.000    0.004    0.000 <frozen importlib._bootstrap_external>:1399(_get_spec)
