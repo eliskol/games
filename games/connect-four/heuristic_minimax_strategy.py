@@ -1,6 +1,7 @@
 from connect_four_recombining_tree_custom_depth import ConnectFourRecombiningTreeCustomDepth, Node
 from connect_four_recombining_tree_custom_depth import Queue
 import time
+import pickle
 
 
 class HeuristicMinimaxStrategy:
@@ -23,13 +24,25 @@ class HeuristicMinimaxStrategy:
                 del self.node_dict[state].minimax_value
 
     def propagate_minimax_values(self):
+        try:
+            with open('heuristic_values.pickle', 'rb') as f:
+                self.calculated_heuristic_values = pickle.load(f)
+        except FileNotFoundError:
+            self.calculated_heuristic_values = {}
+
         start = time.time()
         game_states_to_propagate = Queue()
         for node in self.terminal_nodes:
             node.minimax_value = {
-                1: 9999, 2: -9999, 'Tie': 0}[node.winner] if node.winner is not None else self.calculate_heuristic_value(node.state)
+                1: 9999, 2: -9999, 'Tie': 0}[node.winner] if node.winner is not None else self.assign_heuristic_value(node.state)
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
+            if self.tree.deeptuple(node.state) not in self.calculated_heuristic_values:
+                self.calculated_heuristic_values[self.tree.deeptuple(node.state)] = node.minimax_value
+
+        with open('heuristic_values.pickle', 'wb') as f:
+            pickle.dump(self.calculated_heuristic_values, f, pickle.HIGHEST_PROTOCOL)
+
         while game_states_to_propagate.contents != []:
             # tuple because the keys in self.node_dict can't be lists
             game_state_to_propagate = self.tree.deeptuple(
@@ -89,6 +102,12 @@ class HeuristicMinimaxStrategy:
                     print(end - start)
                     print('propagation', propagation_time)
                 return j
+
+    def assign_heuristic_value(self, board: list[list[int]]):
+        tuple_of_board = self.tree.deeptuple(board)
+        if tuple_of_board in self.calculated_heuristic_values:
+            return self.calculated_heuristic_values[tuple_of_board]
+        return self.calculate_heuristic_value(board)
 
     def calculate_heuristic_value(self, board: list[list[int]]):
         heuristic_value = 0
