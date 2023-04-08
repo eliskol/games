@@ -1,9 +1,15 @@
 import pickle
-bruh = {'amongus': 'sus', 'bruh': 'moment'}
+import sys
+sys.path.insert(1, sys.path[0].replace('tests', 'games/connect-four'))
+from heuristic_minimax_strategy import HeuristicMinimaxStrategy
+from connect_four_recombining_tree_custom_depth import ConnectFourRecombiningTreeCustomDepth
+
+tree = ConnectFourRecombiningTreeCustomDepth([[0 for _ in range(7)] for _ in range(6)], 4)
+
 with open('data.pickle', 'wb') as f:
-    pickle.dump(bruh, f, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(tree.node_dict, f, pickle.HIGHEST_PROTOCOL)
 
 with open('data.pickle', 'rb') as f:
-    bruh2 = pickle.load(f)
+    node_dict = pickle.load(f)
 
-print(bruh2)
+print(node_dict)
