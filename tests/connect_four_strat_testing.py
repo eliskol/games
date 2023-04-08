@@ -17,7 +17,7 @@ end_game = None
 toLog = False
 
 first_player = HeuristicMinimaxStrategy(4)
-second_player = HeuristicMinimaxStrategy(4)
+second_player = HeuristicMinimaxStrategy(5)
 
 # trying to figure out why predefined player wins here
 # thinking its bc minimax values are off
