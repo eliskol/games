@@ -1,0 +1,50 @@
+         193160707 function calls (193160660 primitive calls) in 136.955 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     13/1    0.000    0.000  140.128  140.128 {built-in method builtins.exec}
+        1    0.000    0.000  140.128  140.128 connect_four_strat_testing.py:1(<module>)
+       10    0.001    0.000  138.168   13.817 connect_four.py:77(run)
+      420    0.004    0.000  138.149    0.329 connect_four.py:59(make_move)
+      420    0.011    0.000  138.144    0.329 heuristic_minimax_strategy.py:61(choose_move)
+      422   25.304    0.060   77.336    0.183 heuristic_minimax_strategy.py:12(generate_tree)
+      422    2.691    0.006   62.735    0.149 heuristic_minimax_strategy.py:25(propagate_minimax_values)
+   383938   33.772    0.000   56.575    0.000 heuristic_minimax_strategy.py:93(calculate_heuristic_value)
+      400    0.023    0.000   44.256    0.111 connect_four_recombining_tree_custom_depth.py:141(generate_tree_using_cache)
+      800    2.853    0.004   43.724    0.055 connect_four_recombining_tree_custom_depth.py:187(create_new_layer)
+   512323    1.214    0.000   26.611    0.000 connect_four_recombining_tree_custom_depth.py:30(__init__)
+   512323   13.631    0.000   18.299    0.000 connect_four_recombining_tree_custom_depth.py:42(determine_winner)
+121535017   14.160    0.000   14.160    0.000 {method 'count' of 'list' objects}
+  2697262    4.390    0.000   13.894    0.000 connect_four_recombining_tree_custom_depth.py:229(deeptuple)
+ 18880834    9.505    0.000    9.505    0.000 connect_four_recombining_tree_custom_depth.py:230(<genexpr>)
+   848145    1.155    0.000    8.673    0.000 connect_four_recombining_tree_custom_depth.py:240(deeplist)
+       22    0.000    0.000    7.612    0.346 connect_four_recombining_tree_custom_depth.py:86(__init__)
+       22    0.569    0.026    7.612    0.346 connect_four_recombining_tree_custom_depth.py:89(generate_tree)
+  5937015    7.519    0.000    7.519    0.000 connect_four_recombining_tree_custom_depth.py:241(<genexpr>)
+   512323    2.022    0.000    4.286    0.000 connect_four_recombining_tree_custom_depth.py:43(<listcomp>)
+   997156    1.114    0.000    3.864    0.000 {built-in method builtins.sum}
+  8062698    3.825    0.000    3.825    0.000 heuristic_minimax_strategy.py:106(<listcomp>)
+   512323    1.671    0.000    3.235    0.000 connect_four_recombining_tree_custom_depth.py:77(find_possible_moves)
+  4607256    3.011    0.000    3.011    0.000 heuristic_minimax_strategy.py:116(<listcomp>)
+  4607256    2.824    0.000    2.824    0.000 heuristic_minimax_strategy.py:115(<listcomp>)
+        2    0.000    0.000    1.952    0.976 heuristic_minimax_strategy.py:7(__init__)
+  3487036    0.832    0.000    1.327    0.000 connect_four_recombining_tree_custom_depth.py:34(<genexpr>)
+  3586261    1.266    0.000    1.266    0.000 connect_four_recombining_tree_custom_depth.py:71(check_move_validity)
+   998163    0.303    0.000    0.765    0.000 connect_four_recombining_tree_custom_depth.py:24(dequeue)
+  7313045    0.668    0.000    0.668    0.000 {method 'append' of 'list' objects}
+   848145    0.593    0.000    0.593    0.000 connect_four_recombining_tree_custom_depth.py:222(drop_token)
+  2531731    0.546    0.000    0.546    0.000 {built-in method builtins.hasattr}
+      400    0.137    0.000    0.507    0.001 connect_four_recombining_tree_custom_depth.py:160(prune_tree)
+   998163    0.462    0.000    0.462    0.000 {method 'pop' of 'list' objects}
+   997741    0.323    0.000    0.417    0.000 connect_four_recombining_tree_custom_depth.py:20(enqueue)
+   498566    0.175    0.000    0.304    0.000 {built-in method builtins.any}
+    39730    0.076    0.000    0.239    0.000 connect_four_recombining_tree_custom_depth.py:181(<listcomp>)
+  1092757    0.208    0.000    0.208    0.000 connect_four_recombining_tree_custom_depth.py:64(<genexpr>)
+    74615    0.033    0.000    0.033    0.000 {built-in method builtins.max}
+    71665    0.031    0.000    0.031    0.000 {built-in method builtins.min}
+      430    0.014    0.000    0.018    0.000 connect_four.py:22(determine_winner)
+     16/9    0.000    0.000    0.008    0.001 <frozen importlib._bootstrap>:1022(_find_and_load)
+     16/9    0.000    0.000    0.008    0.001 <frozen importlib._bootstrap>:987(_find_and_load_unlocked)
+     16/9    0.000    0.000    0.006    0.001 <frozen importlib._bootstrap>:664(_load_unlocked)
+     12/9    0.000    0.000    0.006    0.001 <frozen importlib._bootstrap_external>:877(exec_module)
