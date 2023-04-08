@@ -14,13 +14,16 @@ import random
 
 end_game = None
 
-toLog = True
+toLog = False
 
-first_player = PredefinedPlayer([3, 4, 5, 6])
-second_player = HeuristicMinimaxStrategy(3)
+first_player = HeuristicMinimaxStrategy(2)
+second_player = HeuristicMinimaxStrategy(5)
+
+# trying to figure out why predefined player wins here
+# thinking its bc minimax values are off
 
 outcomes = {'Tie': 0, 'c': 0, 'r': 0}
-for i in range(1):
+for i in range(2):
     if i % 2 == 0:
         game = Game(first_player, second_player)
         game.run(log=toLog)
@@ -31,8 +34,6 @@ for i in range(1):
         game.run(log=toLog)
         # assert game.board == end_game
         player_order = {'Tie': 'Tie', 1: 'r', 2: 'c'}
-    if player_order[game.winner] == 'r':
-        game.print_board()
     outcomes[player_order[game.winner]] += 1
     print('game number', i + 1, 'finished')
 print(outcomes)
