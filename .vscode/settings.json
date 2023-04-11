@@ -78,5 +78,8 @@
         "./games/connect-four",
         "./games/connect-four/celeste-strat",
         "./games/connect-four/jeff-strat"
-    ]
+    ],
+    "dateTime.showAMPM": true,
+    "dateTime.use24HourClock": false,
+    "dateTime.timeZone": "America/Los_Angeles"
 }
