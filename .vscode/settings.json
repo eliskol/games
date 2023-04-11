@@ -76,6 +76,7 @@
     "python.linting.pylintEnabled": false,
     "python.analysis.extraPaths": [
         "./games/connect-four",
-        "./games/connect-four/celeste-strat"
+        "./games/connect-four/celeste-strat",
+        "./games/connect-four/jeff-strat"
     ]
 }
