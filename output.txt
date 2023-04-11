@@ -1,0 +1,6229 @@
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+Move # 1
+Move was 3 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+3360
+encountered new game state, calculating heuristic value
+updating cache dict
+3361
+encountered new game state, calculating heuristic value
+updating cache dict
+3362
+encountered new game state, calculating heuristic value
+updating cache dict
+3363
+encountered new game state, calculating heuristic value
+updating cache dict
+3364
+encountered new game state, calculating heuristic value
+updating cache dict
+3365
+encountered new game state, calculating heuristic value
+updating cache dict
+3366
+encountered new game state, calculating heuristic value
+updating cache dict
+3367
+encountered new game state, calculating heuristic value
+updating cache dict
+3368
+encountered new game state, calculating heuristic value
+updating cache dict
+3369
+encountered new game state, calculating heuristic value
+updating cache dict
+3370
+encountered new game state, calculating heuristic value
+updating cache dict
+3371
+encountered new game state, calculating heuristic value
+updating cache dict
+3372
+encountered new game state, calculating heuristic value
+updating cache dict
+3373
+encountered new game state, calculating heuristic value
+updating cache dict
+3374
+encountered new game state, calculating heuristic value
+updating cache dict
+3375
+encountered new game state, calculating heuristic value
+updating cache dict
+3376
+encountered new game state, calculating heuristic value
+updating cache dict
+3377
+encountered new game state, calculating heuristic value
+updating cache dict
+3378
+encountered new game state, calculating heuristic value
+updating cache dict
+3379
+encountered new game state, calculating heuristic value
+updating cache dict
+3380
+encountered new game state, calculating heuristic value
+updating cache dict
+3381
+encountered new game state, calculating heuristic value
+updating cache dict
+3382
+encountered new game state, calculating heuristic value
+updating cache dict
+3383
+encountered new game state, calculating heuristic value
+updating cache dict
+3384
+encountered new game state, calculating heuristic value
+updating cache dict
+3385
+encountered new game state, calculating heuristic value
+updating cache dict
+3386
+encountered new game state, calculating heuristic value
+updating cache dict
+3387
+encountered new game state, calculating heuristic value
+updating cache dict
+3388
+encountered new game state, calculating heuristic value
+updating cache dict
+3389
+encountered new game state, calculating heuristic value
+updating cache dict
+3390
+encountered new game state, calculating heuristic value
+updating cache dict
+3391
+encountered new game state, calculating heuristic value
+updating cache dict
+3392
+encountered new game state, calculating heuristic value
+updating cache dict
+3393
+encountered new game state, calculating heuristic value
+updating cache dict
+3394
+encountered new game state, calculating heuristic value
+updating cache dict
+3395
+encountered new game state, calculating heuristic value
+updating cache dict
+3396
+encountered new game state, calculating heuristic value
+updating cache dict
+3397
+encountered new game state, calculating heuristic value
+updating cache dict
+3398
+encountered new game state, calculating heuristic value
+updating cache dict
+3399
+encountered new game state, calculating heuristic value
+updating cache dict
+3400
+encountered new game state, calculating heuristic value
+updating cache dict
+3401
+encountered new game state, calculating heuristic value
+updating cache dict
+3402
+encountered new game state, calculating heuristic value
+updating cache dict
+3403
+encountered new game state, calculating heuristic value
+updating cache dict
+3404
+encountered new game state, calculating heuristic value
+updating cache dict
+3405
+encountered new game state, calculating heuristic value
+updating cache dict
+3406
+encountered new game state, calculating heuristic value
+updating cache dict
+3407
+encountered new game state, calculating heuristic value
+updating cache dict
+3408
+encountered new game state, calculating heuristic value
+updating cache dict
+3409
+encountered new game state, calculating heuristic value
+updating cache dict
+3410
+encountered new game state, calculating heuristic value
+updating cache dict
+3411
+encountered new game state, calculating heuristic value
+updating cache dict
+3412
+encountered new game state, calculating heuristic value
+updating cache dict
+3413
+encountered new game state, calculating heuristic value
+updating cache dict
+3414
+encountered new game state, calculating heuristic value
+updating cache dict
+3415
+encountered new game state, calculating heuristic value
+updating cache dict
+3416
+encountered new game state, calculating heuristic value
+updating cache dict
+3417
+encountered new game state, calculating heuristic value
+updating cache dict
+3418
+encountered new game state, calculating heuristic value
+updating cache dict
+3419
+encountered new game state, calculating heuristic value
+updating cache dict
+3420
+encountered new game state, calculating heuristic value
+updating cache dict
+3421
+encountered new game state, calculating heuristic value
+updating cache dict
+3422
+encountered new game state, calculating heuristic value
+updating cache dict
+3423
+encountered new game state, calculating heuristic value
+updating cache dict
+3424
+encountered new game state, calculating heuristic value
+updating cache dict
+3425
+encountered new game state, calculating heuristic value
+updating cache dict
+3426
+encountered new game state, calculating heuristic value
+updating cache dict
+3427
+encountered new game state, calculating heuristic value
+updating cache dict
+3428
+encountered new game state, calculating heuristic value
+updating cache dict
+3429
+encountered new game state, calculating heuristic value
+updating cache dict
+3430
+encountered new game state, calculating heuristic value
+updating cache dict
+3431
+encountered new game state, calculating heuristic value
+updating cache dict
+3432
+encountered new game state, calculating heuristic value
+updating cache dict
+3433
+encountered new game state, calculating heuristic value
+updating cache dict
+3434
+encountered new game state, calculating heuristic value
+updating cache dict
+3435
+encountered new game state, calculating heuristic value
+updating cache dict
+3436
+encountered new game state, calculating heuristic value
+updating cache dict
+3437
+encountered new game state, calculating heuristic value
+updating cache dict
+3438
+encountered new game state, calculating heuristic value
+updating cache dict
+3439
+encountered new game state, calculating heuristic value
+updating cache dict
+3440
+encountered new game state, calculating heuristic value
+updating cache dict
+3441
+encountered new game state, calculating heuristic value
+updating cache dict
+3442
+encountered new game state, calculating heuristic value
+updating cache dict
+3443
+encountered new game state, calculating heuristic value
+updating cache dict
+3444
+encountered new game state, calculating heuristic value
+updating cache dict
+3445
+encountered new game state, calculating heuristic value
+updating cache dict
+3446
+encountered new game state, calculating heuristic value
+updating cache dict
+3447
+encountered new game state, calculating heuristic value
+updating cache dict
+3448
+encountered new game state, calculating heuristic value
+updating cache dict
+3449
+encountered new game state, calculating heuristic value
+updating cache dict
+3450
+encountered new game state, calculating heuristic value
+updating cache dict
+3451
+encountered new game state, calculating heuristic value
+updating cache dict
+3452
+encountered new game state, calculating heuristic value
+updating cache dict
+3453
+encountered new game state, calculating heuristic value
+updating cache dict
+3454
+encountered new game state, calculating heuristic value
+updating cache dict
+3455
+encountered new game state, calculating heuristic value
+updating cache dict
+3456
+encountered new game state, calculating heuristic value
+updating cache dict
+3457
+encountered new game state, calculating heuristic value
+updating cache dict
+3458
+encountered new game state, calculating heuristic value
+updating cache dict
+3459
+encountered new game state, calculating heuristic value
+updating cache dict
+3460
+encountered new game state, calculating heuristic value
+updating cache dict
+3461
+encountered new game state, calculating heuristic value
+updating cache dict
+3462
+encountered new game state, calculating heuristic value
+updating cache dict
+3463
+encountered new game state, calculating heuristic value
+updating cache dict
+3464
+encountered new game state, calculating heuristic value
+updating cache dict
+3465
+encountered new game state, calculating heuristic value
+updating cache dict
+3466
+encountered new game state, calculating heuristic value
+updating cache dict
+3467
+encountered new game state, calculating heuristic value
+updating cache dict
+3468
+encountered new game state, calculating heuristic value
+updating cache dict
+3469
+encountered new game state, calculating heuristic value
+updating cache dict
+3470
+encountered new game state, calculating heuristic value
+updating cache dict
+3471
+encountered new game state, calculating heuristic value
+updating cache dict
+3472
+encountered new game state, calculating heuristic value
+updating cache dict
+3473
+encountered new game state, calculating heuristic value
+updating cache dict
+3474
+encountered new game state, calculating heuristic value
+updating cache dict
+3475
+encountered new game state, calculating heuristic value
+updating cache dict
+3476
+encountered new game state, calculating heuristic value
+updating cache dict
+3477
+encountered new game state, calculating heuristic value
+updating cache dict
+3478
+encountered new game state, calculating heuristic value
+updating cache dict
+3479
+encountered new game state, calculating heuristic value
+updating cache dict
+3480
+encountered new game state, calculating heuristic value
+updating cache dict
+3481
+encountered new game state, calculating heuristic value
+updating cache dict
+3482
+encountered new game state, calculating heuristic value
+updating cache dict
+3483
+encountered new game state, calculating heuristic value
+updating cache dict
+3484
+encountered new game state, calculating heuristic value
+updating cache dict
+3485
+encountered new game state, calculating heuristic value
+updating cache dict
+3486
+encountered new game state, calculating heuristic value
+updating cache dict
+3487
+encountered new game state, calculating heuristic value
+updating cache dict
+3488
+encountered new game state, calculating heuristic value
+updating cache dict
+3489
+encountered new game state, calculating heuristic value
+updating cache dict
+3490
+encountered new game state, calculating heuristic value
+updating cache dict
+3491
+encountered new game state, calculating heuristic value
+updating cache dict
+3492
+encountered new game state, calculating heuristic value
+updating cache dict
+3493
+encountered new game state, calculating heuristic value
+updating cache dict
+3494
+encountered new game state, calculating heuristic value
+updating cache dict
+3495
+encountered new game state, calculating heuristic value
+updating cache dict
+3496
+encountered new game state, calculating heuristic value
+updating cache dict
+3497
+encountered new game state, calculating heuristic value
+updating cache dict
+3498
+encountered new game state, calculating heuristic value
+updating cache dict
+3499
+encountered new game state, calculating heuristic value
+updating cache dict
+3500
+encountered new game state, calculating heuristic value
+updating cache dict
+3501
+encountered new game state, calculating heuristic value
+updating cache dict
+3502
+encountered new game state, calculating heuristic value
+updating cache dict
+3503
+encountered new game state, calculating heuristic value
+updating cache dict
+3504
+encountered new game state, calculating heuristic value
+updating cache dict
+3505
+encountered new game state, calculating heuristic value
+updating cache dict
+3506
+encountered new game state, calculating heuristic value
+updating cache dict
+3507
+encountered new game state, calculating heuristic value
+updating cache dict
+3508
+encountered new game state, calculating heuristic value
+updating cache dict
+3509
+encountered new game state, calculating heuristic value
+updating cache dict
+3510
+encountered new game state, calculating heuristic value
+updating cache dict
+3511
+encountered new game state, calculating heuristic value
+updating cache dict
+3512
+encountered new game state, calculating heuristic value
+updating cache dict
+3513
+encountered new game state, calculating heuristic value
+updating cache dict
+3514
+encountered new game state, calculating heuristic value
+updating cache dict
+3515
+encountered new game state, calculating heuristic value
+updating cache dict
+3516
+encountered new game state, calculating heuristic value
+updating cache dict
+3517
+encountered new game state, calculating heuristic value
+updating cache dict
+3518
+encountered new game state, calculating heuristic value
+updating cache dict
+3519
+encountered new game state, calculating heuristic value
+updating cache dict
+3520
+encountered new game state, calculating heuristic value
+updating cache dict
+3521
+encountered new game state, calculating heuristic value
+updating cache dict
+3522
+encountered new game state, calculating heuristic value
+updating cache dict
+3523
+encountered new game state, calculating heuristic value
+updating cache dict
+3524
+encountered new game state, calculating heuristic value
+updating cache dict
+3525
+encountered new game state, calculating heuristic value
+updating cache dict
+3526
+encountered new game state, calculating heuristic value
+updating cache dict
+3527
+encountered new game state, calculating heuristic value
+updating cache dict
+3528
+encountered new game state, calculating heuristic value
+updating cache dict
+3529
+encountered new game state, calculating heuristic value
+updating cache dict
+3530
+encountered new game state, calculating heuristic value
+updating cache dict
+3531
+encountered new game state, calculating heuristic value
+updating cache dict
+3532
+encountered new game state, calculating heuristic value
+updating cache dict
+3533
+encountered new game state, calculating heuristic value
+updating cache dict
+3534
+encountered new game state, calculating heuristic value
+updating cache dict
+3535
+encountered new game state, calculating heuristic value
+updating cache dict
+3536
+encountered new game state, calculating heuristic value
+updating cache dict
+3537
+encountered new game state, calculating heuristic value
+updating cache dict
+3538
+encountered new game state, calculating heuristic value
+updating cache dict
+3539
+encountered new game state, calculating heuristic value
+updating cache dict
+3540
+encountered new game state, calculating heuristic value
+updating cache dict
+3541
+encountered new game state, calculating heuristic value
+updating cache dict
+3542
+encountered new game state, calculating heuristic value
+updating cache dict
+3543
+encountered new game state, calculating heuristic value
+updating cache dict
+3544
+encountered new game state, calculating heuristic value
+updating cache dict
+3545
+encountered new game state, calculating heuristic value
+updating cache dict
+3546
+encountered new game state, calculating heuristic value
+updating cache dict
+3547
+encountered new game state, calculating heuristic value
+updating cache dict
+3548
+encountered new game state, calculating heuristic value
+updating cache dict
+3549
+encountered new game state, calculating heuristic value
+updating cache dict
+3550
+encountered new game state, calculating heuristic value
+updating cache dict
+3551
+encountered new game state, calculating heuristic value
+updating cache dict
+3552
+encountered new game state, calculating heuristic value
+updating cache dict
+3553
+encountered new game state, calculating heuristic value
+updating cache dict
+3554
+encountered new game state, calculating heuristic value
+updating cache dict
+3555
+encountered new game state, calculating heuristic value
+updating cache dict
+3556
+encountered new game state, calculating heuristic value
+updating cache dict
+3557
+encountered new game state, calculating heuristic value
+updating cache dict
+3558
+encountered new game state, calculating heuristic value
+updating cache dict
+3559
+encountered new game state, calculating heuristic value
+updating cache dict
+3560
+encountered new game state, calculating heuristic value
+updating cache dict
+3561
+encountered new game state, calculating heuristic value
+updating cache dict
+3562
+encountered new game state, calculating heuristic value
+updating cache dict
+3563
+encountered new game state, calculating heuristic value
+updating cache dict
+3564
+encountered new game state, calculating heuristic value
+updating cache dict
+3565
+encountered new game state, calculating heuristic value
+updating cache dict
+3566
+encountered new game state, calculating heuristic value
+updating cache dict
+3567
+encountered new game state, calculating heuristic value
+updating cache dict
+3568
+encountered new game state, calculating heuristic value
+updating cache dict
+3569
+encountered new game state, calculating heuristic value
+updating cache dict
+3570
+encountered new game state, calculating heuristic value
+updating cache dict
+3571
+encountered new game state, calculating heuristic value
+updating cache dict
+3572
+encountered new game state, calculating heuristic value
+updating cache dict
+3573
+encountered new game state, calculating heuristic value
+updating cache dict
+3574
+encountered new game state, calculating heuristic value
+updating cache dict
+3575
+encountered new game state, calculating heuristic value
+updating cache dict
+3576
+encountered new game state, calculating heuristic value
+updating cache dict
+3577
+encountered new game state, calculating heuristic value
+updating cache dict
+3578
+encountered new game state, calculating heuristic value
+updating cache dict
+3579
+encountered new game state, calculating heuristic value
+updating cache dict
+3580
+encountered new game state, calculating heuristic value
+updating cache dict
+3581
+encountered new game state, calculating heuristic value
+updating cache dict
+3582
+encountered new game state, calculating heuristic value
+updating cache dict
+3583
+encountered new game state, calculating heuristic value
+updating cache dict
+3584
+encountered new game state, calculating heuristic value
+updating cache dict
+3585
+encountered new game state, calculating heuristic value
+updating cache dict
+3586
+encountered new game state, calculating heuristic value
+updating cache dict
+3587
+encountered new game state, calculating heuristic value
+updating cache dict
+3588
+encountered new game state, calculating heuristic value
+updating cache dict
+3589
+encountered new game state, calculating heuristic value
+updating cache dict
+3590
+encountered new game state, calculating heuristic value
+updating cache dict
+3591
+encountered new game state, calculating heuristic value
+updating cache dict
+3592
+encountered new game state, calculating heuristic value
+updating cache dict
+3593
+encountered new game state, calculating heuristic value
+updating cache dict
+3594
+encountered new game state, calculating heuristic value
+updating cache dict
+3595
+encountered new game state, calculating heuristic value
+updating cache dict
+3596
+encountered new game state, calculating heuristic value
+updating cache dict
+3597
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 2, 1, 0, 0, 0]
+Move # 2
+Move was 2 , made by 2
+----------
+
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 1, 0, 0, 0]
+Move # 3
+Move was 3 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+3598
+encountered new game state, calculating heuristic value
+updating cache dict
+3599
+encountered new game state, calculating heuristic value
+updating cache dict
+3600
+encountered new game state, calculating heuristic value
+updating cache dict
+3601
+encountered new game state, calculating heuristic value
+updating cache dict
+3602
+encountered new game state, calculating heuristic value
+updating cache dict
+3603
+encountered new game state, calculating heuristic value
+updating cache dict
+3604
+encountered new game state, calculating heuristic value
+updating cache dict
+3605
+encountered new game state, calculating heuristic value
+updating cache dict
+3606
+encountered new game state, calculating heuristic value
+updating cache dict
+3607
+encountered new game state, calculating heuristic value
+updating cache dict
+3608
+encountered new game state, calculating heuristic value
+updating cache dict
+3609
+encountered new game state, calculating heuristic value
+updating cache dict
+3610
+encountered new game state, calculating heuristic value
+updating cache dict
+3611
+encountered new game state, calculating heuristic value
+updating cache dict
+3612
+encountered new game state, calculating heuristic value
+updating cache dict
+3613
+encountered new game state, calculating heuristic value
+updating cache dict
+3614
+encountered new game state, calculating heuristic value
+updating cache dict
+3615
+encountered new game state, calculating heuristic value
+updating cache dict
+3616
+encountered new game state, calculating heuristic value
+updating cache dict
+3617
+encountered new game state, calculating heuristic value
+updating cache dict
+3618
+encountered new game state, calculating heuristic value
+updating cache dict
+3619
+encountered new game state, calculating heuristic value
+updating cache dict
+3620
+encountered new game state, calculating heuristic value
+updating cache dict
+3621
+encountered new game state, calculating heuristic value
+updating cache dict
+3622
+encountered new game state, calculating heuristic value
+updating cache dict
+3623
+encountered new game state, calculating heuristic value
+updating cache dict
+3624
+encountered new game state, calculating heuristic value
+updating cache dict
+3625
+encountered new game state, calculating heuristic value
+updating cache dict
+3626
+encountered new game state, calculating heuristic value
+updating cache dict
+3627
+encountered new game state, calculating heuristic value
+updating cache dict
+3628
+encountered new game state, calculating heuristic value
+updating cache dict
+3629
+encountered new game state, calculating heuristic value
+updating cache dict
+3630
+encountered new game state, calculating heuristic value
+updating cache dict
+3631
+encountered new game state, calculating heuristic value
+updating cache dict
+3632
+encountered new game state, calculating heuristic value
+updating cache dict
+3633
+encountered new game state, calculating heuristic value
+updating cache dict
+3634
+encountered new game state, calculating heuristic value
+updating cache dict
+3635
+encountered new game state, calculating heuristic value
+updating cache dict
+3636
+encountered new game state, calculating heuristic value
+updating cache dict
+3637
+encountered new game state, calculating heuristic value
+updating cache dict
+3638
+encountered new game state, calculating heuristic value
+updating cache dict
+3639
+encountered new game state, calculating heuristic value
+updating cache dict
+3640
+encountered new game state, calculating heuristic value
+updating cache dict
+3641
+encountered new game state, calculating heuristic value
+updating cache dict
+3642
+encountered new game state, calculating heuristic value
+updating cache dict
+3643
+encountered new game state, calculating heuristic value
+updating cache dict
+3644
+encountered new game state, calculating heuristic value
+updating cache dict
+3645
+encountered new game state, calculating heuristic value
+updating cache dict
+3646
+encountered new game state, calculating heuristic value
+updating cache dict
+3647
+encountered new game state, calculating heuristic value
+updating cache dict
+3648
+encountered new game state, calculating heuristic value
+updating cache dict
+3649
+encountered new game state, calculating heuristic value
+updating cache dict
+3650
+encountered new game state, calculating heuristic value
+updating cache dict
+3651
+encountered new game state, calculating heuristic value
+updating cache dict
+3652
+encountered new game state, calculating heuristic value
+updating cache dict
+3653
+encountered new game state, calculating heuristic value
+updating cache dict
+3654
+encountered new game state, calculating heuristic value
+updating cache dict
+3655
+encountered new game state, calculating heuristic value
+updating cache dict
+3656
+encountered new game state, calculating heuristic value
+updating cache dict
+3657
+encountered new game state, calculating heuristic value
+updating cache dict
+3658
+encountered new game state, calculating heuristic value
+updating cache dict
+3659
+encountered new game state, calculating heuristic value
+updating cache dict
+3660
+encountered new game state, calculating heuristic value
+updating cache dict
+3661
+encountered new game state, calculating heuristic value
+updating cache dict
+3662
+encountered new game state, calculating heuristic value
+updating cache dict
+3663
+encountered new game state, calculating heuristic value
+updating cache dict
+3664
+encountered new game state, calculating heuristic value
+updating cache dict
+3665
+encountered new game state, calculating heuristic value
+updating cache dict
+3666
+encountered new game state, calculating heuristic value
+updating cache dict
+3667
+encountered new game state, calculating heuristic value
+updating cache dict
+3668
+encountered new game state, calculating heuristic value
+updating cache dict
+3669
+encountered new game state, calculating heuristic value
+updating cache dict
+3670
+encountered new game state, calculating heuristic value
+updating cache dict
+3671
+encountered new game state, calculating heuristic value
+updating cache dict
+3672
+encountered new game state, calculating heuristic value
+updating cache dict
+3673
+encountered new game state, calculating heuristic value
+updating cache dict
+3674
+encountered new game state, calculating heuristic value
+updating cache dict
+3675
+encountered new game state, calculating heuristic value
+updating cache dict
+3676
+encountered new game state, calculating heuristic value
+updating cache dict
+3677
+encountered new game state, calculating heuristic value
+updating cache dict
+3678
+encountered new game state, calculating heuristic value
+updating cache dict
+3679
+encountered new game state, calculating heuristic value
+updating cache dict
+3680
+encountered new game state, calculating heuristic value
+updating cache dict
+3681
+encountered new game state, calculating heuristic value
+updating cache dict
+3682
+encountered new game state, calculating heuristic value
+updating cache dict
+3683
+encountered new game state, calculating heuristic value
+updating cache dict
+3684
+encountered new game state, calculating heuristic value
+updating cache dict
+3685
+encountered new game state, calculating heuristic value
+updating cache dict
+3686
+encountered new game state, calculating heuristic value
+updating cache dict
+3687
+encountered new game state, calculating heuristic value
+updating cache dict
+3688
+encountered new game state, calculating heuristic value
+updating cache dict
+3689
+encountered new game state, calculating heuristic value
+updating cache dict
+3690
+encountered new game state, calculating heuristic value
+updating cache dict
+3691
+encountered new game state, calculating heuristic value
+updating cache dict
+3692
+encountered new game state, calculating heuristic value
+updating cache dict
+3693
+encountered new game state, calculating heuristic value
+updating cache dict
+3694
+encountered new game state, calculating heuristic value
+updating cache dict
+3695
+encountered new game state, calculating heuristic value
+updating cache dict
+3696
+encountered new game state, calculating heuristic value
+updating cache dict
+3697
+encountered new game state, calculating heuristic value
+updating cache dict
+3698
+encountered new game state, calculating heuristic value
+updating cache dict
+3699
+encountered new game state, calculating heuristic value
+updating cache dict
+3700
+encountered new game state, calculating heuristic value
+updating cache dict
+3701
+encountered new game state, calculating heuristic value
+updating cache dict
+3702
+encountered new game state, calculating heuristic value
+updating cache dict
+3703
+encountered new game state, calculating heuristic value
+updating cache dict
+3704
+encountered new game state, calculating heuristic value
+updating cache dict
+3705
+encountered new game state, calculating heuristic value
+updating cache dict
+3706
+encountered new game state, calculating heuristic value
+updating cache dict
+3707
+encountered new game state, calculating heuristic value
+updating cache dict
+3708
+encountered new game state, calculating heuristic value
+updating cache dict
+3709
+encountered new game state, calculating heuristic value
+updating cache dict
+3710
+encountered new game state, calculating heuristic value
+updating cache dict
+3711
+encountered new game state, calculating heuristic value
+updating cache dict
+3712
+encountered new game state, calculating heuristic value
+updating cache dict
+3713
+encountered new game state, calculating heuristic value
+updating cache dict
+3714
+encountered new game state, calculating heuristic value
+updating cache dict
+3715
+encountered new game state, calculating heuristic value
+updating cache dict
+3716
+encountered new game state, calculating heuristic value
+updating cache dict
+3717
+encountered new game state, calculating heuristic value
+updating cache dict
+3718
+encountered new game state, calculating heuristic value
+updating cache dict
+3719
+encountered new game state, calculating heuristic value
+updating cache dict
+3720
+encountered new game state, calculating heuristic value
+updating cache dict
+3721
+encountered new game state, calculating heuristic value
+updating cache dict
+3722
+encountered new game state, calculating heuristic value
+updating cache dict
+3723
+encountered new game state, calculating heuristic value
+updating cache dict
+3724
+encountered new game state, calculating heuristic value
+updating cache dict
+3725
+encountered new game state, calculating heuristic value
+updating cache dict
+3726
+encountered new game state, calculating heuristic value
+updating cache dict
+3727
+encountered new game state, calculating heuristic value
+updating cache dict
+3728
+encountered new game state, calculating heuristic value
+updating cache dict
+3729
+encountered new game state, calculating heuristic value
+updating cache dict
+3730
+encountered new game state, calculating heuristic value
+updating cache dict
+3731
+encountered new game state, calculating heuristic value
+updating cache dict
+3732
+encountered new game state, calculating heuristic value
+updating cache dict
+3733
+encountered new game state, calculating heuristic value
+updating cache dict
+3734
+encountered new game state, calculating heuristic value
+updating cache dict
+3735
+encountered new game state, calculating heuristic value
+updating cache dict
+3736
+encountered new game state, calculating heuristic value
+updating cache dict
+3737
+encountered new game state, calculating heuristic value
+updating cache dict
+3738
+encountered new game state, calculating heuristic value
+updating cache dict
+3739
+encountered new game state, calculating heuristic value
+updating cache dict
+3740
+encountered new game state, calculating heuristic value
+updating cache dict
+3741
+encountered new game state, calculating heuristic value
+updating cache dict
+3742
+encountered new game state, calculating heuristic value
+updating cache dict
+3743
+encountered new game state, calculating heuristic value
+updating cache dict
+3744
+encountered new game state, calculating heuristic value
+updating cache dict
+3745
+encountered new game state, calculating heuristic value
+updating cache dict
+3746
+encountered new game state, calculating heuristic value
+updating cache dict
+3747
+encountered new game state, calculating heuristic value
+updating cache dict
+3748
+encountered new game state, calculating heuristic value
+updating cache dict
+3749
+encountered new game state, calculating heuristic value
+updating cache dict
+3750
+encountered new game state, calculating heuristic value
+updating cache dict
+3751
+encountered new game state, calculating heuristic value
+updating cache dict
+3752
+encountered new game state, calculating heuristic value
+updating cache dict
+3753
+encountered new game state, calculating heuristic value
+updating cache dict
+3754
+encountered new game state, calculating heuristic value
+updating cache dict
+3755
+encountered new game state, calculating heuristic value
+updating cache dict
+3756
+encountered new game state, calculating heuristic value
+updating cache dict
+3757
+encountered new game state, calculating heuristic value
+updating cache dict
+3758
+encountered new game state, calculating heuristic value
+updating cache dict
+3759
+encountered new game state, calculating heuristic value
+updating cache dict
+3760
+encountered new game state, calculating heuristic value
+updating cache dict
+3761
+encountered new game state, calculating heuristic value
+updating cache dict
+3762
+encountered new game state, calculating heuristic value
+updating cache dict
+3763
+encountered new game state, calculating heuristic value
+updating cache dict
+3764
+encountered new game state, calculating heuristic value
+updating cache dict
+3765
+encountered new game state, calculating heuristic value
+updating cache dict
+3766
+encountered new game state, calculating heuristic value
+updating cache dict
+3767
+encountered new game state, calculating heuristic value
+updating cache dict
+3768
+encountered new game state, calculating heuristic value
+updating cache dict
+3769
+encountered new game state, calculating heuristic value
+updating cache dict
+3770
+encountered new game state, calculating heuristic value
+updating cache dict
+3771
+encountered new game state, calculating heuristic value
+updating cache dict
+3772
+encountered new game state, calculating heuristic value
+updating cache dict
+3773
+encountered new game state, calculating heuristic value
+updating cache dict
+3774
+encountered new game state, calculating heuristic value
+updating cache dict
+3775
+encountered new game state, calculating heuristic value
+updating cache dict
+3776
+encountered new game state, calculating heuristic value
+updating cache dict
+3777
+encountered new game state, calculating heuristic value
+updating cache dict
+3778
+encountered new game state, calculating heuristic value
+updating cache dict
+3779
+encountered new game state, calculating heuristic value
+updating cache dict
+3780
+encountered new game state, calculating heuristic value
+updating cache dict
+3781
+encountered new game state, calculating heuristic value
+updating cache dict
+3782
+encountered new game state, calculating heuristic value
+updating cache dict
+3783
+encountered new game state, calculating heuristic value
+updating cache dict
+3784
+encountered new game state, calculating heuristic value
+updating cache dict
+3785
+encountered new game state, calculating heuristic value
+updating cache dict
+3786
+encountered new game state, calculating heuristic value
+updating cache dict
+3787
+encountered new game state, calculating heuristic value
+updating cache dict
+3788
+encountered new game state, calculating heuristic value
+updating cache dict
+3789
+encountered new game state, calculating heuristic value
+updating cache dict
+3790
+encountered new game state, calculating heuristic value
+updating cache dict
+3791
+encountered new game state, calculating heuristic value
+updating cache dict
+3792
+encountered new game state, calculating heuristic value
+updating cache dict
+3793
+encountered new game state, calculating heuristic value
+updating cache dict
+3794
+encountered new game state, calculating heuristic value
+updating cache dict
+3795
+encountered new game state, calculating heuristic value
+updating cache dict
+3796
+encountered new game state, calculating heuristic value
+updating cache dict
+3797
+encountered new game state, calculating heuristic value
+updating cache dict
+3798
+encountered new game state, calculating heuristic value
+updating cache dict
+3799
+encountered new game state, calculating heuristic value
+updating cache dict
+3800
+encountered new game state, calculating heuristic value
+updating cache dict
+3801
+encountered new game state, calculating heuristic value
+updating cache dict
+3802
+encountered new game state, calculating heuristic value
+updating cache dict
+3803
+encountered new game state, calculating heuristic value
+updating cache dict
+3804
+encountered new game state, calculating heuristic value
+updating cache dict
+3805
+encountered new game state, calculating heuristic value
+updating cache dict
+3806
+encountered new game state, calculating heuristic value
+updating cache dict
+3807
+encountered new game state, calculating heuristic value
+updating cache dict
+3808
+encountered new game state, calculating heuristic value
+updating cache dict
+3809
+encountered new game state, calculating heuristic value
+updating cache dict
+3810
+encountered new game state, calculating heuristic value
+updating cache dict
+3811
+encountered new game state, calculating heuristic value
+updating cache dict
+3812
+encountered new game state, calculating heuristic value
+updating cache dict
+3813
+encountered new game state, calculating heuristic value
+updating cache dict
+3814
+encountered new game state, calculating heuristic value
+updating cache dict
+3815
+encountered new game state, calculating heuristic value
+updating cache dict
+3816
+encountered new game state, calculating heuristic value
+updating cache dict
+3817
+encountered new game state, calculating heuristic value
+updating cache dict
+3818
+encountered new game state, calculating heuristic value
+updating cache dict
+3819
+encountered new game state, calculating heuristic value
+updating cache dict
+3820
+encountered new game state, calculating heuristic value
+updating cache dict
+3821
+encountered new game state, calculating heuristic value
+updating cache dict
+3822
+encountered new game state, calculating heuristic value
+updating cache dict
+3823
+encountered new game state, calculating heuristic value
+updating cache dict
+3824
+encountered new game state, calculating heuristic value
+updating cache dict
+3825
+encountered new game state, calculating heuristic value
+updating cache dict
+3826
+encountered new game state, calculating heuristic value
+updating cache dict
+3827
+encountered new game state, calculating heuristic value
+updating cache dict
+3828
+encountered new game state, calculating heuristic value
+updating cache dict
+3829
+encountered new game state, calculating heuristic value
+updating cache dict
+3830
+encountered new game state, calculating heuristic value
+updating cache dict
+3831
+encountered new game state, calculating heuristic value
+updating cache dict
+3832
+encountered new game state, calculating heuristic value
+updating cache dict
+3833
+encountered new game state, calculating heuristic value
+updating cache dict
+3834
+encountered new game state, calculating heuristic value
+updating cache dict
+3835
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 1, 0, 0, 0]
+Move # 4
+Move was 3 , made by 2
+----------
+
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 1, 0, 0, 0]
+Move # 5
+Move was 3 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+3836
+encountered new game state, calculating heuristic value
+updating cache dict
+3837
+encountered new game state, calculating heuristic value
+updating cache dict
+3838
+encountered new game state, calculating heuristic value
+updating cache dict
+3839
+encountered new game state, calculating heuristic value
+updating cache dict
+3840
+encountered new game state, calculating heuristic value
+updating cache dict
+3841
+encountered new game state, calculating heuristic value
+updating cache dict
+3842
+encountered new game state, calculating heuristic value
+updating cache dict
+3843
+encountered new game state, calculating heuristic value
+updating cache dict
+3844
+encountered new game state, calculating heuristic value
+updating cache dict
+3845
+encountered new game state, calculating heuristic value
+updating cache dict
+3846
+encountered new game state, calculating heuristic value
+updating cache dict
+3847
+encountered new game state, calculating heuristic value
+updating cache dict
+3848
+encountered new game state, calculating heuristic value
+updating cache dict
+3849
+encountered new game state, calculating heuristic value
+updating cache dict
+3850
+encountered new game state, calculating heuristic value
+updating cache dict
+3851
+encountered new game state, calculating heuristic value
+updating cache dict
+3852
+encountered new game state, calculating heuristic value
+updating cache dict
+3853
+encountered new game state, calculating heuristic value
+updating cache dict
+3854
+encountered new game state, calculating heuristic value
+updating cache dict
+3855
+encountered new game state, calculating heuristic value
+updating cache dict
+3856
+encountered new game state, calculating heuristic value
+updating cache dict
+3857
+encountered new game state, calculating heuristic value
+updating cache dict
+3858
+encountered new game state, calculating heuristic value
+updating cache dict
+3859
+encountered new game state, calculating heuristic value
+updating cache dict
+3860
+encountered new game state, calculating heuristic value
+updating cache dict
+3861
+encountered new game state, calculating heuristic value
+updating cache dict
+3862
+encountered new game state, calculating heuristic value
+updating cache dict
+3863
+encountered new game state, calculating heuristic value
+updating cache dict
+3864
+encountered new game state, calculating heuristic value
+updating cache dict
+3865
+encountered new game state, calculating heuristic value
+updating cache dict
+3866
+encountered new game state, calculating heuristic value
+updating cache dict
+3867
+encountered new game state, calculating heuristic value
+updating cache dict
+3868
+encountered new game state, calculating heuristic value
+updating cache dict
+3869
+encountered new game state, calculating heuristic value
+updating cache dict
+3870
+encountered new game state, calculating heuristic value
+updating cache dict
+3871
+encountered new game state, calculating heuristic value
+updating cache dict
+3872
+encountered new game state, calculating heuristic value
+updating cache dict
+3873
+encountered new game state, calculating heuristic value
+updating cache dict
+3874
+encountered new game state, calculating heuristic value
+updating cache dict
+3875
+encountered new game state, calculating heuristic value
+updating cache dict
+3876
+encountered new game state, calculating heuristic value
+updating cache dict
+3877
+encountered new game state, calculating heuristic value
+updating cache dict
+3878
+encountered new game state, calculating heuristic value
+updating cache dict
+3879
+encountered new game state, calculating heuristic value
+updating cache dict
+3880
+encountered new game state, calculating heuristic value
+updating cache dict
+3881
+encountered new game state, calculating heuristic value
+updating cache dict
+3882
+encountered new game state, calculating heuristic value
+updating cache dict
+3883
+encountered new game state, calculating heuristic value
+updating cache dict
+3884
+encountered new game state, calculating heuristic value
+updating cache dict
+3885
+encountered new game state, calculating heuristic value
+updating cache dict
+3886
+encountered new game state, calculating heuristic value
+updating cache dict
+3887
+encountered new game state, calculating heuristic value
+updating cache dict
+3888
+encountered new game state, calculating heuristic value
+updating cache dict
+3889
+encountered new game state, calculating heuristic value
+updating cache dict
+3890
+encountered new game state, calculating heuristic value
+updating cache dict
+3891
+encountered new game state, calculating heuristic value
+updating cache dict
+3892
+encountered new game state, calculating heuristic value
+updating cache dict
+3893
+encountered new game state, calculating heuristic value
+updating cache dict
+3894
+encountered new game state, calculating heuristic value
+updating cache dict
+3895
+encountered new game state, calculating heuristic value
+updating cache dict
+3896
+encountered new game state, calculating heuristic value
+updating cache dict
+3897
+encountered new game state, calculating heuristic value
+updating cache dict
+3898
+encountered new game state, calculating heuristic value
+updating cache dict
+3899
+encountered new game state, calculating heuristic value
+updating cache dict
+3900
+encountered new game state, calculating heuristic value
+updating cache dict
+3901
+encountered new game state, calculating heuristic value
+updating cache dict
+3902
+encountered new game state, calculating heuristic value
+updating cache dict
+3903
+encountered new game state, calculating heuristic value
+updating cache dict
+3904
+encountered new game state, calculating heuristic value
+updating cache dict
+3905
+encountered new game state, calculating heuristic value
+updating cache dict
+3906
+encountered new game state, calculating heuristic value
+updating cache dict
+3907
+encountered new game state, calculating heuristic value
+updating cache dict
+3908
+encountered new game state, calculating heuristic value
+updating cache dict
+3909
+encountered new game state, calculating heuristic value
+updating cache dict
+3910
+encountered new game state, calculating heuristic value
+updating cache dict
+3911
+encountered new game state, calculating heuristic value
+updating cache dict
+3912
+encountered new game state, calculating heuristic value
+updating cache dict
+3913
+encountered new game state, calculating heuristic value
+updating cache dict
+3914
+encountered new game state, calculating heuristic value
+updating cache dict
+3915
+encountered new game state, calculating heuristic value
+updating cache dict
+3916
+encountered new game state, calculating heuristic value
+updating cache dict
+3917
+encountered new game state, calculating heuristic value
+updating cache dict
+3918
+encountered new game state, calculating heuristic value
+updating cache dict
+3919
+encountered new game state, calculating heuristic value
+updating cache dict
+3920
+encountered new game state, calculating heuristic value
+updating cache dict
+3921
+encountered new game state, calculating heuristic value
+updating cache dict
+3922
+encountered new game state, calculating heuristic value
+updating cache dict
+3923
+encountered new game state, calculating heuristic value
+updating cache dict
+3924
+encountered new game state, calculating heuristic value
+updating cache dict
+3925
+encountered new game state, calculating heuristic value
+updating cache dict
+3926
+encountered new game state, calculating heuristic value
+updating cache dict
+3927
+encountered new game state, calculating heuristic value
+updating cache dict
+3928
+encountered new game state, calculating heuristic value
+updating cache dict
+3929
+encountered new game state, calculating heuristic value
+updating cache dict
+3930
+encountered new game state, calculating heuristic value
+updating cache dict
+3931
+encountered new game state, calculating heuristic value
+updating cache dict
+3932
+encountered new game state, calculating heuristic value
+updating cache dict
+3933
+encountered new game state, calculating heuristic value
+updating cache dict
+3934
+encountered new game state, calculating heuristic value
+updating cache dict
+3935
+encountered new game state, calculating heuristic value
+updating cache dict
+3936
+encountered new game state, calculating heuristic value
+updating cache dict
+3937
+encountered new game state, calculating heuristic value
+updating cache dict
+3938
+encountered new game state, calculating heuristic value
+updating cache dict
+3939
+encountered new game state, calculating heuristic value
+updating cache dict
+3940
+encountered new game state, calculating heuristic value
+updating cache dict
+3941
+encountered new game state, calculating heuristic value
+updating cache dict
+3942
+encountered new game state, calculating heuristic value
+updating cache dict
+3943
+encountered new game state, calculating heuristic value
+updating cache dict
+3944
+encountered new game state, calculating heuristic value
+updating cache dict
+3945
+encountered new game state, calculating heuristic value
+updating cache dict
+3946
+encountered new game state, calculating heuristic value
+updating cache dict
+3947
+encountered new game state, calculating heuristic value
+updating cache dict
+3948
+encountered new game state, calculating heuristic value
+updating cache dict
+3949
+encountered new game state, calculating heuristic value
+updating cache dict
+3950
+encountered new game state, calculating heuristic value
+updating cache dict
+3951
+encountered new game state, calculating heuristic value
+updating cache dict
+3952
+encountered new game state, calculating heuristic value
+updating cache dict
+3953
+encountered new game state, calculating heuristic value
+updating cache dict
+3954
+encountered new game state, calculating heuristic value
+updating cache dict
+3955
+encountered new game state, calculating heuristic value
+updating cache dict
+3956
+encountered new game state, calculating heuristic value
+updating cache dict
+3957
+encountered new game state, calculating heuristic value
+updating cache dict
+3958
+encountered new game state, calculating heuristic value
+updating cache dict
+3959
+encountered new game state, calculating heuristic value
+updating cache dict
+3960
+encountered new game state, calculating heuristic value
+updating cache dict
+3961
+encountered new game state, calculating heuristic value
+updating cache dict
+3962
+encountered new game state, calculating heuristic value
+updating cache dict
+3963
+encountered new game state, calculating heuristic value
+updating cache dict
+3964
+encountered new game state, calculating heuristic value
+updating cache dict
+3965
+encountered new game state, calculating heuristic value
+updating cache dict
+3966
+encountered new game state, calculating heuristic value
+updating cache dict
+3967
+encountered new game state, calculating heuristic value
+updating cache dict
+3968
+encountered new game state, calculating heuristic value
+updating cache dict
+3969
+encountered new game state, calculating heuristic value
+updating cache dict
+3970
+encountered new game state, calculating heuristic value
+updating cache dict
+3971
+encountered new game state, calculating heuristic value
+updating cache dict
+3972
+encountered new game state, calculating heuristic value
+updating cache dict
+3973
+encountered new game state, calculating heuristic value
+updating cache dict
+3974
+encountered new game state, calculating heuristic value
+updating cache dict
+3975
+encountered new game state, calculating heuristic value
+updating cache dict
+3976
+encountered new game state, calculating heuristic value
+updating cache dict
+3977
+encountered new game state, calculating heuristic value
+updating cache dict
+3978
+encountered new game state, calculating heuristic value
+updating cache dict
+3979
+encountered new game state, calculating heuristic value
+updating cache dict
+3980
+encountered new game state, calculating heuristic value
+updating cache dict
+3981
+encountered new game state, calculating heuristic value
+updating cache dict
+3982
+encountered new game state, calculating heuristic value
+updating cache dict
+3983
+encountered new game state, calculating heuristic value
+updating cache dict
+3984
+encountered new game state, calculating heuristic value
+updating cache dict
+3985
+encountered new game state, calculating heuristic value
+updating cache dict
+3986
+encountered new game state, calculating heuristic value
+updating cache dict
+3987
+encountered new game state, calculating heuristic value
+updating cache dict
+3988
+encountered new game state, calculating heuristic value
+updating cache dict
+3989
+encountered new game state, calculating heuristic value
+updating cache dict
+3990
+encountered new game state, calculating heuristic value
+updating cache dict
+3991
+encountered new game state, calculating heuristic value
+updating cache dict
+3992
+encountered new game state, calculating heuristic value
+updating cache dict
+3993
+encountered new game state, calculating heuristic value
+updating cache dict
+3994
+encountered new game state, calculating heuristic value
+updating cache dict
+3995
+encountered new game state, calculating heuristic value
+updating cache dict
+3996
+encountered new game state, calculating heuristic value
+updating cache dict
+3997
+encountered new game state, calculating heuristic value
+updating cache dict
+3998
+encountered new game state, calculating heuristic value
+updating cache dict
+3999
+encountered new game state, calculating heuristic value
+updating cache dict
+4000
+encountered new game state, calculating heuristic value
+updating cache dict
+4001
+encountered new game state, calculating heuristic value
+updating cache dict
+4002
+encountered new game state, calculating heuristic value
+updating cache dict
+4003
+encountered new game state, calculating heuristic value
+updating cache dict
+4004
+encountered new game state, calculating heuristic value
+updating cache dict
+4005
+encountered new game state, calculating heuristic value
+updating cache dict
+4006
+encountered new game state, calculating heuristic value
+updating cache dict
+4007
+encountered new game state, calculating heuristic value
+updating cache dict
+4008
+encountered new game state, calculating heuristic value
+updating cache dict
+4009
+encountered new game state, calculating heuristic value
+updating cache dict
+4010
+encountered new game state, calculating heuristic value
+updating cache dict
+4011
+encountered new game state, calculating heuristic value
+updating cache dict
+4012
+encountered new game state, calculating heuristic value
+updating cache dict
+4013
+encountered new game state, calculating heuristic value
+updating cache dict
+4014
+encountered new game state, calculating heuristic value
+updating cache dict
+4015
+encountered new game state, calculating heuristic value
+updating cache dict
+4016
+encountered new game state, calculating heuristic value
+updating cache dict
+4017
+encountered new game state, calculating heuristic value
+updating cache dict
+4018
+encountered new game state, calculating heuristic value
+updating cache dict
+4019
+encountered new game state, calculating heuristic value
+updating cache dict
+4020
+encountered new game state, calculating heuristic value
+updating cache dict
+4021
+encountered new game state, calculating heuristic value
+updating cache dict
+4022
+encountered new game state, calculating heuristic value
+updating cache dict
+4023
+encountered new game state, calculating heuristic value
+updating cache dict
+4024
+encountered new game state, calculating heuristic value
+updating cache dict
+4025
+encountered new game state, calculating heuristic value
+updating cache dict
+4026
+encountered new game state, calculating heuristic value
+updating cache dict
+4027
+encountered new game state, calculating heuristic value
+updating cache dict
+4028
+encountered new game state, calculating heuristic value
+updating cache dict
+4029
+encountered new game state, calculating heuristic value
+updating cache dict
+4030
+encountered new game state, calculating heuristic value
+updating cache dict
+4031
+encountered new game state, calculating heuristic value
+updating cache dict
+4032
+encountered new game state, calculating heuristic value
+updating cache dict
+4033
+encountered new game state, calculating heuristic value
+updating cache dict
+4034
+encountered new game state, calculating heuristic value
+updating cache dict
+4035
+encountered new game state, calculating heuristic value
+updating cache dict
+4036
+encountered new game state, calculating heuristic value
+updating cache dict
+4037
+encountered new game state, calculating heuristic value
+updating cache dict
+4038
+encountered new game state, calculating heuristic value
+updating cache dict
+4039
+encountered new game state, calculating heuristic value
+updating cache dict
+4040
+encountered new game state, calculating heuristic value
+updating cache dict
+4041
+encountered new game state, calculating heuristic value
+updating cache dict
+4042
+encountered new game state, calculating heuristic value
+updating cache dict
+4043
+encountered new game state, calculating heuristic value
+updating cache dict
+4044
+encountered new game state, calculating heuristic value
+updating cache dict
+4045
+encountered new game state, calculating heuristic value
+updating cache dict
+4046
+encountered new game state, calculating heuristic value
+updating cache dict
+4047
+encountered new game state, calculating heuristic value
+updating cache dict
+4048
+encountered new game state, calculating heuristic value
+updating cache dict
+4049
+encountered new game state, calculating heuristic value
+updating cache dict
+4050
+encountered new game state, calculating heuristic value
+updating cache dict
+4051
+encountered new game state, calculating heuristic value
+updating cache dict
+4052
+encountered new game state, calculating heuristic value
+updating cache dict
+4053
+encountered new game state, calculating heuristic value
+updating cache dict
+4054
+encountered new game state, calculating heuristic value
+updating cache dict
+4055
+encountered new game state, calculating heuristic value
+updating cache dict
+4056
+encountered new game state, calculating heuristic value
+updating cache dict
+4057
+encountered new game state, calculating heuristic value
+updating cache dict
+4058
+encountered new game state, calculating heuristic value
+updating cache dict
+4059
+encountered new game state, calculating heuristic value
+updating cache dict
+4060
+encountered new game state, calculating heuristic value
+updating cache dict
+4061
+encountered new game state, calculating heuristic value
+updating cache dict
+4062
+encountered new game state, calculating heuristic value
+updating cache dict
+4063
+encountered new game state, calculating heuristic value
+updating cache dict
+4064
+encountered new game state, calculating heuristic value
+updating cache dict
+4065
+encountered new game state, calculating heuristic value
+updating cache dict
+4066
+encountered new game state, calculating heuristic value
+updating cache dict
+4067
+encountered new game state, calculating heuristic value
+updating cache dict
+4068
+encountered new game state, calculating heuristic value
+updating cache dict
+4069
+encountered new game state, calculating heuristic value
+updating cache dict
+4070
+encountered new game state, calculating heuristic value
+updating cache dict
+4071
+encountered new game state, calculating heuristic value
+updating cache dict
+4072
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 1, 0, 0, 0]
+Move # 6
+Move was 3 , made by 2
+----------
+
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 1, 1, 0, 0, 0]
+[0, 0, 2, 1, 0, 0, 0]
+Move # 7
+Move was 2 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+4073
+encountered new game state, calculating heuristic value
+updating cache dict
+4074
+encountered new game state, calculating heuristic value
+updating cache dict
+4075
+encountered new game state, calculating heuristic value
+updating cache dict
+4076
+encountered new game state, calculating heuristic value
+updating cache dict
+4077
+encountered new game state, calculating heuristic value
+updating cache dict
+4078
+encountered new game state, calculating heuristic value
+updating cache dict
+4079
+encountered new game state, calculating heuristic value
+updating cache dict
+4080
+encountered new game state, calculating heuristic value
+updating cache dict
+4081
+encountered new game state, calculating heuristic value
+updating cache dict
+4082
+encountered new game state, calculating heuristic value
+updating cache dict
+4083
+encountered new game state, calculating heuristic value
+updating cache dict
+4084
+encountered new game state, calculating heuristic value
+updating cache dict
+4085
+encountered new game state, calculating heuristic value
+updating cache dict
+4086
+encountered new game state, calculating heuristic value
+updating cache dict
+4087
+encountered new game state, calculating heuristic value
+updating cache dict
+4088
+encountered new game state, calculating heuristic value
+updating cache dict
+4089
+encountered new game state, calculating heuristic value
+updating cache dict
+4090
+encountered new game state, calculating heuristic value
+updating cache dict
+4091
+encountered new game state, calculating heuristic value
+updating cache dict
+4092
+encountered new game state, calculating heuristic value
+updating cache dict
+4093
+encountered new game state, calculating heuristic value
+updating cache dict
+4094
+encountered new game state, calculating heuristic value
+updating cache dict
+4095
+encountered new game state, calculating heuristic value
+updating cache dict
+4096
+encountered new game state, calculating heuristic value
+updating cache dict
+4097
+encountered new game state, calculating heuristic value
+updating cache dict
+4098
+encountered new game state, calculating heuristic value
+updating cache dict
+4099
+encountered new game state, calculating heuristic value
+updating cache dict
+4100
+encountered new game state, calculating heuristic value
+updating cache dict
+4101
+encountered new game state, calculating heuristic value
+updating cache dict
+4102
+encountered new game state, calculating heuristic value
+updating cache dict
+4103
+encountered new game state, calculating heuristic value
+updating cache dict
+4104
+encountered new game state, calculating heuristic value
+updating cache dict
+4105
+encountered new game state, calculating heuristic value
+updating cache dict
+4106
+encountered new game state, calculating heuristic value
+updating cache dict
+4107
+encountered new game state, calculating heuristic value
+updating cache dict
+4108
+encountered new game state, calculating heuristic value
+updating cache dict
+4109
+encountered new game state, calculating heuristic value
+updating cache dict
+4110
+encountered new game state, calculating heuristic value
+updating cache dict
+4111
+encountered new game state, calculating heuristic value
+updating cache dict
+4112
+encountered new game state, calculating heuristic value
+updating cache dict
+4113
+encountered new game state, calculating heuristic value
+updating cache dict
+4114
+encountered new game state, calculating heuristic value
+updating cache dict
+4115
+encountered new game state, calculating heuristic value
+updating cache dict
+4116
+encountered new game state, calculating heuristic value
+updating cache dict
+4117
+encountered new game state, calculating heuristic value
+updating cache dict
+4118
+encountered new game state, calculating heuristic value
+updating cache dict
+4119
+encountered new game state, calculating heuristic value
+updating cache dict
+4120
+encountered new game state, calculating heuristic value
+updating cache dict
+4121
+encountered new game state, calculating heuristic value
+updating cache dict
+4122
+encountered new game state, calculating heuristic value
+updating cache dict
+4123
+encountered new game state, calculating heuristic value
+updating cache dict
+4124
+encountered new game state, calculating heuristic value
+updating cache dict
+4125
+encountered new game state, calculating heuristic value
+updating cache dict
+4126
+encountered new game state, calculating heuristic value
+updating cache dict
+4127
+encountered new game state, calculating heuristic value
+updating cache dict
+4128
+encountered new game state, calculating heuristic value
+updating cache dict
+4129
+encountered new game state, calculating heuristic value
+updating cache dict
+4130
+encountered new game state, calculating heuristic value
+updating cache dict
+4131
+encountered new game state, calculating heuristic value
+updating cache dict
+4132
+encountered new game state, calculating heuristic value
+updating cache dict
+4133
+encountered new game state, calculating heuristic value
+updating cache dict
+4134
+encountered new game state, calculating heuristic value
+updating cache dict
+4135
+encountered new game state, calculating heuristic value
+updating cache dict
+4136
+encountered new game state, calculating heuristic value
+updating cache dict
+4137
+encountered new game state, calculating heuristic value
+updating cache dict
+4138
+encountered new game state, calculating heuristic value
+updating cache dict
+4139
+encountered new game state, calculating heuristic value
+updating cache dict
+4140
+encountered new game state, calculating heuristic value
+updating cache dict
+4141
+encountered new game state, calculating heuristic value
+updating cache dict
+4142
+encountered new game state, calculating heuristic value
+updating cache dict
+4143
+encountered new game state, calculating heuristic value
+updating cache dict
+4144
+encountered new game state, calculating heuristic value
+updating cache dict
+4145
+encountered new game state, calculating heuristic value
+updating cache dict
+4146
+encountered new game state, calculating heuristic value
+updating cache dict
+4147
+encountered new game state, calculating heuristic value
+updating cache dict
+4148
+encountered new game state, calculating heuristic value
+updating cache dict
+4149
+encountered new game state, calculating heuristic value
+updating cache dict
+4150
+encountered new game state, calculating heuristic value
+updating cache dict
+4151
+encountered new game state, calculating heuristic value
+updating cache dict
+4152
+encountered new game state, calculating heuristic value
+updating cache dict
+4153
+encountered new game state, calculating heuristic value
+updating cache dict
+4154
+encountered new game state, calculating heuristic value
+updating cache dict
+4155
+encountered new game state, calculating heuristic value
+updating cache dict
+4156
+encountered new game state, calculating heuristic value
+updating cache dict
+4157
+encountered new game state, calculating heuristic value
+updating cache dict
+4158
+encountered new game state, calculating heuristic value
+updating cache dict
+4159
+encountered new game state, calculating heuristic value
+updating cache dict
+4160
+encountered new game state, calculating heuristic value
+updating cache dict
+4161
+encountered new game state, calculating heuristic value
+updating cache dict
+4162
+encountered new game state, calculating heuristic value
+updating cache dict
+4163
+encountered new game state, calculating heuristic value
+updating cache dict
+4164
+encountered new game state, calculating heuristic value
+updating cache dict
+4165
+encountered new game state, calculating heuristic value
+updating cache dict
+4166
+encountered new game state, calculating heuristic value
+updating cache dict
+4167
+encountered new game state, calculating heuristic value
+updating cache dict
+4168
+encountered new game state, calculating heuristic value
+updating cache dict
+4169
+encountered new game state, calculating heuristic value
+updating cache dict
+4170
+encountered new game state, calculating heuristic value
+updating cache dict
+4171
+encountered new game state, calculating heuristic value
+updating cache dict
+4172
+encountered new game state, calculating heuristic value
+updating cache dict
+4173
+encountered new game state, calculating heuristic value
+updating cache dict
+4174
+encountered new game state, calculating heuristic value
+updating cache dict
+4175
+encountered new game state, calculating heuristic value
+updating cache dict
+4176
+encountered new game state, calculating heuristic value
+updating cache dict
+4177
+encountered new game state, calculating heuristic value
+updating cache dict
+4178
+encountered new game state, calculating heuristic value
+updating cache dict
+4179
+encountered new game state, calculating heuristic value
+updating cache dict
+4180
+encountered new game state, calculating heuristic value
+updating cache dict
+4181
+encountered new game state, calculating heuristic value
+updating cache dict
+4182
+encountered new game state, calculating heuristic value
+updating cache dict
+4183
+encountered new game state, calculating heuristic value
+updating cache dict
+4184
+encountered new game state, calculating heuristic value
+updating cache dict
+4185
+encountered new game state, calculating heuristic value
+updating cache dict
+4186
+encountered new game state, calculating heuristic value
+updating cache dict
+4187
+encountered new game state, calculating heuristic value
+updating cache dict
+4188
+encountered new game state, calculating heuristic value
+updating cache dict
+4189
+encountered new game state, calculating heuristic value
+updating cache dict
+4190
+encountered new game state, calculating heuristic value
+updating cache dict
+4191
+encountered new game state, calculating heuristic value
+updating cache dict
+4192
+encountered new game state, calculating heuristic value
+updating cache dict
+4193
+encountered new game state, calculating heuristic value
+updating cache dict
+4194
+encountered new game state, calculating heuristic value
+updating cache dict
+4195
+encountered new game state, calculating heuristic value
+updating cache dict
+4196
+encountered new game state, calculating heuristic value
+updating cache dict
+4197
+encountered new game state, calculating heuristic value
+updating cache dict
+4198
+encountered new game state, calculating heuristic value
+updating cache dict
+4199
+encountered new game state, calculating heuristic value
+updating cache dict
+4200
+encountered new game state, calculating heuristic value
+updating cache dict
+4201
+encountered new game state, calculating heuristic value
+updating cache dict
+4202
+encountered new game state, calculating heuristic value
+updating cache dict
+4203
+encountered new game state, calculating heuristic value
+updating cache dict
+4204
+encountered new game state, calculating heuristic value
+updating cache dict
+4205
+encountered new game state, calculating heuristic value
+updating cache dict
+4206
+encountered new game state, calculating heuristic value
+updating cache dict
+4207
+encountered new game state, calculating heuristic value
+updating cache dict
+4208
+encountered new game state, calculating heuristic value
+updating cache dict
+4209
+encountered new game state, calculating heuristic value
+updating cache dict
+4210
+encountered new game state, calculating heuristic value
+updating cache dict
+4211
+encountered new game state, calculating heuristic value
+updating cache dict
+4212
+encountered new game state, calculating heuristic value
+updating cache dict
+4213
+encountered new game state, calculating heuristic value
+updating cache dict
+4214
+encountered new game state, calculating heuristic value
+updating cache dict
+4215
+encountered new game state, calculating heuristic value
+updating cache dict
+4216
+encountered new game state, calculating heuristic value
+updating cache dict
+4217
+encountered new game state, calculating heuristic value
+updating cache dict
+4218
+encountered new game state, calculating heuristic value
+updating cache dict
+4219
+encountered new game state, calculating heuristic value
+updating cache dict
+4220
+encountered new game state, calculating heuristic value
+updating cache dict
+4221
+encountered new game state, calculating heuristic value
+updating cache dict
+4222
+encountered new game state, calculating heuristic value
+updating cache dict
+4223
+encountered new game state, calculating heuristic value
+updating cache dict
+4224
+encountered new game state, calculating heuristic value
+updating cache dict
+4225
+encountered new game state, calculating heuristic value
+updating cache dict
+4226
+encountered new game state, calculating heuristic value
+updating cache dict
+4227
+encountered new game state, calculating heuristic value
+updating cache dict
+4228
+encountered new game state, calculating heuristic value
+updating cache dict
+4229
+encountered new game state, calculating heuristic value
+updating cache dict
+4230
+encountered new game state, calculating heuristic value
+updating cache dict
+4231
+encountered new game state, calculating heuristic value
+updating cache dict
+4232
+encountered new game state, calculating heuristic value
+updating cache dict
+4233
+encountered new game state, calculating heuristic value
+updating cache dict
+4234
+encountered new game state, calculating heuristic value
+updating cache dict
+4235
+encountered new game state, calculating heuristic value
+updating cache dict
+4236
+encountered new game state, calculating heuristic value
+updating cache dict
+4237
+encountered new game state, calculating heuristic value
+updating cache dict
+4238
+encountered new game state, calculating heuristic value
+updating cache dict
+4239
+encountered new game state, calculating heuristic value
+updating cache dict
+4240
+encountered new game state, calculating heuristic value
+updating cache dict
+4241
+encountered new game state, calculating heuristic value
+updating cache dict
+4242
+encountered new game state, calculating heuristic value
+updating cache dict
+4243
+encountered new game state, calculating heuristic value
+updating cache dict
+4244
+encountered new game state, calculating heuristic value
+updating cache dict
+4245
+encountered new game state, calculating heuristic value
+updating cache dict
+4246
+encountered new game state, calculating heuristic value
+updating cache dict
+4247
+encountered new game state, calculating heuristic value
+updating cache dict
+4248
+encountered new game state, calculating heuristic value
+updating cache dict
+4249
+encountered new game state, calculating heuristic value
+updating cache dict
+4250
+encountered new game state, calculating heuristic value
+updating cache dict
+4251
+encountered new game state, calculating heuristic value
+updating cache dict
+4252
+encountered new game state, calculating heuristic value
+updating cache dict
+4253
+encountered new game state, calculating heuristic value
+updating cache dict
+4254
+encountered new game state, calculating heuristic value
+updating cache dict
+4255
+encountered new game state, calculating heuristic value
+updating cache dict
+4256
+encountered new game state, calculating heuristic value
+updating cache dict
+4257
+encountered new game state, calculating heuristic value
+updating cache dict
+4258
+encountered new game state, calculating heuristic value
+updating cache dict
+4259
+encountered new game state, calculating heuristic value
+updating cache dict
+4260
+encountered new game state, calculating heuristic value
+updating cache dict
+4261
+encountered new game state, calculating heuristic value
+updating cache dict
+4262
+encountered new game state, calculating heuristic value
+updating cache dict
+4263
+encountered new game state, calculating heuristic value
+updating cache dict
+4264
+encountered new game state, calculating heuristic value
+updating cache dict
+4265
+encountered new game state, calculating heuristic value
+updating cache dict
+4266
+encountered new game state, calculating heuristic value
+updating cache dict
+4267
+encountered new game state, calculating heuristic value
+updating cache dict
+4268
+encountered new game state, calculating heuristic value
+updating cache dict
+4269
+encountered new game state, calculating heuristic value
+updating cache dict
+4270
+encountered new game state, calculating heuristic value
+updating cache dict
+4271
+encountered new game state, calculating heuristic value
+updating cache dict
+4272
+encountered new game state, calculating heuristic value
+updating cache dict
+4273
+encountered new game state, calculating heuristic value
+updating cache dict
+4274
+encountered new game state, calculating heuristic value
+updating cache dict
+4275
+encountered new game state, calculating heuristic value
+updating cache dict
+4276
+encountered new game state, calculating heuristic value
+updating cache dict
+4277
+encountered new game state, calculating heuristic value
+updating cache dict
+4278
+encountered new game state, calculating heuristic value
+updating cache dict
+4279
+encountered new game state, calculating heuristic value
+updating cache dict
+4280
+encountered new game state, calculating heuristic value
+updating cache dict
+4281
+encountered new game state, calculating heuristic value
+updating cache dict
+4282
+encountered new game state, calculating heuristic value
+updating cache dict
+4283
+encountered new game state, calculating heuristic value
+updating cache dict
+4284
+encountered new game state, calculating heuristic value
+updating cache dict
+4285
+encountered new game state, calculating heuristic value
+updating cache dict
+4286
+encountered new game state, calculating heuristic value
+updating cache dict
+4287
+encountered new game state, calculating heuristic value
+updating cache dict
+4288
+encountered new game state, calculating heuristic value
+updating cache dict
+4289
+encountered new game state, calculating heuristic value
+updating cache dict
+4290
+encountered new game state, calculating heuristic value
+updating cache dict
+4291
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 2, 0, 0, 0]
+[0, 0, 1, 1, 0, 0, 0]
+[0, 0, 2, 1, 0, 0, 0]
+Move # 8
+Move was 2 , made by 2
+----------
+
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 2, 0, 0, 0]
+[0, 0, 1, 1, 0, 0, 0]
+[0, 0, 2, 1, 0, 0, 1]
+Move # 9
+Move was 6 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+4292
+encountered new game state, calculating heuristic value
+updating cache dict
+4293
+encountered new game state, calculating heuristic value
+updating cache dict
+4294
+encountered new game state, calculating heuristic value
+updating cache dict
+4295
+encountered new game state, calculating heuristic value
+updating cache dict
+4296
+encountered new game state, calculating heuristic value
+updating cache dict
+4297
+encountered new game state, calculating heuristic value
+updating cache dict
+4298
+encountered new game state, calculating heuristic value
+updating cache dict
+4299
+encountered new game state, calculating heuristic value
+updating cache dict
+4300
+encountered new game state, calculating heuristic value
+updating cache dict
+4301
+encountered new game state, calculating heuristic value
+updating cache dict
+4302
+encountered new game state, calculating heuristic value
+updating cache dict
+4303
+encountered new game state, calculating heuristic value
+updating cache dict
+4304
+encountered new game state, calculating heuristic value
+updating cache dict
+4305
+encountered new game state, calculating heuristic value
+updating cache dict
+4306
+encountered new game state, calculating heuristic value
+updating cache dict
+4307
+encountered new game state, calculating heuristic value
+updating cache dict
+4308
+encountered new game state, calculating heuristic value
+updating cache dict
+4309
+encountered new game state, calculating heuristic value
+updating cache dict
+4310
+encountered new game state, calculating heuristic value
+updating cache dict
+4311
+encountered new game state, calculating heuristic value
+updating cache dict
+4312
+encountered new game state, calculating heuristic value
+updating cache dict
+4313
+encountered new game state, calculating heuristic value
+updating cache dict
+4314
+encountered new game state, calculating heuristic value
+updating cache dict
+4315
+encountered new game state, calculating heuristic value
+updating cache dict
+4316
+encountered new game state, calculating heuristic value
+updating cache dict
+4317
+encountered new game state, calculating heuristic value
+updating cache dict
+4318
+encountered new game state, calculating heuristic value
+updating cache dict
+4319
+encountered new game state, calculating heuristic value
+updating cache dict
+4320
+encountered new game state, calculating heuristic value
+updating cache dict
+4321
+encountered new game state, calculating heuristic value
+updating cache dict
+4322
+encountered new game state, calculating heuristic value
+updating cache dict
+4323
+encountered new game state, calculating heuristic value
+updating cache dict
+4324
+encountered new game state, calculating heuristic value
+updating cache dict
+4325
+encountered new game state, calculating heuristic value
+updating cache dict
+4326
+encountered new game state, calculating heuristic value
+updating cache dict
+4327
+encountered new game state, calculating heuristic value
+updating cache dict
+4328
+encountered new game state, calculating heuristic value
+updating cache dict
+4329
+encountered new game state, calculating heuristic value
+updating cache dict
+4330
+encountered new game state, calculating heuristic value
+updating cache dict
+4331
+encountered new game state, calculating heuristic value
+updating cache dict
+4332
+encountered new game state, calculating heuristic value
+updating cache dict
+4333
+encountered new game state, calculating heuristic value
+updating cache dict
+4334
+encountered new game state, calculating heuristic value
+updating cache dict
+4335
+encountered new game state, calculating heuristic value
+updating cache dict
+4336
+encountered new game state, calculating heuristic value
+updating cache dict
+4337
+encountered new game state, calculating heuristic value
+updating cache dict
+4338
+encountered new game state, calculating heuristic value
+updating cache dict
+4339
+encountered new game state, calculating heuristic value
+updating cache dict
+4340
+encountered new game state, calculating heuristic value
+updating cache dict
+4341
+encountered new game state, calculating heuristic value
+updating cache dict
+4342
+encountered new game state, calculating heuristic value
+updating cache dict
+4343
+encountered new game state, calculating heuristic value
+updating cache dict
+4344
+encountered new game state, calculating heuristic value
+updating cache dict
+4345
+encountered new game state, calculating heuristic value
+updating cache dict
+4346
+encountered new game state, calculating heuristic value
+updating cache dict
+4347
+encountered new game state, calculating heuristic value
+updating cache dict
+4348
+encountered new game state, calculating heuristic value
+updating cache dict
+4349
+encountered new game state, calculating heuristic value
+updating cache dict
+4350
+encountered new game state, calculating heuristic value
+updating cache dict
+4351
+encountered new game state, calculating heuristic value
+updating cache dict
+4352
+encountered new game state, calculating heuristic value
+updating cache dict
+4353
+encountered new game state, calculating heuristic value
+updating cache dict
+4354
+encountered new game state, calculating heuristic value
+updating cache dict
+4355
+encountered new game state, calculating heuristic value
+updating cache dict
+4356
+encountered new game state, calculating heuristic value
+updating cache dict
+4357
+encountered new game state, calculating heuristic value
+updating cache dict
+4358
+encountered new game state, calculating heuristic value
+updating cache dict
+4359
+encountered new game state, calculating heuristic value
+updating cache dict
+4360
+encountered new game state, calculating heuristic value
+updating cache dict
+4361
+encountered new game state, calculating heuristic value
+updating cache dict
+4362
+encountered new game state, calculating heuristic value
+updating cache dict
+4363
+encountered new game state, calculating heuristic value
+updating cache dict
+4364
+encountered new game state, calculating heuristic value
+updating cache dict
+4365
+encountered new game state, calculating heuristic value
+updating cache dict
+4366
+encountered new game state, calculating heuristic value
+updating cache dict
+4367
+encountered new game state, calculating heuristic value
+updating cache dict
+4368
+encountered new game state, calculating heuristic value
+updating cache dict
+4369
+encountered new game state, calculating heuristic value
+updating cache dict
+4370
+encountered new game state, calculating heuristic value
+updating cache dict
+4371
+encountered new game state, calculating heuristic value
+updating cache dict
+4372
+encountered new game state, calculating heuristic value
+updating cache dict
+4373
+encountered new game state, calculating heuristic value
+updating cache dict
+4374
+encountered new game state, calculating heuristic value
+updating cache dict
+4375
+encountered new game state, calculating heuristic value
+updating cache dict
+4376
+encountered new game state, calculating heuristic value
+updating cache dict
+4377
+encountered new game state, calculating heuristic value
+updating cache dict
+4378
+encountered new game state, calculating heuristic value
+updating cache dict
+4379
+encountered new game state, calculating heuristic value
+updating cache dict
+4380
+encountered new game state, calculating heuristic value
+updating cache dict
+4381
+encountered new game state, calculating heuristic value
+updating cache dict
+4382
+encountered new game state, calculating heuristic value
+updating cache dict
+4383
+encountered new game state, calculating heuristic value
+updating cache dict
+4384
+encountered new game state, calculating heuristic value
+updating cache dict
+4385
+encountered new game state, calculating heuristic value
+updating cache dict
+4386
+encountered new game state, calculating heuristic value
+updating cache dict
+4387
+encountered new game state, calculating heuristic value
+updating cache dict
+4388
+encountered new game state, calculating heuristic value
+updating cache dict
+4389
+encountered new game state, calculating heuristic value
+updating cache dict
+4390
+encountered new game state, calculating heuristic value
+updating cache dict
+4391
+encountered new game state, calculating heuristic value
+updating cache dict
+4392
+encountered new game state, calculating heuristic value
+updating cache dict
+4393
+encountered new game state, calculating heuristic value
+updating cache dict
+4394
+encountered new game state, calculating heuristic value
+updating cache dict
+4395
+encountered new game state, calculating heuristic value
+updating cache dict
+4396
+encountered new game state, calculating heuristic value
+updating cache dict
+4397
+encountered new game state, calculating heuristic value
+updating cache dict
+4398
+encountered new game state, calculating heuristic value
+updating cache dict
+4399
+encountered new game state, calculating heuristic value
+updating cache dict
+4400
+encountered new game state, calculating heuristic value
+updating cache dict
+4401
+encountered new game state, calculating heuristic value
+updating cache dict
+4402
+encountered new game state, calculating heuristic value
+updating cache dict
+4403
+encountered new game state, calculating heuristic value
+updating cache dict
+4404
+encountered new game state, calculating heuristic value
+updating cache dict
+4405
+encountered new game state, calculating heuristic value
+updating cache dict
+4406
+encountered new game state, calculating heuristic value
+updating cache dict
+4407
+encountered new game state, calculating heuristic value
+updating cache dict
+4408
+encountered new game state, calculating heuristic value
+updating cache dict
+4409
+encountered new game state, calculating heuristic value
+updating cache dict
+4410
+encountered new game state, calculating heuristic value
+updating cache dict
+4411
+encountered new game state, calculating heuristic value
+updating cache dict
+4412
+encountered new game state, calculating heuristic value
+updating cache dict
+4413
+encountered new game state, calculating heuristic value
+updating cache dict
+4414
+encountered new game state, calculating heuristic value
+updating cache dict
+4415
+encountered new game state, calculating heuristic value
+updating cache dict
+4416
+encountered new game state, calculating heuristic value
+updating cache dict
+4417
+encountered new game state, calculating heuristic value
+updating cache dict
+4418
+encountered new game state, calculating heuristic value
+updating cache dict
+4419
+encountered new game state, calculating heuristic value
+updating cache dict
+4420
+encountered new game state, calculating heuristic value
+updating cache dict
+4421
+encountered new game state, calculating heuristic value
+updating cache dict
+4422
+encountered new game state, calculating heuristic value
+updating cache dict
+4423
+encountered new game state, calculating heuristic value
+updating cache dict
+4424
+encountered new game state, calculating heuristic value
+updating cache dict
+4425
+encountered new game state, calculating heuristic value
+updating cache dict
+4426
+encountered new game state, calculating heuristic value
+updating cache dict
+4427
+encountered new game state, calculating heuristic value
+updating cache dict
+4428
+encountered new game state, calculating heuristic value
+updating cache dict
+4429
+encountered new game state, calculating heuristic value
+updating cache dict
+4430
+encountered new game state, calculating heuristic value
+updating cache dict
+4431
+encountered new game state, calculating heuristic value
+updating cache dict
+4432
+encountered new game state, calculating heuristic value
+updating cache dict
+4433
+encountered new game state, calculating heuristic value
+updating cache dict
+4434
+encountered new game state, calculating heuristic value
+updating cache dict
+4435
+encountered new game state, calculating heuristic value
+updating cache dict
+4436
+encountered new game state, calculating heuristic value
+updating cache dict
+4437
+encountered new game state, calculating heuristic value
+updating cache dict
+4438
+encountered new game state, calculating heuristic value
+updating cache dict
+4439
+encountered new game state, calculating heuristic value
+updating cache dict
+4440
+encountered new game state, calculating heuristic value
+updating cache dict
+4441
+encountered new game state, calculating heuristic value
+updating cache dict
+4442
+encountered new game state, calculating heuristic value
+updating cache dict
+4443
+encountered new game state, calculating heuristic value
+updating cache dict
+4444
+encountered new game state, calculating heuristic value
+updating cache dict
+4445
+encountered new game state, calculating heuristic value
+updating cache dict
+4446
+encountered new game state, calculating heuristic value
+updating cache dict
+4447
+encountered new game state, calculating heuristic value
+updating cache dict
+4448
+encountered new game state, calculating heuristic value
+updating cache dict
+4449
+encountered new game state, calculating heuristic value
+updating cache dict
+4450
+encountered new game state, calculating heuristic value
+updating cache dict
+4451
+encountered new game state, calculating heuristic value
+updating cache dict
+4452
+encountered new game state, calculating heuristic value
+updating cache dict
+4453
+encountered new game state, calculating heuristic value
+updating cache dict
+4454
+encountered new game state, calculating heuristic value
+updating cache dict
+4455
+encountered new game state, calculating heuristic value
+updating cache dict
+4456
+encountered new game state, calculating heuristic value
+updating cache dict
+4457
+encountered new game state, calculating heuristic value
+updating cache dict
+4458
+encountered new game state, calculating heuristic value
+updating cache dict
+4459
+encountered new game state, calculating heuristic value
+updating cache dict
+4460
+encountered new game state, calculating heuristic value
+updating cache dict
+4461
+encountered new game state, calculating heuristic value
+updating cache dict
+4462
+encountered new game state, calculating heuristic value
+updating cache dict
+4463
+encountered new game state, calculating heuristic value
+updating cache dict
+4464
+encountered new game state, calculating heuristic value
+updating cache dict
+4465
+encountered new game state, calculating heuristic value
+updating cache dict
+4466
+encountered new game state, calculating heuristic value
+updating cache dict
+4467
+encountered new game state, calculating heuristic value
+updating cache dict
+4468
+encountered new game state, calculating heuristic value
+updating cache dict
+4469
+encountered new game state, calculating heuristic value
+updating cache dict
+4470
+encountered new game state, calculating heuristic value
+updating cache dict
+4471
+encountered new game state, calculating heuristic value
+updating cache dict
+4472
+encountered new game state, calculating heuristic value
+updating cache dict
+4473
+encountered new game state, calculating heuristic value
+updating cache dict
+4474
+encountered new game state, calculating heuristic value
+updating cache dict
+4475
+encountered new game state, calculating heuristic value
+updating cache dict
+4476
+encountered new game state, calculating heuristic value
+updating cache dict
+4477
+encountered new game state, calculating heuristic value
+updating cache dict
+4478
+encountered new game state, calculating heuristic value
+updating cache dict
+4479
+encountered new game state, calculating heuristic value
+updating cache dict
+4480
+encountered new game state, calculating heuristic value
+updating cache dict
+4481
+encountered new game state, calculating heuristic value
+updating cache dict
+4482
+encountered new game state, calculating heuristic value
+updating cache dict
+4483
+encountered new game state, calculating heuristic value
+updating cache dict
+4484
+encountered new game state, calculating heuristic value
+updating cache dict
+4485
+encountered new game state, calculating heuristic value
+updating cache dict
+4486
+encountered new game state, calculating heuristic value
+updating cache dict
+4487
+encountered new game state, calculating heuristic value
+updating cache dict
+4488
+encountered new game state, calculating heuristic value
+updating cache dict
+4489
+encountered new game state, calculating heuristic value
+updating cache dict
+4490
+encountered new game state, calculating heuristic value
+updating cache dict
+4491
+encountered new game state, calculating heuristic value
+updating cache dict
+4492
+encountered new game state, calculating heuristic value
+updating cache dict
+4493
+encountered new game state, calculating heuristic value
+updating cache dict
+4494
+encountered new game state, calculating heuristic value
+updating cache dict
+4495
+encountered new game state, calculating heuristic value
+updating cache dict
+4496
+encountered new game state, calculating heuristic value
+updating cache dict
+4497
+encountered new game state, calculating heuristic value
+updating cache dict
+4498
+encountered new game state, calculating heuristic value
+updating cache dict
+4499
+encountered new game state, calculating heuristic value
+updating cache dict
+4500
+encountered new game state, calculating heuristic value
+updating cache dict
+4501
+encountered new game state, calculating heuristic value
+updating cache dict
+4502
+encountered new game state, calculating heuristic value
+updating cache dict
+4503
+encountered new game state, calculating heuristic value
+updating cache dict
+4504
+encountered new game state, calculating heuristic value
+updating cache dict
+4505
+encountered new game state, calculating heuristic value
+updating cache dict
+4506
+encountered new game state, calculating heuristic value
+updating cache dict
+4507
+encountered new game state, calculating heuristic value
+updating cache dict
+4508
+encountered new game state, calculating heuristic value
+updating cache dict
+4509
+encountered new game state, calculating heuristic value
+updating cache dict
+4510
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 2, 0, 0, 0]
+[0, 0, 1, 1, 0, 0, 0]
+[0, 0, 2, 1, 0, 2, 1]
+Move # 10
+Move was 5 , made by 2
+----------
+
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 2, 0, 0, 0]
+[0, 0, 1, 1, 0, 1, 0]
+[0, 0, 2, 1, 0, 2, 1]
+Move # 11
+Move was 5 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+4511
+encountered new game state, calculating heuristic value
+updating cache dict
+4512
+encountered new game state, calculating heuristic value
+updating cache dict
+4513
+encountered new game state, calculating heuristic value
+updating cache dict
+4514
+encountered new game state, calculating heuristic value
+updating cache dict
+4515
+encountered new game state, calculating heuristic value
+updating cache dict
+4516
+encountered new game state, calculating heuristic value
+updating cache dict
+4517
+encountered new game state, calculating heuristic value
+updating cache dict
+4518
+encountered new game state, calculating heuristic value
+updating cache dict
+4519
+encountered new game state, calculating heuristic value
+updating cache dict
+4520
+encountered new game state, calculating heuristic value
+updating cache dict
+4521
+encountered new game state, calculating heuristic value
+updating cache dict
+4522
+encountered new game state, calculating heuristic value
+updating cache dict
+4523
+encountered new game state, calculating heuristic value
+updating cache dict
+4524
+encountered new game state, calculating heuristic value
+updating cache dict
+4525
+encountered new game state, calculating heuristic value
+updating cache dict
+4526
+encountered new game state, calculating heuristic value
+updating cache dict
+4527
+encountered new game state, calculating heuristic value
+updating cache dict
+4528
+encountered new game state, calculating heuristic value
+updating cache dict
+4529
+encountered new game state, calculating heuristic value
+updating cache dict
+4530
+encountered new game state, calculating heuristic value
+updating cache dict
+4531
+encountered new game state, calculating heuristic value
+updating cache dict
+4532
+encountered new game state, calculating heuristic value
+updating cache dict
+4533
+encountered new game state, calculating heuristic value
+updating cache dict
+4534
+encountered new game state, calculating heuristic value
+updating cache dict
+4535
+encountered new game state, calculating heuristic value
+updating cache dict
+4536
+encountered new game state, calculating heuristic value
+updating cache dict
+4537
+encountered new game state, calculating heuristic value
+updating cache dict
+4538
+encountered new game state, calculating heuristic value
+updating cache dict
+4539
+encountered new game state, calculating heuristic value
+updating cache dict
+4540
+encountered new game state, calculating heuristic value
+updating cache dict
+4541
+encountered new game state, calculating heuristic value
+updating cache dict
+4542
+encountered new game state, calculating heuristic value
+updating cache dict
+4543
+encountered new game state, calculating heuristic value
+updating cache dict
+4544
+encountered new game state, calculating heuristic value
+updating cache dict
+4545
+encountered new game state, calculating heuristic value
+updating cache dict
+4546
+encountered new game state, calculating heuristic value
+updating cache dict
+4547
+encountered new game state, calculating heuristic value
+updating cache dict
+4548
+encountered new game state, calculating heuristic value
+updating cache dict
+4549
+encountered new game state, calculating heuristic value
+updating cache dict
+4550
+encountered new game state, calculating heuristic value
+updating cache dict
+4551
+encountered new game state, calculating heuristic value
+updating cache dict
+4552
+encountered new game state, calculating heuristic value
+updating cache dict
+4553
+encountered new game state, calculating heuristic value
+updating cache dict
+4554
+encountered new game state, calculating heuristic value
+updating cache dict
+4555
+encountered new game state, calculating heuristic value
+updating cache dict
+4556
+encountered new game state, calculating heuristic value
+updating cache dict
+4557
+encountered new game state, calculating heuristic value
+updating cache dict
+4558
+encountered new game state, calculating heuristic value
+updating cache dict
+4559
+encountered new game state, calculating heuristic value
+updating cache dict
+4560
+encountered new game state, calculating heuristic value
+updating cache dict
+4561
+encountered new game state, calculating heuristic value
+updating cache dict
+4562
+encountered new game state, calculating heuristic value
+updating cache dict
+4563
+encountered new game state, calculating heuristic value
+updating cache dict
+4564
+encountered new game state, calculating heuristic value
+updating cache dict
+4565
+encountered new game state, calculating heuristic value
+updating cache dict
+4566
+encountered new game state, calculating heuristic value
+updating cache dict
+4567
+encountered new game state, calculating heuristic value
+updating cache dict
+4568
+encountered new game state, calculating heuristic value
+updating cache dict
+4569
+encountered new game state, calculating heuristic value
+updating cache dict
+4570
+encountered new game state, calculating heuristic value
+updating cache dict
+4571
+encountered new game state, calculating heuristic value
+updating cache dict
+4572
+encountered new game state, calculating heuristic value
+updating cache dict
+4573
+encountered new game state, calculating heuristic value
+updating cache dict
+4574
+encountered new game state, calculating heuristic value
+updating cache dict
+4575
+encountered new game state, calculating heuristic value
+updating cache dict
+4576
+encountered new game state, calculating heuristic value
+updating cache dict
+4577
+encountered new game state, calculating heuristic value
+updating cache dict
+4578
+encountered new game state, calculating heuristic value
+updating cache dict
+4579
+encountered new game state, calculating heuristic value
+updating cache dict
+4580
+encountered new game state, calculating heuristic value
+updating cache dict
+4581
+encountered new game state, calculating heuristic value
+updating cache dict
+4582
+encountered new game state, calculating heuristic value
+updating cache dict
+4583
+encountered new game state, calculating heuristic value
+updating cache dict
+4584
+encountered new game state, calculating heuristic value
+updating cache dict
+4585
+encountered new game state, calculating heuristic value
+updating cache dict
+4586
+encountered new game state, calculating heuristic value
+updating cache dict
+4587
+encountered new game state, calculating heuristic value
+updating cache dict
+4588
+encountered new game state, calculating heuristic value
+updating cache dict
+4589
+encountered new game state, calculating heuristic value
+updating cache dict
+4590
+encountered new game state, calculating heuristic value
+updating cache dict
+4591
+encountered new game state, calculating heuristic value
+updating cache dict
+4592
+encountered new game state, calculating heuristic value
+updating cache dict
+4593
+encountered new game state, calculating heuristic value
+updating cache dict
+4594
+encountered new game state, calculating heuristic value
+updating cache dict
+4595
+encountered new game state, calculating heuristic value
+updating cache dict
+4596
+encountered new game state, calculating heuristic value
+updating cache dict
+4597
+encountered new game state, calculating heuristic value
+updating cache dict
+4598
+encountered new game state, calculating heuristic value
+updating cache dict
+4599
+encountered new game state, calculating heuristic value
+updating cache dict
+4600
+encountered new game state, calculating heuristic value
+updating cache dict
+4601
+encountered new game state, calculating heuristic value
+updating cache dict
+4602
+encountered new game state, calculating heuristic value
+updating cache dict
+4603
+encountered new game state, calculating heuristic value
+updating cache dict
+4604
+encountered new game state, calculating heuristic value
+updating cache dict
+4605
+encountered new game state, calculating heuristic value
+updating cache dict
+4606
+encountered new game state, calculating heuristic value
+updating cache dict
+4607
+encountered new game state, calculating heuristic value
+updating cache dict
+4608
+encountered new game state, calculating heuristic value
+updating cache dict
+4609
+encountered new game state, calculating heuristic value
+updating cache dict
+4610
+encountered new game state, calculating heuristic value
+updating cache dict
+4611
+encountered new game state, calculating heuristic value
+updating cache dict
+4612
+encountered new game state, calculating heuristic value
+updating cache dict
+4613
+encountered new game state, calculating heuristic value
+updating cache dict
+4614
+encountered new game state, calculating heuristic value
+updating cache dict
+4615
+encountered new game state, calculating heuristic value
+updating cache dict
+4616
+encountered new game state, calculating heuristic value
+updating cache dict
+4617
+encountered new game state, calculating heuristic value
+updating cache dict
+4618
+encountered new game state, calculating heuristic value
+updating cache dict
+4619
+encountered new game state, calculating heuristic value
+updating cache dict
+4620
+encountered new game state, calculating heuristic value
+updating cache dict
+4621
+encountered new game state, calculating heuristic value
+updating cache dict
+4622
+encountered new game state, calculating heuristic value
+updating cache dict
+4623
+encountered new game state, calculating heuristic value
+updating cache dict
+4624
+encountered new game state, calculating heuristic value
+updating cache dict
+4625
+encountered new game state, calculating heuristic value
+updating cache dict
+4626
+updating cache dict
+4627
+encountered new game state, calculating heuristic value
+updating cache dict
+4628
+encountered new game state, calculating heuristic value
+updating cache dict
+4629
+encountered new game state, calculating heuristic value
+updating cache dict
+4630
+encountered new game state, calculating heuristic value
+updating cache dict
+4631
+encountered new game state, calculating heuristic value
+updating cache dict
+4632
+encountered new game state, calculating heuristic value
+updating cache dict
+4633
+encountered new game state, calculating heuristic value
+updating cache dict
+4634
+encountered new game state, calculating heuristic value
+updating cache dict
+4635
+encountered new game state, calculating heuristic value
+updating cache dict
+4636
+encountered new game state, calculating heuristic value
+updating cache dict
+4637
+encountered new game state, calculating heuristic value
+updating cache dict
+4638
+encountered new game state, calculating heuristic value
+updating cache dict
+4639
+encountered new game state, calculating heuristic value
+updating cache dict
+4640
+encountered new game state, calculating heuristic value
+updating cache dict
+4641
+encountered new game state, calculating heuristic value
+updating cache dict
+4642
+encountered new game state, calculating heuristic value
+updating cache dict
+4643
+encountered new game state, calculating heuristic value
+updating cache dict
+4644
+encountered new game state, calculating heuristic value
+updating cache dict
+4645
+encountered new game state, calculating heuristic value
+updating cache dict
+4646
+encountered new game state, calculating heuristic value
+updating cache dict
+4647
+encountered new game state, calculating heuristic value
+updating cache dict
+4648
+encountered new game state, calculating heuristic value
+updating cache dict
+4649
+encountered new game state, calculating heuristic value
+updating cache dict
+4650
+encountered new game state, calculating heuristic value
+updating cache dict
+4651
+encountered new game state, calculating heuristic value
+updating cache dict
+4652
+encountered new game state, calculating heuristic value
+updating cache dict
+4653
+encountered new game state, calculating heuristic value
+updating cache dict
+4654
+encountered new game state, calculating heuristic value
+updating cache dict
+4655
+encountered new game state, calculating heuristic value
+updating cache dict
+4656
+encountered new game state, calculating heuristic value
+updating cache dict
+4657
+encountered new game state, calculating heuristic value
+updating cache dict
+4658
+encountered new game state, calculating heuristic value
+updating cache dict
+4659
+encountered new game state, calculating heuristic value
+updating cache dict
+4660
+encountered new game state, calculating heuristic value
+updating cache dict
+4661
+encountered new game state, calculating heuristic value
+updating cache dict
+4662
+encountered new game state, calculating heuristic value
+updating cache dict
+4663
+encountered new game state, calculating heuristic value
+updating cache dict
+4664
+encountered new game state, calculating heuristic value
+updating cache dict
+4665
+encountered new game state, calculating heuristic value
+updating cache dict
+4666
+encountered new game state, calculating heuristic value
+updating cache dict
+4667
+encountered new game state, calculating heuristic value
+updating cache dict
+4668
+encountered new game state, calculating heuristic value
+updating cache dict
+4669
+encountered new game state, calculating heuristic value
+updating cache dict
+4670
+encountered new game state, calculating heuristic value
+updating cache dict
+4671
+encountered new game state, calculating heuristic value
+updating cache dict
+4672
+encountered new game state, calculating heuristic value
+updating cache dict
+4673
+encountered new game state, calculating heuristic value
+updating cache dict
+4674
+encountered new game state, calculating heuristic value
+updating cache dict
+4675
+encountered new game state, calculating heuristic value
+updating cache dict
+4676
+encountered new game state, calculating heuristic value
+updating cache dict
+4677
+encountered new game state, calculating heuristic value
+updating cache dict
+4678
+encountered new game state, calculating heuristic value
+updating cache dict
+4679
+encountered new game state, calculating heuristic value
+updating cache dict
+4680
+encountered new game state, calculating heuristic value
+updating cache dict
+4681
+encountered new game state, calculating heuristic value
+updating cache dict
+4682
+encountered new game state, calculating heuristic value
+updating cache dict
+4683
+encountered new game state, calculating heuristic value
+updating cache dict
+4684
+encountered new game state, calculating heuristic value
+updating cache dict
+4685
+encountered new game state, calculating heuristic value
+updating cache dict
+4686
+encountered new game state, calculating heuristic value
+updating cache dict
+4687
+encountered new game state, calculating heuristic value
+updating cache dict
+4688
+encountered new game state, calculating heuristic value
+updating cache dict
+4689
+encountered new game state, calculating heuristic value
+updating cache dict
+4690
+encountered new game state, calculating heuristic value
+updating cache dict
+4691
+encountered new game state, calculating heuristic value
+updating cache dict
+4692
+encountered new game state, calculating heuristic value
+updating cache dict
+4693
+encountered new game state, calculating heuristic value
+updating cache dict
+4694
+encountered new game state, calculating heuristic value
+updating cache dict
+4695
+encountered new game state, calculating heuristic value
+updating cache dict
+4696
+encountered new game state, calculating heuristic value
+updating cache dict
+4697
+encountered new game state, calculating heuristic value
+updating cache dict
+4698
+encountered new game state, calculating heuristic value
+updating cache dict
+4699
+encountered new game state, calculating heuristic value
+updating cache dict
+4700
+encountered new game state, calculating heuristic value
+updating cache dict
+4701
+encountered new game state, calculating heuristic value
+updating cache dict
+4702
+encountered new game state, calculating heuristic value
+updating cache dict
+4703
+encountered new game state, calculating heuristic value
+updating cache dict
+4704
+encountered new game state, calculating heuristic value
+updating cache dict
+4705
+encountered new game state, calculating heuristic value
+updating cache dict
+4706
+encountered new game state, calculating heuristic value
+updating cache dict
+4707
+encountered new game state, calculating heuristic value
+updating cache dict
+4708
+encountered new game state, calculating heuristic value
+updating cache dict
+4709
+encountered new game state, calculating heuristic value
+updating cache dict
+4710
+encountered new game state, calculating heuristic value
+updating cache dict
+4711
+encountered new game state, calculating heuristic value
+updating cache dict
+4712
+encountered new game state, calculating heuristic value
+updating cache dict
+4713
+encountered new game state, calculating heuristic value
+updating cache dict
+4714
+encountered new game state, calculating heuristic value
+updating cache dict
+4715
+encountered new game state, calculating heuristic value
+updating cache dict
+4716
+encountered new game state, calculating heuristic value
+updating cache dict
+4717
+encountered new game state, calculating heuristic value
+updating cache dict
+4718
+encountered new game state, calculating heuristic value
+updating cache dict
+4719
+encountered new game state, calculating heuristic value
+updating cache dict
+4720
+encountered new game state, calculating heuristic value
+updating cache dict
+4721
+encountered new game state, calculating heuristic value
+updating cache dict
+4722
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 2, 0, 2, 0]
+[0, 0, 1, 1, 0, 1, 0]
+[0, 0, 2, 1, 0, 2, 1]
+Move # 12
+Move was 5 , made by 2
+----------
+
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 2, 0, 2, 0]
+[0, 0, 1, 1, 0, 1, 0]
+[0, 0, 2, 1, 1, 2, 1]
+Move # 13
+Move was 4 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+4723
+encountered new game state, calculating heuristic value
+updating cache dict
+4724
+encountered new game state, calculating heuristic value
+updating cache dict
+4725
+encountered new game state, calculating heuristic value
+updating cache dict
+4726
+encountered new game state, calculating heuristic value
+updating cache dict
+4727
+encountered new game state, calculating heuristic value
+updating cache dict
+4728
+encountered new game state, calculating heuristic value
+updating cache dict
+4729
+encountered new game state, calculating heuristic value
+updating cache dict
+4730
+encountered new game state, calculating heuristic value
+updating cache dict
+4731
+encountered new game state, calculating heuristic value
+updating cache dict
+4732
+encountered new game state, calculating heuristic value
+updating cache dict
+4733
+encountered new game state, calculating heuristic value
+updating cache dict
+4734
+encountered new game state, calculating heuristic value
+updating cache dict
+4735
+encountered new game state, calculating heuristic value
+updating cache dict
+4736
+encountered new game state, calculating heuristic value
+updating cache dict
+4737
+encountered new game state, calculating heuristic value
+updating cache dict
+4738
+encountered new game state, calculating heuristic value
+updating cache dict
+4739
+encountered new game state, calculating heuristic value
+updating cache dict
+4740
+encountered new game state, calculating heuristic value
+updating cache dict
+4741
+encountered new game state, calculating heuristic value
+updating cache dict
+4742
+encountered new game state, calculating heuristic value
+updating cache dict
+4743
+encountered new game state, calculating heuristic value
+updating cache dict
+4744
+encountered new game state, calculating heuristic value
+updating cache dict
+4745
+encountered new game state, calculating heuristic value
+updating cache dict
+4746
+encountered new game state, calculating heuristic value
+updating cache dict
+4747
+encountered new game state, calculating heuristic value
+updating cache dict
+4748
+encountered new game state, calculating heuristic value
+updating cache dict
+4749
+encountered new game state, calculating heuristic value
+updating cache dict
+4750
+encountered new game state, calculating heuristic value
+updating cache dict
+4751
+encountered new game state, calculating heuristic value
+updating cache dict
+4752
+encountered new game state, calculating heuristic value
+updating cache dict
+4753
+encountered new game state, calculating heuristic value
+updating cache dict
+4754
+encountered new game state, calculating heuristic value
+updating cache dict
+4755
+encountered new game state, calculating heuristic value
+updating cache dict
+4756
+encountered new game state, calculating heuristic value
+updating cache dict
+4757
+encountered new game state, calculating heuristic value
+updating cache dict
+4758
+encountered new game state, calculating heuristic value
+updating cache dict
+4759
+encountered new game state, calculating heuristic value
+updating cache dict
+4760
+encountered new game state, calculating heuristic value
+updating cache dict
+4761
+encountered new game state, calculating heuristic value
+updating cache dict
+4762
+encountered new game state, calculating heuristic value
+updating cache dict
+4763
+encountered new game state, calculating heuristic value
+updating cache dict
+4764
+encountered new game state, calculating heuristic value
+updating cache dict
+4765
+encountered new game state, calculating heuristic value
+updating cache dict
+4766
+encountered new game state, calculating heuristic value
+updating cache dict
+4767
+encountered new game state, calculating heuristic value
+updating cache dict
+4768
+encountered new game state, calculating heuristic value
+updating cache dict
+4769
+encountered new game state, calculating heuristic value
+updating cache dict
+4770
+encountered new game state, calculating heuristic value
+updating cache dict
+4771
+encountered new game state, calculating heuristic value
+updating cache dict
+4772
+encountered new game state, calculating heuristic value
+updating cache dict
+4773
+encountered new game state, calculating heuristic value
+updating cache dict
+4774
+encountered new game state, calculating heuristic value
+updating cache dict
+4775
+encountered new game state, calculating heuristic value
+updating cache dict
+4776
+encountered new game state, calculating heuristic value
+updating cache dict
+4777
+encountered new game state, calculating heuristic value
+updating cache dict
+4778
+encountered new game state, calculating heuristic value
+updating cache dict
+4779
+encountered new game state, calculating heuristic value
+updating cache dict
+4780
+encountered new game state, calculating heuristic value
+updating cache dict
+4781
+encountered new game state, calculating heuristic value
+updating cache dict
+4782
+encountered new game state, calculating heuristic value
+updating cache dict
+4783
+encountered new game state, calculating heuristic value
+updating cache dict
+4784
+encountered new game state, calculating heuristic value
+updating cache dict
+4785
+encountered new game state, calculating heuristic value
+updating cache dict
+4786
+encountered new game state, calculating heuristic value
+updating cache dict
+4787
+encountered new game state, calculating heuristic value
+updating cache dict
+4788
+encountered new game state, calculating heuristic value
+updating cache dict
+4789
+encountered new game state, calculating heuristic value
+updating cache dict
+4790
+encountered new game state, calculating heuristic value
+updating cache dict
+4791
+encountered new game state, calculating heuristic value
+updating cache dict
+4792
+encountered new game state, calculating heuristic value
+updating cache dict
+4793
+encountered new game state, calculating heuristic value
+updating cache dict
+4794
+encountered new game state, calculating heuristic value
+updating cache dict
+4795
+encountered new game state, calculating heuristic value
+updating cache dict
+4796
+encountered new game state, calculating heuristic value
+updating cache dict
+4797
+encountered new game state, calculating heuristic value
+updating cache dict
+4798
+encountered new game state, calculating heuristic value
+updating cache dict
+4799
+encountered new game state, calculating heuristic value
+updating cache dict
+4800
+encountered new game state, calculating heuristic value
+updating cache dict
+4801
+encountered new game state, calculating heuristic value
+updating cache dict
+4802
+encountered new game state, calculating heuristic value
+updating cache dict
+4803
+updating cache dict
+4804
+encountered new game state, calculating heuristic value
+updating cache dict
+4805
+encountered new game state, calculating heuristic value
+updating cache dict
+4806
+encountered new game state, calculating heuristic value
+updating cache dict
+4807
+encountered new game state, calculating heuristic value
+updating cache dict
+4808
+encountered new game state, calculating heuristic value
+updating cache dict
+4809
+updating cache dict
+4810
+encountered new game state, calculating heuristic value
+updating cache dict
+4811
+encountered new game state, calculating heuristic value
+updating cache dict
+4812
+encountered new game state, calculating heuristic value
+updating cache dict
+4813
+encountered new game state, calculating heuristic value
+updating cache dict
+4814
+encountered new game state, calculating heuristic value
+updating cache dict
+4815
+encountered new game state, calculating heuristic value
+updating cache dict
+4816
+updating cache dict
+4817
+encountered new game state, calculating heuristic value
+updating cache dict
+4818
+encountered new game state, calculating heuristic value
+updating cache dict
+4819
+encountered new game state, calculating heuristic value
+updating cache dict
+4820
+updating cache dict
+4821
+encountered new game state, calculating heuristic value
+updating cache dict
+4822
+encountered new game state, calculating heuristic value
+updating cache dict
+4823
+encountered new game state, calculating heuristic value
+updating cache dict
+4824
+encountered new game state, calculating heuristic value
+updating cache dict
+4825
+updating cache dict
+4826
+encountered new game state, calculating heuristic value
+updating cache dict
+4827
+encountered new game state, calculating heuristic value
+updating cache dict
+4828
+encountered new game state, calculating heuristic value
+updating cache dict
+4829
+encountered new game state, calculating heuristic value
+updating cache dict
+4830
+updating cache dict
+4831
+encountered new game state, calculating heuristic value
+updating cache dict
+4832
+encountered new game state, calculating heuristic value
+updating cache dict
+4833
+encountered new game state, calculating heuristic value
+updating cache dict
+4834
+encountered new game state, calculating heuristic value
+updating cache dict
+4835
+encountered new game state, calculating heuristic value
+updating cache dict
+4836
+encountered new game state, calculating heuristic value
+updating cache dict
+4837
+encountered new game state, calculating heuristic value
+updating cache dict
+4838
+encountered new game state, calculating heuristic value
+updating cache dict
+4839
+encountered new game state, calculating heuristic value
+updating cache dict
+4840
+encountered new game state, calculating heuristic value
+updating cache dict
+4841
+encountered new game state, calculating heuristic value
+updating cache dict
+4842
+encountered new game state, calculating heuristic value
+updating cache dict
+4843
+encountered new game state, calculating heuristic value
+updating cache dict
+4844
+encountered new game state, calculating heuristic value
+updating cache dict
+4845
+encountered new game state, calculating heuristic value
+updating cache dict
+4846
+encountered new game state, calculating heuristic value
+updating cache dict
+4847
+encountered new game state, calculating heuristic value
+updating cache dict
+4848
+encountered new game state, calculating heuristic value
+updating cache dict
+4849
+encountered new game state, calculating heuristic value
+updating cache dict
+4850
+encountered new game state, calculating heuristic value
+updating cache dict
+4851
+encountered new game state, calculating heuristic value
+updating cache dict
+4852
+updating cache dict
+4853
+encountered new game state, calculating heuristic value
+updating cache dict
+4854
+encountered new game state, calculating heuristic value
+updating cache dict
+4855
+encountered new game state, calculating heuristic value
+updating cache dict
+4856
+updating cache dict
+4857
+encountered new game state, calculating heuristic value
+updating cache dict
+4858
+encountered new game state, calculating heuristic value
+updating cache dict
+4859
+encountered new game state, calculating heuristic value
+updating cache dict
+4860
+updating cache dict
+4861
+encountered new game state, calculating heuristic value
+updating cache dict
+4862
+encountered new game state, calculating heuristic value
+updating cache dict
+4863
+updating cache dict
+4864
+encountered new game state, calculating heuristic value
+updating cache dict
+4865
+encountered new game state, calculating heuristic value
+updating cache dict
+4866
+updating cache dict
+4867
+encountered new game state, calculating heuristic value
+updating cache dict
+4868
+encountered new game state, calculating heuristic value
+updating cache dict
+4869
+updating cache dict
+4870
+encountered new game state, calculating heuristic value
+updating cache dict
+4871
+encountered new game state, calculating heuristic value
+updating cache dict
+4872
+encountered new game state, calculating heuristic value
+updating cache dict
+4873
+encountered new game state, calculating heuristic value
+updating cache dict
+4874
+encountered new game state, calculating heuristic value
+updating cache dict
+4875
+encountered new game state, calculating heuristic value
+updating cache dict
+4876
+encountered new game state, calculating heuristic value
+updating cache dict
+4877
+encountered new game state, calculating heuristic value
+updating cache dict
+4878
+encountered new game state, calculating heuristic value
+updating cache dict
+4879
+encountered new game state, calculating heuristic value
+updating cache dict
+4880
+encountered new game state, calculating heuristic value
+updating cache dict
+4881
+encountered new game state, calculating heuristic value
+updating cache dict
+4882
+encountered new game state, calculating heuristic value
+updating cache dict
+4883
+encountered new game state, calculating heuristic value
+updating cache dict
+4884
+encountered new game state, calculating heuristic value
+updating cache dict
+4885
+encountered new game state, calculating heuristic value
+updating cache dict
+4886
+encountered new game state, calculating heuristic value
+updating cache dict
+4887
+encountered new game state, calculating heuristic value
+updating cache dict
+4888
+encountered new game state, calculating heuristic value
+updating cache dict
+4889
+encountered new game state, calculating heuristic value
+updating cache dict
+4890
+encountered new game state, calculating heuristic value
+updating cache dict
+4891
+encountered new game state, calculating heuristic value
+updating cache dict
+4892
+encountered new game state, calculating heuristic value
+updating cache dict
+4893
+encountered new game state, calculating heuristic value
+updating cache dict
+4894
+encountered new game state, calculating heuristic value
+updating cache dict
+4895
+encountered new game state, calculating heuristic value
+updating cache dict
+4896
+encountered new game state, calculating heuristic value
+updating cache dict
+4897
+encountered new game state, calculating heuristic value
+updating cache dict
+4898
+encountered new game state, calculating heuristic value
+updating cache dict
+4899
+encountered new game state, calculating heuristic value
+updating cache dict
+4900
+encountered new game state, calculating heuristic value
+updating cache dict
+4901
+encountered new game state, calculating heuristic value
+updating cache dict
+4902
+encountered new game state, calculating heuristic value
+updating cache dict
+4903
+encountered new game state, calculating heuristic value
+updating cache dict
+4904
+encountered new game state, calculating heuristic value
+updating cache dict
+4905
+encountered new game state, calculating heuristic value
+updating cache dict
+4906
+encountered new game state, calculating heuristic value
+updating cache dict
+4907
+encountered new game state, calculating heuristic value
+updating cache dict
+4908
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 2, 0, 2, 0]
+[0, 0, 1, 1, 0, 1, 0]
+[2, 0, 2, 1, 1, 2, 1]
+Move # 14
+Move was 0 , made by 2
+----------
+
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[0, 0, 2, 2, 0, 2, 0]
+[1, 0, 1, 1, 0, 1, 0]
+[2, 0, 2, 1, 1, 2, 1]
+Move # 15
+Move was 0 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+4909
+encountered new game state, calculating heuristic value
+updating cache dict
+4910
+encountered new game state, calculating heuristic value
+updating cache dict
+4911
+encountered new game state, calculating heuristic value
+updating cache dict
+4912
+encountered new game state, calculating heuristic value
+updating cache dict
+4913
+encountered new game state, calculating heuristic value
+updating cache dict
+4914
+encountered new game state, calculating heuristic value
+updating cache dict
+4915
+encountered new game state, calculating heuristic value
+updating cache dict
+4916
+encountered new game state, calculating heuristic value
+updating cache dict
+4917
+encountered new game state, calculating heuristic value
+updating cache dict
+4918
+encountered new game state, calculating heuristic value
+updating cache dict
+4919
+encountered new game state, calculating heuristic value
+updating cache dict
+4920
+encountered new game state, calculating heuristic value
+updating cache dict
+4921
+encountered new game state, calculating heuristic value
+updating cache dict
+4922
+encountered new game state, calculating heuristic value
+updating cache dict
+4923
+encountered new game state, calculating heuristic value
+updating cache dict
+4924
+encountered new game state, calculating heuristic value
+updating cache dict
+4925
+encountered new game state, calculating heuristic value
+updating cache dict
+4926
+encountered new game state, calculating heuristic value
+updating cache dict
+4927
+encountered new game state, calculating heuristic value
+updating cache dict
+4928
+encountered new game state, calculating heuristic value
+updating cache dict
+4929
+encountered new game state, calculating heuristic value
+updating cache dict
+4930
+encountered new game state, calculating heuristic value
+updating cache dict
+4931
+encountered new game state, calculating heuristic value
+updating cache dict
+4932
+encountered new game state, calculating heuristic value
+updating cache dict
+4933
+encountered new game state, calculating heuristic value
+updating cache dict
+4934
+encountered new game state, calculating heuristic value
+updating cache dict
+4935
+encountered new game state, calculating heuristic value
+updating cache dict
+4936
+encountered new game state, calculating heuristic value
+updating cache dict
+4937
+encountered new game state, calculating heuristic value
+updating cache dict
+4938
+encountered new game state, calculating heuristic value
+updating cache dict
+4939
+encountered new game state, calculating heuristic value
+updating cache dict
+4940
+encountered new game state, calculating heuristic value
+updating cache dict
+4941
+encountered new game state, calculating heuristic value
+updating cache dict
+4942
+encountered new game state, calculating heuristic value
+updating cache dict
+4943
+encountered new game state, calculating heuristic value
+updating cache dict
+4944
+encountered new game state, calculating heuristic value
+updating cache dict
+4945
+encountered new game state, calculating heuristic value
+updating cache dict
+4946
+encountered new game state, calculating heuristic value
+updating cache dict
+4947
+encountered new game state, calculating heuristic value
+updating cache dict
+4948
+encountered new game state, calculating heuristic value
+updating cache dict
+4949
+encountered new game state, calculating heuristic value
+updating cache dict
+4950
+encountered new game state, calculating heuristic value
+updating cache dict
+4951
+encountered new game state, calculating heuristic value
+updating cache dict
+4952
+encountered new game state, calculating heuristic value
+updating cache dict
+4953
+encountered new game state, calculating heuristic value
+updating cache dict
+4954
+encountered new game state, calculating heuristic value
+updating cache dict
+4955
+encountered new game state, calculating heuristic value
+updating cache dict
+4956
+encountered new game state, calculating heuristic value
+updating cache dict
+4957
+encountered new game state, calculating heuristic value
+updating cache dict
+4958
+encountered new game state, calculating heuristic value
+updating cache dict
+4959
+encountered new game state, calculating heuristic value
+updating cache dict
+4960
+encountered new game state, calculating heuristic value
+updating cache dict
+4961
+encountered new game state, calculating heuristic value
+updating cache dict
+4962
+encountered new game state, calculating heuristic value
+updating cache dict
+4963
+encountered new game state, calculating heuristic value
+updating cache dict
+4964
+encountered new game state, calculating heuristic value
+updating cache dict
+4965
+encountered new game state, calculating heuristic value
+updating cache dict
+4966
+encountered new game state, calculating heuristic value
+updating cache dict
+4967
+encountered new game state, calculating heuristic value
+updating cache dict
+4968
+encountered new game state, calculating heuristic value
+updating cache dict
+4969
+encountered new game state, calculating heuristic value
+updating cache dict
+4970
+encountered new game state, calculating heuristic value
+updating cache dict
+4971
+encountered new game state, calculating heuristic value
+updating cache dict
+4972
+encountered new game state, calculating heuristic value
+updating cache dict
+4973
+encountered new game state, calculating heuristic value
+updating cache dict
+4974
+encountered new game state, calculating heuristic value
+updating cache dict
+4975
+encountered new game state, calculating heuristic value
+updating cache dict
+4976
+encountered new game state, calculating heuristic value
+updating cache dict
+4977
+encountered new game state, calculating heuristic value
+updating cache dict
+4978
+encountered new game state, calculating heuristic value
+updating cache dict
+4979
+encountered new game state, calculating heuristic value
+updating cache dict
+4980
+encountered new game state, calculating heuristic value
+updating cache dict
+4981
+encountered new game state, calculating heuristic value
+updating cache dict
+4982
+updating cache dict
+4983
+encountered new game state, calculating heuristic value
+updating cache dict
+4984
+encountered new game state, calculating heuristic value
+updating cache dict
+4985
+encountered new game state, calculating heuristic value
+updating cache dict
+4986
+encountered new game state, calculating heuristic value
+updating cache dict
+4987
+encountered new game state, calculating heuristic value
+updating cache dict
+4988
+updating cache dict
+4989
+encountered new game state, calculating heuristic value
+updating cache dict
+4990
+encountered new game state, calculating heuristic value
+updating cache dict
+4991
+encountered new game state, calculating heuristic value
+updating cache dict
+4992
+encountered new game state, calculating heuristic value
+updating cache dict
+4993
+encountered new game state, calculating heuristic value
+updating cache dict
+4994
+encountered new game state, calculating heuristic value
+updating cache dict
+4995
+updating cache dict
+4996
+encountered new game state, calculating heuristic value
+updating cache dict
+4997
+encountered new game state, calculating heuristic value
+updating cache dict
+4998
+encountered new game state, calculating heuristic value
+updating cache dict
+4999
+updating cache dict
+5000
+encountered new game state, calculating heuristic value
+updating cache dict
+5001
+encountered new game state, calculating heuristic value
+updating cache dict
+5002
+encountered new game state, calculating heuristic value
+updating cache dict
+5003
+encountered new game state, calculating heuristic value
+updating cache dict
+5004
+updating cache dict
+5005
+encountered new game state, calculating heuristic value
+updating cache dict
+5006
+encountered new game state, calculating heuristic value
+updating cache dict
+5007
+encountered new game state, calculating heuristic value
+updating cache dict
+5008
+encountered new game state, calculating heuristic value
+updating cache dict
+5009
+updating cache dict
+5010
+encountered new game state, calculating heuristic value
+updating cache dict
+5011
+encountered new game state, calculating heuristic value
+updating cache dict
+5012
+encountered new game state, calculating heuristic value
+updating cache dict
+5013
+encountered new game state, calculating heuristic value
+updating cache dict
+5014
+encountered new game state, calculating heuristic value
+updating cache dict
+5015
+encountered new game state, calculating heuristic value
+updating cache dict
+5016
+encountered new game state, calculating heuristic value
+updating cache dict
+5017
+encountered new game state, calculating heuristic value
+updating cache dict
+5018
+encountered new game state, calculating heuristic value
+updating cache dict
+5019
+encountered new game state, calculating heuristic value
+updating cache dict
+5020
+encountered new game state, calculating heuristic value
+updating cache dict
+5021
+encountered new game state, calculating heuristic value
+updating cache dict
+5022
+encountered new game state, calculating heuristic value
+updating cache dict
+5023
+encountered new game state, calculating heuristic value
+updating cache dict
+5024
+encountered new game state, calculating heuristic value
+updating cache dict
+5025
+encountered new game state, calculating heuristic value
+updating cache dict
+5026
+encountered new game state, calculating heuristic value
+updating cache dict
+5027
+encountered new game state, calculating heuristic value
+updating cache dict
+5028
+encountered new game state, calculating heuristic value
+updating cache dict
+5029
+encountered new game state, calculating heuristic value
+updating cache dict
+5030
+encountered new game state, calculating heuristic value
+updating cache dict
+5031
+updating cache dict
+5032
+encountered new game state, calculating heuristic value
+updating cache dict
+5033
+encountered new game state, calculating heuristic value
+updating cache dict
+5034
+encountered new game state, calculating heuristic value
+updating cache dict
+5035
+updating cache dict
+5036
+encountered new game state, calculating heuristic value
+updating cache dict
+5037
+encountered new game state, calculating heuristic value
+updating cache dict
+5038
+encountered new game state, calculating heuristic value
+updating cache dict
+5039
+updating cache dict
+5040
+encountered new game state, calculating heuristic value
+updating cache dict
+5041
+encountered new game state, calculating heuristic value
+updating cache dict
+5042
+updating cache dict
+5043
+encountered new game state, calculating heuristic value
+updating cache dict
+5044
+encountered new game state, calculating heuristic value
+updating cache dict
+5045
+updating cache dict
+5046
+encountered new game state, calculating heuristic value
+updating cache dict
+5047
+encountered new game state, calculating heuristic value
+updating cache dict
+5048
+updating cache dict
+5049
+encountered new game state, calculating heuristic value
+updating cache dict
+5050
+encountered new game state, calculating heuristic value
+updating cache dict
+5051
+encountered new game state, calculating heuristic value
+updating cache dict
+5052
+encountered new game state, calculating heuristic value
+updating cache dict
+5053
+encountered new game state, calculating heuristic value
+updating cache dict
+5054
+encountered new game state, calculating heuristic value
+updating cache dict
+5055
+encountered new game state, calculating heuristic value
+updating cache dict
+5056
+encountered new game state, calculating heuristic value
+updating cache dict
+5057
+encountered new game state, calculating heuristic value
+updating cache dict
+5058
+encountered new game state, calculating heuristic value
+updating cache dict
+5059
+encountered new game state, calculating heuristic value
+updating cache dict
+5060
+encountered new game state, calculating heuristic value
+updating cache dict
+5061
+encountered new game state, calculating heuristic value
+updating cache dict
+5062
+encountered new game state, calculating heuristic value
+updating cache dict
+5063
+encountered new game state, calculating heuristic value
+updating cache dict
+5064
+encountered new game state, calculating heuristic value
+updating cache dict
+5065
+encountered new game state, calculating heuristic value
+updating cache dict
+5066
+encountered new game state, calculating heuristic value
+updating cache dict
+5067
+encountered new game state, calculating heuristic value
+updating cache dict
+5068
+encountered new game state, calculating heuristic value
+updating cache dict
+5069
+encountered new game state, calculating heuristic value
+updating cache dict
+5070
+encountered new game state, calculating heuristic value
+updating cache dict
+5071
+encountered new game state, calculating heuristic value
+updating cache dict
+5072
+encountered new game state, calculating heuristic value
+updating cache dict
+5073
+encountered new game state, calculating heuristic value
+updating cache dict
+5074
+encountered new game state, calculating heuristic value
+updating cache dict
+5075
+encountered new game state, calculating heuristic value
+updating cache dict
+5076
+encountered new game state, calculating heuristic value
+updating cache dict
+5077
+encountered new game state, calculating heuristic value
+updating cache dict
+5078
+encountered new game state, calculating heuristic value
+updating cache dict
+5079
+encountered new game state, calculating heuristic value
+updating cache dict
+5080
+encountered new game state, calculating heuristic value
+updating cache dict
+5081
+encountered new game state, calculating heuristic value
+updating cache dict
+5082
+encountered new game state, calculating heuristic value
+updating cache dict
+5083
+encountered new game state, calculating heuristic value
+updating cache dict
+5084
+encountered new game state, calculating heuristic value
+updating cache dict
+5085
+encountered new game state, calculating heuristic value
+updating cache dict
+5086
+encountered new game state, calculating heuristic value
+updating cache dict
+5087
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0]
+[2, 0, 2, 2, 0, 2, 0]
+[1, 0, 1, 1, 0, 1, 0]
+[2, 0, 2, 1, 1, 2, 1]
+Move # 16
+Move was 0 , made by 2
+----------
+
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 2, 0, 0, 0]
+[1, 0, 0, 1, 0, 0, 0]
+[2, 0, 2, 2, 0, 2, 0]
+[1, 0, 1, 1, 0, 1, 0]
+[2, 0, 2, 1, 1, 2, 1]
+Move # 17
+Move was 0 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+5088
+encountered new game state, calculating heuristic value
+updating cache dict
+5089
+encountered new game state, calculating heuristic value
+updating cache dict
+5090
+encountered new game state, calculating heuristic value
+updating cache dict
+5091
+encountered new game state, calculating heuristic value
+updating cache dict
+5092
+encountered new game state, calculating heuristic value
+updating cache dict
+5093
+encountered new game state, calculating heuristic value
+updating cache dict
+5094
+encountered new game state, calculating heuristic value
+updating cache dict
+5095
+encountered new game state, calculating heuristic value
+updating cache dict
+5096
+encountered new game state, calculating heuristic value
+updating cache dict
+5097
+encountered new game state, calculating heuristic value
+updating cache dict
+5098
+encountered new game state, calculating heuristic value
+updating cache dict
+5099
+encountered new game state, calculating heuristic value
+updating cache dict
+5100
+encountered new game state, calculating heuristic value
+updating cache dict
+5101
+encountered new game state, calculating heuristic value
+updating cache dict
+5102
+encountered new game state, calculating heuristic value
+updating cache dict
+5103
+encountered new game state, calculating heuristic value
+updating cache dict
+5104
+encountered new game state, calculating heuristic value
+updating cache dict
+5105
+encountered new game state, calculating heuristic value
+updating cache dict
+5106
+encountered new game state, calculating heuristic value
+updating cache dict
+5107
+encountered new game state, calculating heuristic value
+updating cache dict
+5108
+encountered new game state, calculating heuristic value
+updating cache dict
+5109
+encountered new game state, calculating heuristic value
+updating cache dict
+5110
+encountered new game state, calculating heuristic value
+updating cache dict
+5111
+encountered new game state, calculating heuristic value
+updating cache dict
+5112
+encountered new game state, calculating heuristic value
+updating cache dict
+5113
+encountered new game state, calculating heuristic value
+updating cache dict
+5114
+encountered new game state, calculating heuristic value
+updating cache dict
+5115
+encountered new game state, calculating heuristic value
+updating cache dict
+5116
+encountered new game state, calculating heuristic value
+updating cache dict
+5117
+encountered new game state, calculating heuristic value
+updating cache dict
+5118
+encountered new game state, calculating heuristic value
+updating cache dict
+5119
+encountered new game state, calculating heuristic value
+updating cache dict
+5120
+encountered new game state, calculating heuristic value
+updating cache dict
+5121
+encountered new game state, calculating heuristic value
+updating cache dict
+5122
+encountered new game state, calculating heuristic value
+updating cache dict
+5123
+encountered new game state, calculating heuristic value
+updating cache dict
+5124
+encountered new game state, calculating heuristic value
+updating cache dict
+5125
+encountered new game state, calculating heuristic value
+updating cache dict
+5126
+encountered new game state, calculating heuristic value
+updating cache dict
+5127
+encountered new game state, calculating heuristic value
+updating cache dict
+5128
+encountered new game state, calculating heuristic value
+updating cache dict
+5129
+encountered new game state, calculating heuristic value
+updating cache dict
+5130
+encountered new game state, calculating heuristic value
+updating cache dict
+5131
+encountered new game state, calculating heuristic value
+updating cache dict
+5132
+encountered new game state, calculating heuristic value
+updating cache dict
+5133
+encountered new game state, calculating heuristic value
+updating cache dict
+5134
+encountered new game state, calculating heuristic value
+updating cache dict
+5135
+encountered new game state, calculating heuristic value
+updating cache dict
+5136
+encountered new game state, calculating heuristic value
+updating cache dict
+5137
+encountered new game state, calculating heuristic value
+updating cache dict
+5138
+encountered new game state, calculating heuristic value
+updating cache dict
+5139
+encountered new game state, calculating heuristic value
+updating cache dict
+5140
+encountered new game state, calculating heuristic value
+updating cache dict
+5141
+encountered new game state, calculating heuristic value
+updating cache dict
+5142
+encountered new game state, calculating heuristic value
+updating cache dict
+5143
+encountered new game state, calculating heuristic value
+updating cache dict
+5144
+encountered new game state, calculating heuristic value
+updating cache dict
+5145
+encountered new game state, calculating heuristic value
+updating cache dict
+5146
+encountered new game state, calculating heuristic value
+updating cache dict
+5147
+encountered new game state, calculating heuristic value
+updating cache dict
+5148
+encountered new game state, calculating heuristic value
+updating cache dict
+5149
+encountered new game state, calculating heuristic value
+updating cache dict
+5150
+encountered new game state, calculating heuristic value
+updating cache dict
+5151
+encountered new game state, calculating heuristic value
+updating cache dict
+5152
+encountered new game state, calculating heuristic value
+updating cache dict
+5153
+encountered new game state, calculating heuristic value
+updating cache dict
+5154
+encountered new game state, calculating heuristic value
+updating cache dict
+5155
+encountered new game state, calculating heuristic value
+updating cache dict
+5156
+encountered new game state, calculating heuristic value
+updating cache dict
+5157
+encountered new game state, calculating heuristic value
+updating cache dict
+5158
+encountered new game state, calculating heuristic value
+updating cache dict
+5159
+encountered new game state, calculating heuristic value
+updating cache dict
+5160
+updating cache dict
+5161
+encountered new game state, calculating heuristic value
+updating cache dict
+5162
+encountered new game state, calculating heuristic value
+updating cache dict
+5163
+encountered new game state, calculating heuristic value
+updating cache dict
+5164
+encountered new game state, calculating heuristic value
+updating cache dict
+5165
+encountered new game state, calculating heuristic value
+updating cache dict
+5166
+updating cache dict
+5167
+encountered new game state, calculating heuristic value
+updating cache dict
+5168
+encountered new game state, calculating heuristic value
+updating cache dict
+5169
+encountered new game state, calculating heuristic value
+updating cache dict
+5170
+encountered new game state, calculating heuristic value
+updating cache dict
+5171
+encountered new game state, calculating heuristic value
+updating cache dict
+5172
+encountered new game state, calculating heuristic value
+updating cache dict
+5173
+updating cache dict
+5174
+encountered new game state, calculating heuristic value
+updating cache dict
+5175
+encountered new game state, calculating heuristic value
+updating cache dict
+5176
+encountered new game state, calculating heuristic value
+updating cache dict
+5177
+updating cache dict
+5178
+encountered new game state, calculating heuristic value
+updating cache dict
+5179
+encountered new game state, calculating heuristic value
+updating cache dict
+5180
+encountered new game state, calculating heuristic value
+updating cache dict
+5181
+encountered new game state, calculating heuristic value
+updating cache dict
+5182
+updating cache dict
+5183
+encountered new game state, calculating heuristic value
+updating cache dict
+5184
+encountered new game state, calculating heuristic value
+updating cache dict
+5185
+encountered new game state, calculating heuristic value
+updating cache dict
+5186
+encountered new game state, calculating heuristic value
+updating cache dict
+5187
+updating cache dict
+5188
+encountered new game state, calculating heuristic value
+updating cache dict
+5189
+encountered new game state, calculating heuristic value
+updating cache dict
+5190
+encountered new game state, calculating heuristic value
+updating cache dict
+5191
+encountered new game state, calculating heuristic value
+updating cache dict
+5192
+encountered new game state, calculating heuristic value
+updating cache dict
+5193
+encountered new game state, calculating heuristic value
+updating cache dict
+5194
+encountered new game state, calculating heuristic value
+updating cache dict
+5195
+encountered new game state, calculating heuristic value
+updating cache dict
+5196
+encountered new game state, calculating heuristic value
+updating cache dict
+5197
+encountered new game state, calculating heuristic value
+updating cache dict
+5198
+encountered new game state, calculating heuristic value
+updating cache dict
+5199
+encountered new game state, calculating heuristic value
+updating cache dict
+5200
+encountered new game state, calculating heuristic value
+updating cache dict
+5201
+encountered new game state, calculating heuristic value
+updating cache dict
+5202
+encountered new game state, calculating heuristic value
+updating cache dict
+5203
+encountered new game state, calculating heuristic value
+updating cache dict
+5204
+encountered new game state, calculating heuristic value
+updating cache dict
+5205
+encountered new game state, calculating heuristic value
+updating cache dict
+5206
+encountered new game state, calculating heuristic value
+updating cache dict
+5207
+encountered new game state, calculating heuristic value
+updating cache dict
+5208
+encountered new game state, calculating heuristic value
+updating cache dict
+5209
+updating cache dict
+5210
+encountered new game state, calculating heuristic value
+updating cache dict
+5211
+encountered new game state, calculating heuristic value
+updating cache dict
+5212
+encountered new game state, calculating heuristic value
+updating cache dict
+5213
+updating cache dict
+5214
+encountered new game state, calculating heuristic value
+updating cache dict
+5215
+encountered new game state, calculating heuristic value
+updating cache dict
+5216
+encountered new game state, calculating heuristic value
+updating cache dict
+5217
+updating cache dict
+5218
+encountered new game state, calculating heuristic value
+updating cache dict
+5219
+encountered new game state, calculating heuristic value
+updating cache dict
+5220
+updating cache dict
+5221
+encountered new game state, calculating heuristic value
+updating cache dict
+5222
+encountered new game state, calculating heuristic value
+updating cache dict
+5223
+updating cache dict
+5224
+encountered new game state, calculating heuristic value
+updating cache dict
+5225
+encountered new game state, calculating heuristic value
+updating cache dict
+5226
+updating cache dict
+5227
+encountered new game state, calculating heuristic value
+updating cache dict
+5228
+encountered new game state, calculating heuristic value
+updating cache dict
+5229
+encountered new game state, calculating heuristic value
+updating cache dict
+5230
+encountered new game state, calculating heuristic value
+updating cache dict
+5231
+encountered new game state, calculating heuristic value
+updating cache dict
+5232
+encountered new game state, calculating heuristic value
+updating cache dict
+5233
+encountered new game state, calculating heuristic value
+updating cache dict
+5234
+encountered new game state, calculating heuristic value
+updating cache dict
+5235
+encountered new game state, calculating heuristic value
+updating cache dict
+5236
+encountered new game state, calculating heuristic value
+updating cache dict
+5237
+encountered new game state, calculating heuristic value
+updating cache dict
+5238
+encountered new game state, calculating heuristic value
+updating cache dict
+5239
+encountered new game state, calculating heuristic value
+updating cache dict
+5240
+encountered new game state, calculating heuristic value
+updating cache dict
+5241
+encountered new game state, calculating heuristic value
+updating cache dict
+5242
+encountered new game state, calculating heuristic value
+updating cache dict
+5243
+encountered new game state, calculating heuristic value
+updating cache dict
+5244
+encountered new game state, calculating heuristic value
+updating cache dict
+5245
+encountered new game state, calculating heuristic value
+updating cache dict
+5246
+encountered new game state, calculating heuristic value
+updating cache dict
+5247
+encountered new game state, calculating heuristic value
+updating cache dict
+5248
+encountered new game state, calculating heuristic value
+updating cache dict
+5249
+encountered new game state, calculating heuristic value
+updating cache dict
+5250
+encountered new game state, calculating heuristic value
+updating cache dict
+5251
+encountered new game state, calculating heuristic value
+updating cache dict
+5252
+encountered new game state, calculating heuristic value
+updating cache dict
+5253
+encountered new game state, calculating heuristic value
+updating cache dict
+5254
+encountered new game state, calculating heuristic value
+updating cache dict
+5255
+encountered new game state, calculating heuristic value
+updating cache dict
+5256
+encountered new game state, calculating heuristic value
+updating cache dict
+5257
+encountered new game state, calculating heuristic value
+updating cache dict
+5258
+encountered new game state, calculating heuristic value
+updating cache dict
+5259
+encountered new game state, calculating heuristic value
+updating cache dict
+5260
+encountered new game state, calculating heuristic value
+updating cache dict
+5261
+encountered new game state, calculating heuristic value
+updating cache dict
+5262
+encountered new game state, calculating heuristic value
+updating cache dict
+5263
+encountered new game state, calculating heuristic value
+updating cache dict
+5264
+encountered new game state, calculating heuristic value
+updating cache dict
+5265
+----------
+[0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 2, 0, 0, 0]
+[1, 0, 0, 1, 0, 0, 0]
+[2, 0, 2, 2, 0, 2, 0]
+[1, 0, 1, 1, 0, 1, 0]
+[2, 0, 2, 1, 1, 2, 1]
+Move # 18
+Move was 0 , made by 2
+----------
+
+----------
+[1, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 2, 0, 0, 0]
+[1, 0, 0, 1, 0, 0, 0]
+[2, 0, 2, 2, 0, 2, 0]
+[1, 0, 1, 1, 0, 1, 0]
+[2, 0, 2, 1, 1, 2, 1]
+Move # 19
+Move was 0 , made by 1
+----------
+
+encountered new game state, calculating heuristic value
+updating cache dict
+5266
+encountered new game state, calculating heuristic value
+updating cache dict
+5267
+encountered new game state, calculating heuristic value
+updating cache dict
+5268
+encountered new game state, calculating heuristic value
+updating cache dict
+5269
+encountered new game state, calculating heuristic value
+updating cache dict
+5270
+encountered new game state, calculating heuristic value
+updating cache dict
+5271
+encountered new game state, calculating heuristic value
+updating cache dict
+5272
+encountered new game state, calculating heuristic value
+updating cache dict
+5273
+encountered new game state, calculating heuristic value
+updating cache dict
+5274
+encountered new game state, calculating heuristic value
+updating cache dict
+5275
+encountered new game state, calculating heuristic value
+updating cache dict
+5276
+encountered new game state, calculating heuristic value
+updating cache dict
+5277
+encountered new game state, calculating heuristic value
+updating cache dict
+5278
+encountered new game state, calculating heuristic value
+updating cache dict
+5279
+encountered new game state, calculating heuristic value
+updating cache dict
+5280
+encountered new game state, calculating heuristic value
+updating cache dict
+5281
+encountered new game state, calculating heuristic value
+updating cache dict
+5282
+encountered new game state, calculating heuristic value
+updating cache dict
+5283
+encountered new game state, calculating heuristic value
+updating cache dict
+5284
+encountered new game state, calculating heuristic value
+updating cache dict
+5285
+encountered new game state, calculating heuristic value
+updating cache dict
+5286
+encountered new game state, calculating heuristic value
+updating cache dict
+5287
+encountered new game state, calculating heuristic value
+updating cache dict
+5288
+encountered new game state, calculating heuristic value
+updating cache dict
+5289
+encountered new game state, calculating heuristic value
+updating cache dict
+5290
+encountered new game state, calculating heuristic value
+updating cache dict
+5291
+updating cache dict
+5292
+encountered new game state, calculating heuristic value
+updating cache dict
+5293
+encountered new game state, calculating heuristic value
+updating cache dict
+5294
+encountered new game state, calculating heuristic value
+updating cache dict
+5295
+encountered new game state, calculating heuristic value
+updating cache dict
+5296
+encountered new game state, calculating heuristic value
+updating cache dict
+5297
+updating cache dict
+5298
+encountered new game state, calculating heuristic value
+updating cache dict
+5299
+encountered new game state, calculating heuristic value
+updating cache dict
+5300
+encountered new game state, calculating heuristic value
+updating cache dict
+5301
+updating cache dict
+5302
+encountered new game state, calculating heuristic value
+updating cache dict
+5303
+encountered new game state, calculating heuristic value
+updating cache dict
+5304
+encountered new game state, calculating heuristic value
+updating cache dict
+5305
+encountered new game state, calculating heuristic value
+updating cache dict
+5306
+updating cache dict
+5307
+encountered new game state, calculating heuristic value
+updating cache dict
+5308
+encountered new game state, calculating heuristic value
+updating cache dict
+5309
+encountered new game state, calculating heuristic value
+updating cache dict
+5310
+encountered new game state, calculating heuristic value
+updating cache dict
+5311
+updating cache dict
+5312
+encountered new game state, calculating heuristic value
+updating cache dict
+5313
+encountered new game state, calculating heuristic value
+updating cache dict
+5314
+encountered new game state, calculating heuristic value
+updating cache dict
+5315
+encountered new game state, calculating heuristic value
+updating cache dict
+5316
+encountered new game state, calculating heuristic value
+updating cache dict
+5317
+encountered new game state, calculating heuristic value
+updating cache dict
+5318
+encountered new game state, calculating heuristic value
+updating cache dict
+5319
+encountered new game state, calculating heuristic value
+updating cache dict
+5320
+encountered new game state, calculating heuristic value
+updating cache dict
+5321
+encountered new game state, calculating heuristic value
+updating cache dict
+5322
+encountered new game state, calculating heuristic value
+updating cache dict
+5323
+encountered new game state, calculating heuristic value
+updating cache dict
+5324
+encountered new game state, calculating heuristic value
+updating cache dict
+5325
+encountered new game state, calculating heuristic value
+updating cache dict
+5326
+encountered new game state, calculating heuristic value
+updating cache dict
+5327
+encountered new game state, calculating heuristic value
+updating cache dict
+5328
+encountered new game state, calculating heuristic value
+updating cache dict
+5329
+updating cache dict
+5330
+encountered new game state, calculating heuristic value
+updating cache dict
+5331
+encountered new game state, calculating heuristic value
+updating cache dict
+5332
+encountered new game state, calculating heuristic value
+updating cache dict
+5333
+updating cache dict
+5334
+encountered new game state, calculating heuristic value
+updating cache dict
+5335
+encountered new game state, calculating heuristic value
+updating cache dict
+5336
+updating cache dict
+5337
+encountered new game state, calculating heuristic value
+updating cache dict
+5338
+encountered new game state, calculating heuristic value
+updating cache dict
+5339
+updating cache dict
+5340
+encountered new game state, calculating heuristic value
+updating cache dict
+5341
+encountered new game state, calculating heuristic value
+updating cache dict
+5342
+updating cache dict
+5343
+encountered new game state, calculating heuristic value
+updating cache dict
+5344
+encountered new game state, calculating heuristic value
+updating cache dict
+5345
+encountered new game state, calculating heuristic value
+updating cache dict
+5346
+encountered new game state, calculating heuristic value
+updating cache dict
+5347
+encountered new game state, calculating heuristic value
+updating cache dict
+5348
+encountered new game state, calculating heuristic value
+updating cache dict
+5349
+encountered new game state, calculating heuristic value
+updating cache dict
+5350
+encountered new game state, calculating heuristic value
+updating cache dict
+5351
+encountered new game state, calculating heuristic value
+updating cache dict
+5352
+encountered new game state, calculating heuristic value
+updating cache dict
+5353
+encountered new game state, calculating heuristic value
+updating cache dict
+5354
+encountered new game state, calculating heuristic value
+updating cache dict
+5355
+encountered new game state, calculating heuristic value
+updating cache dict
+5356
+encountered new game state, calculating heuristic value
+updating cache dict
+5357
+encountered new game state, calculating heuristic value
+updating cache dict
+5358
+encountered new game state, calculating heuristic value
+updating cache dict
+5359
+encountered new game state, calculating heuristic value
+updating cache dict
+5360
+encountered new game state, calculating heuristic value
+updating cache dict
+5361
+encountered new game state, calculating heuristic value
+updating cache dict
+5362
+encountered new game state, calculating heuristic value
+updating cache dict
+5363
+encountered new game state, calculating heuristic value
+updating cache dict
+5364
+encountered new game state, calculating heuristic value
+updating cache dict
+5365
+encountered new game state, calculating heuristic value
+updating cache dict
+5366
+encountered new game state, calculating heuristic value
+updating cache dict
+5367
+encountered new game state, calculating heuristic value
+updating cache dict
+5368
+encountered new game state, calculating heuristic value
+updating cache dict
+5369
+encountered new game state, calculating heuristic value
+updating cache dict
+5370
+encountered new game state, calculating heuristic value
+updating cache dict
+5371
+encountered new game state, calculating heuristic value
+updating cache dict
+5372
+encountered new game state, calculating heuristic value
+updating cache dict
+5373
+encountered new game state, calculating heuristic value
+updating cache dict
+5374
+----------
+[1, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 2, 0, 0, 0]
+[1, 0, 0, 1, 0, 0, 0]
+[2, 0, 2, 2, 0, 2, 0]
+[1, 0, 1, 1, 0, 1, 0]
+[2, 2, 2, 1, 1, 2, 1]
+Move # 20
+Move was 1 , made by 2
+----------
+
+----------
+[1, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 2, 0, 0, 0]
+[1, 0, 0, 1, 0, 0, 0]
+[2, 0, 2, 2, 0, 2, 0]
+[1, 1, 1, 1, 0, 1, 0]
+[2, 2, 2, 1, 1, 2, 1]
+Move # 21
+Move was 1 , made by 1
+----------
+
