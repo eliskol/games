@@ -1,19 +1,17 @@
-from multiprocessing import Process, Value, Array
+from multiprocessing import Process, Value, Array, Queue
 
 
-def f(n, a):
-    n.value = 3.1415927
-    for i in range(len(a)):
-        a[i] = -a[i]
+def f(q: Queue, item):
+    q.put(item)
 
 
 if __name__ == '__main__':
-    num = Value('d', 0.0)
-    arr = Array('i', range(10))
-
-    p = Process(target=f, args=(num, arr))
-    p.start()
-    p.join()
-
-    print(num.value)
-    print(arr[:])
+    q = Queue()
+    p1 = Process(target=f, args=(q, 'hi'))
+    p2 = Process(target=f, args=(q, 'hello'))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
+    print(q.get())
+    print(q.get())

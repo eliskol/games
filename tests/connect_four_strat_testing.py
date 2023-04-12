@@ -24,7 +24,7 @@ first_player = HeuristicMinimaxStrategy(5, True)
 # second_player = RandomPlayer()
 
 outcomes = {'Tie': 0, 'c': 0, 'r': 0}
-for i in range(10):
+for i in range(2):
     if i % 2 == 0:
         second_player = minimaxHeuristic(2, 5)
         game = Game(first_player, second_player)
