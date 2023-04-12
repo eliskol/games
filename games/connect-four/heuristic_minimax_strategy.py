@@ -1,16 +1,30 @@
 from connect_four_recombining_tree_custom_depth import ConnectFourRecombiningTreeCustomDepth, Node
 from connect_four_recombining_tree_custom_depth import Queue
 import time
+import pickle
 
 
 class HeuristicMinimaxStrategy:
-    def __init__(self, n):
-        self.generate_tree([[0 for _ in range(7)] for _ in range(6)], n)
-        self.time = self.propagate_minimax_values()
+    def __init__(self, n: int, save_heuristic_values: bool):
+        # self.generate_tree([[0 for _ in range(7)] for _ in range(6)], n)
+        self.get_pickled_cache()
+        # self.time = self.propagate_minimax_values()
         self.n = n
+        self.save_heuristic_values = save_heuristic_values
+
+    def get_pickled_cache(self):
+        try:
+            with open('heuristic_values.pickle', 'rb') as f:
+                self.calculated_heuristic_values = pickle.load(f)
+        except (FileNotFoundError, EOFError):
+            self.calculated_heuristic_values = {}
+
+        self.need_to_update_pickle = False
 
     def generate_tree(self, board_state, n):
-        if (not hasattr(self, "tree")) or board_state == [[0 for _ in range(7)] for _ in range(6)] or sum([row.count(1) for row in board_state]) == 1 != sum([row.count(2) for row in board_state]) or self.n == 1:
+        if (not hasattr(self, "tree")) or board_state == [[0 for _ in range(7)] for _ in range(6)]\
+              or sum([row.count(1) for row in board_state]) == 1 != sum([row.count(2) for row in board_state])\
+              or self.n == 1:
             self.tree = ConnectFourRecombiningTreeCustomDepth(board_state, n)
         else:
             self.tree.generate_tree_using_cache(board_state)
@@ -27,9 +41,15 @@ class HeuristicMinimaxStrategy:
         game_states_to_propagate = Queue()
         for node in self.terminal_nodes:
             node.minimax_value = {
-                1: 9999, 2: -9999, 'Tie': 0}[node.winner] if node.winner is not None else self.calculate_heuristic_value(node.state)
+                1: 9999, 2: -9999, 'Tie': 0}[node.winner] if node.winner is not None else self.assign_heuristic_value(node.state)
+            if self.tree.deeptuple(node.state) not in self.calculated_heuristic_values and self.save_heuristic_values:
+                print('updating cache dict')
+                self.need_to_update_pickle = True
+                self.calculated_heuristic_values[self.tree.deeptuple(node.state)] = node.minimax_value
+                print(len(self.calculated_heuristic_values))
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
+
         while game_states_to_propagate.contents != []:
             # tuple because the keys in self.node_dict can't be lists
             game_state_to_propagate = self.tree.deeptuple(
@@ -64,6 +84,7 @@ class HeuristicMinimaxStrategy:
         self.current_board_state = board
         self.generate_tree(board, self.n)
         propagation_time = self.propagate_minimax_values()
+        print('after propagation: cache dict length is', len(self.calculated_heuristic_values))
 
         if board == [[0 for _ in range(7)] for _ in range(6)]:
             self.player = 1
@@ -82,6 +103,13 @@ class HeuristicMinimaxStrategy:
             goal_node = min(current_node.children,
                             key=lambda node: node.minimax_value)
 
+        if goal_node.winner is not None and  self.save_heuristic_values:
+            with open('heuristic_values.pickle', 'wb') as f:
+                print('updating pickle')
+                print(len(self.calculated_heuristic_values))
+                pickle.dump(self.calculated_heuristic_values,
+                            f, pickle.HIGHEST_PROTOCOL)
+
         for j in range(7):  # check for which column was changed i.e. i want to move in
             if [board[i][j] for i in range(6)] != [goal_node.state[i][j] for i in range(6)]:
                 end = time.time()
@@ -89,6 +117,13 @@ class HeuristicMinimaxStrategy:
                     print(end - start)
                     print('propagation', propagation_time)
                 return j
+
+    def assign_heuristic_value(self, board: list[list[int]]):
+        tuple_of_board = self.tree.deeptuple(board)
+        if tuple_of_board in self.calculated_heuristic_values:
+            return self.calculated_heuristic_values[tuple_of_board]
+        print('encountered new game state, calculating heuristic value')
+        return self.calculate_heuristic_value(board)
 
     def calculate_heuristic_value(self, board: list[list[int]]):
         heuristic_value = 0
