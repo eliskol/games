@@ -15,24 +15,24 @@ from heuristic_minimax_strategy import HeuristicMinimaxStrategy
 from last_minute_player import LastMinutePlayer
 from input_player import InputPlayer
 from random_heuristic_strategy import RandomHeuristicStrategy
+from heuristic_player import HeuristicPlayer
 
 end_game = None
 
 toLog = True
 
-first_player = HeuristicMinimaxStrategy(5, True)
-# second_player = RandomPlayer()
-
+first_player = HeuristicMinimaxStrategy(4, True)
+# second_player = minim
 outcomes = {'Tie': 0, 'c': 0, 'r': 0}
-for i in range(10):
+for i in range(4):
     if i % 2 == 0:
-        second_player = minimaxHeuristic(2, 5)
+        second_player = minimaxHeuristic(2, 4)
         game = Game(first_player, second_player)
         game.run(log=toLog)
         end_game = game.board
         player_order = {'Tie': 'Tie', 1: 'c', 2: 'r'}
     elif i % 2 == 1:
-        second_player = minimaxHeuristic(1, 5)
+        second_player = minimaxHeuristic(1, 4)
         game = Game(second_player, first_player)
         game.run(log=toLog)
         # assert game.board == end_game
