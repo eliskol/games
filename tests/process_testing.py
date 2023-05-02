@@ -2,7 +2,7 @@ import multiprocessing as mp
 
 
 def test_func(num):
-    return (num ** 123) % 7
+    return (num**123) % 7
 
 
 # bruh = mp.Process(target=test_func, args=('this',))

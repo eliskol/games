@@ -1,9 +1,8 @@
 import sys
-sys.path.insert(1, sys.path[0].replace('tests', 'games/connect-four'))
-sys.path.insert(1, sys.path[0].replace(
-    'tests', 'games/connect-four/celeste-strat'))
-sys.path.insert(1, sys.path[0].replace(
-    'tests', 'games/connect-four/jeff-strat'))
+
+sys.path.insert(1, sys.path[0].replace("tests", "games/connect-four"))
+sys.path.insert(1, sys.path[0].replace("tests", "games/connect-four/celeste-strat"))
+sys.path.insert(1, sys.path[0].replace("tests", "games/connect-four/jeff-strat"))
 from random_heuristic_strategy import RandomHeuristicStrategy
 from last_minute_player import LastMinutePlayer
 from heuristic_minimax_strategy import HeuristicMinimaxStrategy

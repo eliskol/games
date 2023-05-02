@@ -1,8 +1,8 @@
 import time
+
+
 class Queue:
-
     def __init__(self, contents=None):
-
         if contents is None:
             self.contents = []
 
@@ -10,17 +10,13 @@ class Queue:
             self.contents = contents
 
     def print(self):
-
         for item in self.contents:
-
             print(item)
 
     def enqueue(self, item_to_queue):
-
         self.contents.append(item_to_queue)
 
     def dequeue(self):
-
         return self.contents.pop(0)
 
 
@@ -37,7 +33,6 @@ class Node:
         self.possible_moves = self.find_possible_moves()
 
     def determine_winner(self):
-
         for j in range(3):
             i = 3 * j
             if self.state[j] == self.state[j + 3] == self.state[j + 6] != 0:  # columns
@@ -50,7 +45,7 @@ class Node:
         elif self.state[2] == self.state[4] == self.state[6] != 0:  # anti-diagonal
             return self.state[4]
         elif 0 not in self.state:
-            return 'Tie'
+            return "Tie"
 
         return None
 
@@ -77,7 +72,6 @@ class TicTacToeRecombiningTree:
         leaf_node_count = 0
 
         while queue.contents != []:
-
             dequeued_node = queue.dequeue()
 
             if dequeued_node.winner is not None:
@@ -106,8 +100,6 @@ class TicTacToeRecombiningTree:
                     queue.enqueue(new_node)
                     created_game_states[tuple(new_board_state)] = new_node
 
-
-
         #         print(a_variable)
         # print('finished generating!')
         # print(time.time() - start_time)
@@ -126,4 +118,3 @@ class TicTacToeRecombiningTree:
                 possible_moves.append(i)
         return possible_moves
 
-bruh = TicTacToeRecombiningTree()

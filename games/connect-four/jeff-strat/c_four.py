@@ -5,7 +5,6 @@ import copy
 
 
 class Game:
-
     def __init__(self, player_one, player_two):
         self.players = [player_one, player_two]
         self.turn = 0
@@ -14,7 +13,7 @@ class Game:
     def print_board(self):
         for row in self.board:
             print(row)
-        print('')
+        print("")
 
     def update_board(self, board, col, turn):
         for row in range(5, -1, -1):
@@ -25,7 +24,7 @@ class Game:
         self.print_board()
         print("invalid move, turn skipped")
         print("player is ", self.turn)
-        print('move was made by ', self.players)
+        print("move was made by ", self.players)
         return board
 
     def make_move(self):
@@ -49,7 +48,12 @@ class Game:
                 last_piece = board[row][col]
                 if last_piece == 0:
                     continue
-                elif last_piece == board[row][col+1] == board[row][col+2] == board[row][col+3]:
+                elif (
+                    last_piece
+                    == board[row][col + 1]
+                    == board[row][col + 2]
+                    == board[row][col + 3]
+                ):
                     return str(last_piece)
         # vertical
         for row in range(0, 3):
@@ -57,7 +61,12 @@ class Game:
                 last_piece = board[row][col]
                 if last_piece == 0:
                     continue
-                elif last_piece == board[row+1][col] == board[row+2][col] == board[row+3][col]:
+                elif (
+                    last_piece
+                    == board[row + 1][col]
+                    == board[row + 2][col]
+                    == board[row + 3][col]
+                ):
                     return str(last_piece)
         # diagonal (\)
         for row in range(0, 3):
@@ -65,7 +74,12 @@ class Game:
                 last_piece = board[row][col]
                 if last_piece == 0:
                     continue
-                elif last_piece == board[row+1][col+1] == board[row+2][col+2] == board[row+3][col+3]:
+                elif (
+                    last_piece
+                    == board[row + 1][col + 1]
+                    == board[row + 2][col + 2]
+                    == board[row + 3][col + 3]
+                ):
                     return str(last_piece)
         # diagonal (/)
         for row in range(5, 2, -1):
@@ -73,12 +87,17 @@ class Game:
                 last_piece = board[row][col]
                 if last_piece == 0:
                     continue
-                elif last_piece == board[row-1][col+1] == board[row-2][col+2] == board[row-3][col+3]:
+                elif (
+                    last_piece
+                    == board[row - 1][col + 1]
+                    == board[row - 2][col + 2]
+                    == board[row - 3][col + 3]
+                ):
                     return str(last_piece)
         for row in board:
             if 0 in row:
                 return False
-        return 'Tie'
+        return "Tie"
 
     def game(self, log=False):
         while True:

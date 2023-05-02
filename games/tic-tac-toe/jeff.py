@@ -14,9 +14,9 @@ def jeff_strat(board):
             return 4
         else:
             return 8
-    '''-------------- set = 1 ended ----------------'''
+    """-------------- set = 1 ended ----------------"""
     if p_turn == 1 and len(possible_moves(board)) == 9 - 2:
-        i = board.index(p_turn+1)
+        i = board.index(p_turn + 1)
         if i in middle:
             return 0
         elif i in corners:
@@ -32,8 +32,8 @@ def jeff_strat(board):
             for i in possible_moves(board):
                 if i in corners:
                     return i
-    '''-------------- set = 2 ended ----------------'''
-    #print(p_turn)
+    """-------------- set = 2 ended ----------------"""
+    # print(p_turn)
     if p_turn == 1:
         if len(is_almost_end(board)[0]) != 0:
             return is_almost_end(board)[0][0]

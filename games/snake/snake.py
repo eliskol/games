@@ -9,7 +9,7 @@ class Game:
         self.player = player
         self.score = 0
         self.snake = [(4, 1), (4, 2), (4, 3)]
-        self.board = [[' ' for _ in range(10)] for _ in range(10)]
+        self.board = [[" " for _ in range(10)] for _ in range(10)]
         self.game_over = False
         self.num_moves = 0
         self.render_snake()
@@ -17,9 +17,9 @@ class Game:
 
     def render_snake(self):
         for segment in self.snake[:-1]:
-            self.board[segment[0]][segment[1]] = 'o'
+            self.board[segment[0]][segment[1]] = "o"
         snake_head = self.snake[-1]
-        self.board[snake_head[0]][snake_head[1]] = 'e'
+        self.board[snake_head[0]][snake_head[1]] = "e"
 
     def print_board(self):
         for row in reversed(self.board):
@@ -28,16 +28,16 @@ class Game:
 
     def place_berry(self):
         random_coords = (random.randrange(0, 10), random.randrange(0, 10))
-        while self.board[random_coords[0]][random_coords[1]] != ' ':
+        while self.board[random_coords[0]][random_coords[1]] != " ":
             random_coords = (random.randrange(0, 10), random.randrange(0, 10))
 
-        self.board[random_coords[0]][random_coords[1]] = 'b'
+        self.board[random_coords[0]][random_coords[1]] = "b"
         self.berry = random_coords
 
     def check_collision(self, move):
         snake_head_coords = self.snake[-1]
 
-        if move == 'a':
+        if move == "a":
             if snake_head_coords[1] == 0:
                 self.game_over = True
                 return True
@@ -45,7 +45,7 @@ class Game:
                 self.game_over = True
                 return True
 
-        elif move == 's':
+        elif move == "s":
             if snake_head_coords[0] == 0:
                 self.game_over = True
                 return True
@@ -53,7 +53,7 @@ class Game:
                 self.game_over = True
                 return True
 
-        elif move == 'w':
+        elif move == "w":
             if snake_head_coords[0] == 9:
                 self.game_over = True
                 return True
@@ -61,7 +61,7 @@ class Game:
                 self.game_over = True
                 return True
 
-        elif move == 'd':
+        elif move == "d":
             if snake_head_coords[1] == 9:
                 self.game_over = True
                 return True
@@ -74,7 +74,7 @@ class Game:
     def check_if_game_won(self):
         filled_rows = []
         for row in self.board:
-            if ('b' not in row) and (' ') not in row:
+            if ("b" not in row) and (" ") not in row:
                 filled_rows.append(None)
         if len(filled_rows == 10):
             self.game_over = True
@@ -90,22 +90,18 @@ class Game:
             # print('you died!')
 
         else:
-            if move == 'a':
-                self.snake.append(
-                    (snake_head_coords[0], snake_head_coords[1] - 1))
-            elif move == 's':
-                self.snake.append(
-                    (snake_head_coords[0] - 1, snake_head_coords[1]))
-            elif move == 'd':
-                self.snake.append(
-                    (snake_head_coords[0], snake_head_coords[1] + 1))
-            elif move == 'w':
-                self.snake.append(
-                    (snake_head_coords[0] + 1, snake_head_coords[1]))
+            if move == "a":
+                self.snake.append((snake_head_coords[0], snake_head_coords[1] - 1))
+            elif move == "s":
+                self.snake.append((snake_head_coords[0] - 1, snake_head_coords[1]))
+            elif move == "d":
+                self.snake.append((snake_head_coords[0], snake_head_coords[1] + 1))
+            elif move == "w":
+                self.snake.append((snake_head_coords[0] + 1, snake_head_coords[1]))
             else:
                 return
 
-        self.board[last_segment[0]][last_segment[1]] = ' '
+        self.board[last_segment[0]][last_segment[1]] = " "
 
         if self.snake[-1] == self.berry:
             self.score += 1
@@ -128,13 +124,13 @@ class Game:
         # print('you died!!')
         # print(self.score)
         # print(self.num_moves)
-        return {'score': self.score, 'moves': self.num_moves}
+        return {"score": self.score, "moves": self.num_moves}
 
 
-'''
+"""
 from input_strat import InputPlayer
 brh = InputPlayer()
 game = Game(brh)
 game.run_game(log=True)
 # todo -- rewrite rendering function
-'''
+"""

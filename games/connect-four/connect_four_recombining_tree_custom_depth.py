@@ -2,9 +2,7 @@ import time
 
 
 class Queue:
-
     def __init__(self, contents=None):
-
         if contents is None:
             self.contents = []
 
@@ -12,17 +10,13 @@ class Queue:
             self.contents = contents
 
     def print(self):
-
         for item in self.contents:
-
             print(item)
 
     def enqueue(self, item_to_queue):
-
         self.contents.append(item_to_queue)
 
     def dequeue(self):
-
         return self.contents.pop(0)
 
 
@@ -31,13 +25,20 @@ class Node:
         self.state = board_state
         self.winner = self.determine_winner()
         if self.winner is None:
-            self.turn = 1 if sum(row.count(1) for row in self.state) == sum(row.count(2) for row in self.state) else 2
+            self.turn = (
+                1
+                if sum(row.count(1) for row in self.state)
+                == sum(row.count(2) for row in self.state)
+                else 2
+            )
         else:
             self.turn = None
         self.children = []
         self.parents = []
         self.possible_moves = self.find_possible_moves()
-        self.is_terminal_node = False  # false by default, gets set to true during tree generation
+        self.is_terminal_node = (
+            False  # false by default, gets set to true during tree generation
+        )
 
     def determine_winner(self):
         if self.state == [[0 for _ in range(7)] for _ in range(6)]:
@@ -45,26 +46,50 @@ class Node:
 
         for i in range(0, 6):
             for j in range(0, 4):
-                if self.state[i][j] == self.state[i][j + 1] == self.state[i][j + 2] == self.state[i][j + 3] != 0:
+                if (
+                    self.state[i][j]
+                    == self.state[i][j + 1]
+                    == self.state[i][j + 2]
+                    == self.state[i][j + 3]
+                    != 0
+                ):
                     return self.state[i][j]
 
         for i in range(0, 3):
             for j in range(0, 7):
-                if self.state[i][j] == self.state[i + 1][j] == self.state[i + 2][j] == self.state[i + 3][j] != 0:
+                if (
+                    self.state[i][j]
+                    == self.state[i + 1][j]
+                    == self.state[i + 2][j]
+                    == self.state[i + 3][j]
+                    != 0
+                ):
                     return self.state[i][j]
 
         for i in range(0, 3):
             for j in range(0, 4):
-                if self.state[i][j] == self.state[i + 1][j + 1] == self.state[i + 2][j + 2] == self.state[i + 3][j + 3] != 0:
+                if (
+                    self.state[i][j]
+                    == self.state[i + 1][j + 1]
+                    == self.state[i + 2][j + 2]
+                    == self.state[i + 3][j + 3]
+                    != 0
+                ):
                     return self.state[i][j]
 
-                elif self.state[5 - i][j] == self.state[5 - (i + 1)][j + 1] == self.state[5 - (i + 2)][j + 2] == self.state[5 - (i + 3)][j + 3] != 0:
+                elif (
+                    self.state[5 - i][j]
+                    == self.state[5 - (i + 1)][j + 1]
+                    == self.state[5 - (i + 2)][j + 2]
+                    == self.state[5 - (i + 3)][j + 3]
+                    != 0
+                ):
                     return self.state[5 - i][j]
 
         if any(0 in row for row in self.state):
             pass
         else:
-            return 'Tie'
+            return "Tie"
 
         return None
 
@@ -96,7 +121,6 @@ class ConnectFourRecombiningTreeCustomDepth:
         queue = Queue([first_node])
 
         while queue.contents != []:
-
             dequeued_node = queue.dequeue()
 
             if dequeued_node.depth == n:
@@ -104,7 +128,10 @@ class ConnectFourRecombiningTreeCustomDepth:
                 dequeued_node.is_terminal_node = True
                 continue
 
-            if dequeued_node.winner is not None and dequeued_node.is_terminal_node is False:
+            if (
+                dequeued_node.winner is not None
+                and dequeued_node.is_terminal_node is False
+            ):
                 terminal_nodes.append(dequeued_node)
                 dequeued_node.is_terminal_node = True
                 continue
@@ -169,7 +196,9 @@ class ConnectFourRecombiningTreeCustomDepth:
             if dequeued_node.is_terminal_node:
                 terminal_nodes.append(dequeued_node)
                 if dequeued_node.winner is None:
-                    bottom_layer_nodes.append(dequeued_node)  # excludes nodes that have already finished the game
+                    bottom_layer_nodes.append(
+                        dequeued_node
+                    )  # excludes nodes that have already finished the game
 
             for child_node in dequeued_node.children:
                 child_node_state = child_node.state
@@ -178,7 +207,11 @@ class ConnectFourRecombiningTreeCustomDepth:
                     node_dict[tuple_of_child_node_state] = child_node
                     queue.enqueue(child_node)
 
-                node_dict[tuple_of_child_node_state].parents = [parent for parent in node_dict[tuple_of_child_node_state].parents if self.deeptuple(parent.state) in node_dict]
+                node_dict[tuple_of_child_node_state].parents = [
+                    parent
+                    for parent in node_dict[tuple_of_child_node_state].parents
+                    if self.deeptuple(parent.state) in node_dict
+                ]
 
         self.node_dict = node_dict
         self.terminal_nodes = terminal_nodes
@@ -193,7 +226,9 @@ class ConnectFourRecombiningTreeCustomDepth:
             possible_moves = current_node.possible_moves
             for move in possible_moves:
                 new_board_state = self.deeplist(current_board_state)
-                new_board_state = self.drop_token(current_node.turn, new_board_state, move)
+                new_board_state = self.drop_token(
+                    current_node.turn, new_board_state, move
+                )
 
                 if self.deeptuple(new_board_state) in self.node_dict:
                     new_node = self.node_dict[self.deeptuple(new_board_state)]

@@ -2,7 +2,7 @@ import random
 
 
 def christine_strat(state):
-    board = [state[i:i+3] for i in range(0, 9, 3)]
+    board = [state[i : i + 3] for i in range(0, 9, 3)]
     # print(board)
 
     if sum(x.count(1) for x in board) == sum(y.count(2) for y in board):
@@ -18,8 +18,7 @@ def christine_strat(state):
 
     rows = board
     cols = [[board[i][j] for i in range(3)] for j in range(3)]
-    diags = [[board[i][i]
-              for i in range(3)], [board[i][2-i] for i in range(3)]]
+    diags = [[board[i][i] for i in range(3)], [board[i][2 - i] for i in range(3)]]
 
     for row_idx, row in enumerate(rows):
         if row.count(player_num) == 2 and row.count(0) == 1:
@@ -34,7 +33,7 @@ def christine_strat(state):
             if diag_idx == 0:
                 return (diag.index(0), diag.index(0))
             else:
-                return (diag.index(0), 2-diag.index(0))
+                return (diag.index(0), 2 - diag.index(0))
 
     for row_idx, row in enumerate(rows):
         if row.count(opp_player_num) == 2 and row.count(0) == 1:
@@ -49,7 +48,7 @@ def christine_strat(state):
             if diag_idx == 0:
                 return (diag.index(0), diag.index(0))
             else:
-                return (diag.index(0), 2-diag.index(0))
+                return (diag.index(0), 2 - diag.index(0))
 
     if len(open_spaces) == 8:
         if board[0][0] == 1 and board[1][1] == 0:
@@ -90,13 +89,29 @@ def christine_strat(state):
     if player_num == 2 and board[1][1] == 0:
         return (1, 1)
 
-    if board[0][1] == opp_player_num and board[1][0] == opp_player_num and board[0][2] == 0:
+    if (
+        board[0][1] == opp_player_num
+        and board[1][0] == opp_player_num
+        and board[0][2] == 0
+    ):
         return (0, 2)
-    if board[1][2] == opp_player_num and board[2][1] == opp_player_num and board[0][2] == 0:
+    if (
+        board[1][2] == opp_player_num
+        and board[2][1] == opp_player_num
+        and board[0][2] == 0
+    ):
         return (0, 2)
-    if board[0][1] == opp_player_num and board[1][2] == opp_player_num and board[2][0] == 0:
+    if (
+        board[0][1] == opp_player_num
+        and board[1][2] == opp_player_num
+        and board[2][0] == 0
+    ):
         return (2, 0)
-    if board[1][0] == opp_player_num and board[2][1] == opp_player_num and board[0][2] == 0:
+    if (
+        board[1][0] == opp_player_num
+        and board[2][1] == opp_player_num
+        and board[0][2] == 0
+    ):
         return (0, 2)
 
     if board[1][2] == opp_player_num and board[0][0] == 0:

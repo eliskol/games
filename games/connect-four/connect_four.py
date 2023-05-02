@@ -27,26 +27,50 @@ class Game:
 
         for i in range(0, 6):
             for j in range(0, 4):
-                if self.board[i][j] == self.board[i][j + 1] == self.board[i][j + 2] == self.board[i][j + 3] != 0:
+                if (
+                    self.board[i][j]
+                    == self.board[i][j + 1]
+                    == self.board[i][j + 2]
+                    == self.board[i][j + 3]
+                    != 0
+                ):
                     return self.board[i][j]
 
         for i in range(0, 3):
             for j in range(0, 7):
-                if self.board[i][j] == self.board[i + 1][j] == self.board[i + 2][j] == self.board[i + 3][j] != 0:
+                if (
+                    self.board[i][j]
+                    == self.board[i + 1][j]
+                    == self.board[i + 2][j]
+                    == self.board[i + 3][j]
+                    != 0
+                ):
                     return self.board[i][j]
 
         for i in range(0, 3):
             for j in range(0, 4):
-                if self.board[i][j] == self.board[i + 1][j + 1] == self.board[i + 2][j + 2] == self.board[i + 3][j + 3] != 0:
+                if (
+                    self.board[i][j]
+                    == self.board[i + 1][j + 1]
+                    == self.board[i + 2][j + 2]
+                    == self.board[i + 3][j + 3]
+                    != 0
+                ):
                     return self.board[i][j]
 
-                elif self.board[5 - i][j] == self.board[5 - (i + 1)][j + 1] == self.board[5 - (i + 2)][j + 2] == self.board[5 - (i + 3)][j + 3] != 0:
+                elif (
+                    self.board[5 - i][j]
+                    == self.board[5 - (i + 1)][j + 1]
+                    == self.board[5 - (i + 2)][j + 2]
+                    == self.board[5 - (i + 3)][j + 3]
+                    != 0
+                ):
                     return self.board[5 - i][j]
 
         if any(0 in row for row in self.board):
             pass
         else:
-            return 'Tie'
+            return "Tie"
 
         return None
 
@@ -65,12 +89,18 @@ class Game:
             self.drop_token(self.next_player, move_to_make)
             self.previous_player = self.next_player
         if self.log is True:
-            print('----------')
+            print("----------")
             self.print_board()
-            print('Move #', self.moves)
+            print("Move #", self.moves)
             print(
-                'Move was', move_to_make if validity_of_move is True else f'invalid: {move_to_make}', ', made by', self.next_player)
-            print('----------\n')
+                "Move was",
+                move_to_make
+                if validity_of_move is True
+                else f"invalid: {move_to_make}",
+                ", made by",
+                self.next_player,
+            )
+            print("----------\n")
         # funky way to switch 1 and 2 because why not
         self.next_player = [2, 1][self.next_player - 1]
 

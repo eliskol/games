@@ -2,12 +2,10 @@ import random
 
 
 def strategy(board):
-
     player_number = 2
 
     if board == [0 for _ in range(9)]:
         player_number = 1
-    
 
     for j in range(3):
         i = 3 * j
@@ -38,7 +36,6 @@ def strategy(board):
         return 2
 
     if player_number == 1:
-
         if board == [0 for _ in range(9)]:
             return 4
         if board[0] == 0:
@@ -51,7 +48,6 @@ def strategy(board):
             return 8
 
     if player_number == 2:
-
         if board[4] == 0:
             return 4
         elif board[1] == 0:
@@ -63,10 +59,7 @@ def strategy(board):
         elif board[7] == 0:
             return 7
 
-
-
     random_move = random.randrange(0, 9)
     while board[random_move] != 0:
         random_move = random.randrange(0, 9)
     return random_move
-

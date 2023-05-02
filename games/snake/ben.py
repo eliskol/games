@@ -1,6 +1,5 @@
 class BenStrat:
     def choose_move(self, board):
-
         if "e" in board[9]:
             if board[9][9] == "e":
                 return "w"
@@ -40,7 +39,6 @@ class BenStrat:
             return "s"
         if "e" in board[8]:
             for i in range(1, 10):
-
                 if i % 2 == 0:
                     if board[8][i] == "e":
                         return "a"

@@ -1,4 +1,6 @@
-from tic_tac_toe_recombining_tree_custom_depth import TicTacToeRecombiningTreeCustomDepth
+from tic_tac_toe_recombining_tree_custom_depth import (
+    TicTacToeRecombiningTreeCustomDepth,
+)
 from tic_tac_toe_recombining_tree import Queue
 import time
 
@@ -10,7 +12,12 @@ class HeuristicMinimaxStrategy:
         self.n = n
 
     def generate_tree(self, board_state, n=9):
-        if not hasattr(self, "tree") or board_state.count(0) == 9 or (board_state.count(1) == 1 and board_state.count(2) == 0) or self.n == 1:
+        if (
+            not hasattr(self, "tree")
+            or board_state.count(0) == 9
+            or (board_state.count(1) == 1 and board_state.count(2) == 0)
+            or self.n == 1
+        ):
             self.tree = TicTacToeRecombiningTreeCustomDepth(board_state, n)
         else:
             self.tree.generate_tree_using_cache(board_state)
@@ -21,19 +28,24 @@ class HeuristicMinimaxStrategy:
         start = time.time()
         game_states_to_propagate = Queue()
         for node in self.terminal_nodes:
-            node.minimax_value = {1: 1, 2: -1, 'Tie': 0, None: self.calculate_heuristic_value(node.state)}[node.winner]
+            node.minimax_value = {
+                1: 1,
+                2: -1,
+                "Tie": 0,
+                None: self.calculate_heuristic_value(node.state),
+            }[node.winner]
             for parent_node in node.parents:
                 game_states_to_propagate.enqueue(parent_node.state)
         while game_states_to_propagate.contents != []:
             # tuple because the keys in self.node_dict can't be lists
             game_state_to_propagate = tuple(game_states_to_propagate.dequeue())
             current_node = self.node_dict[game_state_to_propagate]
-            if hasattr(current_node, 'minimax_value'):
+            if hasattr(current_node, "minimax_value"):
                 continue
             proceed = True
             minimax_values_of_children = []
             for child_node in current_node.children:
-                if not hasattr(child_node, 'minimax_value'):
+                if not hasattr(child_node, "minimax_value"):
                     proceed = False
                     break
                 minimax_values_of_children.append(child_node.minimax_value)
@@ -45,7 +57,7 @@ class HeuristicMinimaxStrategy:
                 current_node.minimax_value = min(minimax_values_of_children)
 
             for parent_node in current_node.parents:
-                if hasattr(parent_node, 'minimax_value'):
+                if hasattr(parent_node, "minimax_value"):
                     continue
                 game_states_to_propagate.enqueue(parent_node.state)
         end = time.time()
@@ -60,11 +72,9 @@ class HeuristicMinimaxStrategy:
         board = tuple(board)
         current_node = self.node_dict[board]
         if self.player == 1:
-            goal_node = max(current_node.children,
-                            key=lambda node: node.minimax_value)
+            goal_node = max(current_node.children, key=lambda node: node.minimax_value)
         else:
-            goal_node = min(current_node.children,
-                            key=lambda node: node.minimax_value)
+            goal_node = min(current_node.children, key=lambda node: node.minimax_value)
 
         for i in range(9):
             if board[i] != goal_node.state[i]:
@@ -74,7 +84,9 @@ class HeuristicMinimaxStrategy:
         total = 0
         for i in [0, 3, 6]:  # rows
             if board[i] == board[i + 1] != 0 and board[i + 2] == 0:
-                total += {1: 1, 2: -1}[board[i]]  # add 1 if its player 1, subtract 1 if its player 2
+                total += {1: 1, 2: -1}[
+                    board[i]
+                ]  # add 1 if its player 1, subtract 1 if its player 2
             if board[i + 1] == board[i + 2] != 0 and board[i] == 0:
                 total += {1: 1, 2: -1}[board[i + 1]]  # see above comment
             if board[i] == board[i + 2] != 0 and board[i + 1] == 0:
@@ -101,7 +113,7 @@ class HeuristicMinimaxStrategy:
         if board[2] == board[6] != 0 and board[4] == 0:
             total += {1: 1, 2: -1}[board[2]]  # see above comment
         if board[4] == board[8] != 0 and board[0] == 0:
-            total += {1: 1, 2: -1}[board[4]] # see above comment
+            total += {1: 1, 2: -1}[board[4]]  # see above comment
 
         total /= 8
         if total == 0.5:

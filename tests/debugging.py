@@ -18,4 +18,8 @@ game.run(log=True)
 for state in bruh2.node_dict:
     node2 = bruh2.node_dict[state]
     node3 = bruh3.node_dict[state]
-    print((node2.minimax_value, node3.minimax_value) if node2.minimax_value != node3.minimax_value else "same")
+    print(
+        (node2.minimax_value, node3.minimax_value)
+        if node2.minimax_value != node3.minimax_value
+        else "same"
+    )

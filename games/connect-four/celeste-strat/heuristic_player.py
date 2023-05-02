@@ -15,18 +15,28 @@ class HeuristicPlayer:
         if board == [[0, 0, 0, 0, 0, 0] for i in range(6)]:
             return 5
 
-        children_heuristic_values_dict = {tree.get_board_tuple(
-            children.game_state): children.heuristic_value for children in board_node.children}
+        children_heuristic_values_dict = {
+            tree.get_board_tuple(children.game_state): children.heuristic_value
+            for children in board_node.children
+        }
 
         if len(children_heuristic_values_dict) == 0:
             return random.choice(board_node.remaining_columns())
 
         if board_node.upcoming_player == 1:
             best_move_board = list(
-                max(children_heuristic_values_dict, key=children_heuristic_values_dict.get))
+                max(
+                    children_heuristic_values_dict,
+                    key=children_heuristic_values_dict.get,
+                )
+            )
         else:
             best_move_board = list(
-                min(children_heuristic_values_dict, key=children_heuristic_values_dict.get))
+                min(
+                    children_heuristic_values_dict,
+                    key=children_heuristic_values_dict.get,
+                )
+            )
 
         current_board = board_node.game_state
 

@@ -2,9 +2,7 @@ import time
 
 
 class Queue:
-
     def __init__(self, contents=None):
-
         if contents is None:
             self.contents = []
 
@@ -12,17 +10,13 @@ class Queue:
             self.contents = contents
 
     def print(self):
-
         for item in self.contents:
-
             print(item)
 
     def enqueue(self, item_to_queue):
-
         self.contents.append(item_to_queue)
 
     def dequeue(self):
-
         return self.contents.pop(0)
 
 
@@ -41,7 +35,6 @@ class Node:
         self.is_terminal_node = False
 
     def determine_winner(self):
-
         for j in range(3):
             i = 3 * j
             if self.state[j] == self.state[j + 3] == self.state[j + 6] != 0:  # columns
@@ -54,7 +47,7 @@ class Node:
         elif self.state[2] == self.state[4] == self.state[6] != 0:  # anti-diagonal
             return self.state[4]
         elif 0 not in self.state:
-            return 'Tie'
+            return "Tie"
 
         return None
 
@@ -81,7 +74,6 @@ class TicTacToeRecombiningTreeCustomDepth:
         a_variable = 1
 
         while queue.contents != []:
-
             dequeued_node = queue.dequeue()
 
             if dequeued_node.depth == n:
@@ -134,7 +126,8 @@ class TicTacToeRecombiningTreeCustomDepth:
         for current_board_state in self.node_dict:
             current_node = self.node_dict[current_board_state]
             index_of_all_filled_in_spaces_of_first_node = [
-                i for i in range(9) if first_node.state[i] != 0]
+                i for i in range(9) if first_node.state[i] != 0
+            ]
             for i in index_of_all_filled_in_spaces_of_first_node:
                 if first_node.state[i] == current_node.state[i]:
                     is_a_possible_child = True
@@ -169,12 +162,14 @@ class TicTacToeRecombiningTreeCustomDepth:
                         if second_new_board_state == [1, 2, 1, 2, 1, 2, 2, 1, 1]:
                             pass
                         if tuple(second_new_board_state) in created_game_states:
-                            second_new_node = created_game_states[tuple(
-                                second_new_board_state)]
+                            second_new_node = created_game_states[
+                                tuple(second_new_board_state)
+                            ]
                         else:
                             second_new_node = Node(second_new_board_state)
-                            created_game_states[tuple(
-                                second_new_board_state)] = second_new_node
+                            created_game_states[
+                                tuple(second_new_board_state)
+                            ] = second_new_node
 
                         second_new_node.parents.append(new_node)
                         new_node.children.append(second_new_node)
@@ -210,7 +205,8 @@ class TicTacToeRecombiningTreeCustomDepth:
         for current_board_state in self.node_dict:
             current_node = self.node_dict[current_board_state]
             index_of_all_filled_in_spaces_of_first_node = [
-                i for i in range(9) if new_node.state[i] != 0]
+                i for i in range(9) if new_node.state[i] != 0
+            ]
             is_a_possible_child = True
             for i in index_of_all_filled_in_spaces_of_first_node:
                 if new_node.state[i] == current_node.state[i]:
