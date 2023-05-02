@@ -10,7 +10,7 @@ class HeuristicMinimaxStrategy:
         self.n = n
 
     def generate_tree(self, board_state, n=9):
-        if not hasattr(self, "tree") or board_state.count(0) == 9 or (board_state.count(1) == 1 and board_state.count(2) == 0):
+        if not hasattr(self, "tree") or board_state.count(0) == 9 or (board_state.count(1) == 1 and board_state.count(2) == 0) or self.n == 1:
             self.tree = TicTacToeRecombiningTreeCustomDepth(board_state, n)
         else:
             self.tree.generate_tree_using_cache(board_state)
@@ -53,7 +53,7 @@ class HeuristicMinimaxStrategy:
 
     def choose_move(self, board):
         self.current_board_state = board
-        self.generate_tree(board)
+        self.generate_tree(board, self.n)
         self.propagate_minimax_values()
 
         # in order to look up in self.node_dict; lists aren't hashable
