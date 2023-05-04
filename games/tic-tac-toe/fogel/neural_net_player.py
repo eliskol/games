@@ -1,0 +1,1 @@
+# make neural net player; just need to configure num hidden nodes; methods for replicating nn
