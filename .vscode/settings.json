@@ -81,5 +81,9 @@
     ],
     "dateTime.showAMPM": true,
     "dateTime.use24HourClock": false,
-    "dateTime.timeZone": "America/Los_Angeles"
+    "dateTime.timeZone": "America/Los_Angeles",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none"
 }
