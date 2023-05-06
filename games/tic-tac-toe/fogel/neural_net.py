@@ -24,6 +24,11 @@ class NeuralNet:
         self.number_of_weights = sum(
             [matrix.shape[0] * matrix.shape[1] for matrix in self.A]
         ) + sum([matrix.shape[0] * matrix.shape[1] for matrix in self.b])
+        self.num_nodes_by_layer = [
+            weight_matrix.shape[1] for weight_matrix in self.A
+        ] + [
+            self.A[-1].shape[0]
+        ]  # using weight matrix shapes to find num nodes by layer
 
     @classmethod
     def random(
