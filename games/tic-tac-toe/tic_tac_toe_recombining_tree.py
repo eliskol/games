@@ -117,4 +117,3 @@ class TicTacToeRecombiningTree:
             if board_state[i] == 0:
                 possible_moves.append(i)
         return possible_moves
-
