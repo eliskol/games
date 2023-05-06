@@ -3,7 +3,7 @@ import random
 
 class NearPerfectPlayer:
     def choose_move(self, board) -> int:
-        roll = random.random
+        roll = random.random()
         if roll < 0.1:
             move = random.randrange(0, 9)
             while board[move] != 0:
@@ -36,19 +36,19 @@ class NearPerfectPlayer:
             move = random.randrange(0, 9)
         return move
 
-    def determine_winner(self):
+    def determine_winner(self, board):
         for j in range(3):
             i = 3 * j
-            if self.board[j] == self.board[j + 3] == self.board[j + 6] != 0:  # columns
-                return self.board[j]
-            elif self.board[i] == self.board[i + 1] == self.board[i + 2] != 0:  # rows
-                return self.board[i]
+            if board[j] == board[j + 3] == board[j + 6] != 0:  # columns
+                return board[j]
+            elif board[i] == board[i + 1] == board[i + 2] != 0:  # rows
+                return board[i]
 
-        if self.board[0] == self.board[4] == self.board[8] != 0:  # diagonal
-            return self.board[4]
-        elif self.board[2] == self.board[4] == self.board[6] != 0:  # anti-diagonal
-            return self.board[4]
-        elif 0 not in self.board:
+        if board[0] == board[4] == board[8] != 0:  # diagonal
+            return board[4]
+        elif board[2] == board[4] == board[6] != 0:  # anti-diagonal
+            return board[4]
+        elif 0 not in board:
             return "Tie"
 
         return None
