@@ -1,4 +1,5 @@
 import sys
+import pickle
 import numpy as np
 
 sys.path.insert(1, sys.path[0].removesuffix("fogel"))
@@ -46,9 +47,26 @@ class Fogel:
         for i in range(len(self.neural_net_players)):
             self.neural_net_players.append(self.neural_net_players[i].replicate())
 
-    def run(self, iterations):
-        for i in range(iterations):
+    def save_in_progress(self):
+        print("saving trial in progress")
+        with open("in_prog_trial.pickle", "wb") as f:
+            pickle.dump(
+                (self.max_payoffs, self.neural_net_players), f, pickle.HIGHEST_PROTOCOL
+            )
+
+    def resume_in_progress(self):
+        with open("in_prog_trial.pickle", "rb") as f:
+            self.max_payoffs = pickle.load(f)[0]
+            if pickle.load(f)[1] != []:
+                self.neural_net_players = pickle.load(f)[1]
+
+    def run(self, num_generations_to_run):
+        self.num_generations_to_run = num_generations_to_run
+        for i in range(num_generations_to_run - len(self.max_payoffs)):
+            self.current_generation = i
             print(i)
+            print("adding next gen")
+            self.create_next_gen()
             print("running games")
             self.run_games()
             self.max_payoffs.append(
@@ -61,14 +79,38 @@ class Fogel:
             )
             print("pruning off players")
             self.select_best_players()
-            print("adding next gen")
-            self.create_next_gen()
+            if (i + 1) % 10 == 0:
+                self.save_in_progress()
+        with open("in_prog_trial.pickle", "wb") as f:
+            pickle.dump(([], []), f, pickle.HIGHEST_PROTOCOL)
 
 
-fogels = [Fogel(50) for _ in range(20)]
-for fogel in fogels:
-    print("fogel numer", fogels.index(fogel))
-    fogel.run(800)
+def start(num_trials, num_nets, num_gens):
+    completed_trials_data = get_completed_trials_data()
+    num_completed_trials = len(completed_trials_data)
+    fogels = [Fogel(num_nets) for _ in range(num_trials - num_completed_trials)]
+    for fogel in fogels:
+        print("fogel numer", fogels.index(fogel))
+        fogel.run(num_gens)
+        completed_trials_data = get_completed_trials_data()
+        completed_trials_data.append(fogel.max_payoffs)
+        dump_completed_trials_data()
 
-print([sum([fogel.max_payoffs[i] for fogel in fogels]) / len(fogels) for i in range(800)])
 
+def get_completed_trials_data():
+    try:
+        with open("completed_trials_data.pickle", "rb") as f:
+            completed_trials_data = pickle.load(f)
+    except (FileNotFoundError, EOFError):
+        completed_trials_data = []
+    return completed_trials_data
+
+
+def dump_completed_trials_data(completed_trials_data):
+    with open("completed_trials_data.pickle", "wb") as f:
+        pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
+
+
+start(20, 10, 10)
+
+print([sum([fogel.max_payoffs[i] for fogel in fogels]) / len(fogels) for i in range(1)])
