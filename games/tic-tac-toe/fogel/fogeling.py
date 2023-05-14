@@ -12,6 +12,7 @@ rng = np.random.default_rng()
 
 activation_functions_and_derivatives = [[sigmoid, sigmoid_prime] for _ in range(2)]
 
+
 class Fogel:
     def __init__(self, num_players) -> None:
         self.num_players = num_players
@@ -80,7 +81,13 @@ class Fogel:
                 if pickle.load(f)[1] != []:
                     neural_net_params = pickle.load(f)[1]
                     self.neural_net_players = [
-                        NeuralNetPlayer.from_neural_net(NeuralNet(*neural_net_params.insert(2, activation_functions_and_derivatives)[i]))
+                        NeuralNetPlayer.from_neural_net(
+                            NeuralNet(
+                                *neural_net_params.insert(
+                                    2, activation_functions_and_derivatives
+                                )[i]
+                            )
+                        )
                         for i in range(self.num_players)
                     ]
         except FileNotFoundError:
@@ -92,7 +99,10 @@ class Fogel:
         self.num_generations_to_run = num_generations_to_run
         self.resume_in_progress()
         for i in range(num_generations_to_run - len(self.max_payoffs)):
-            print("Generations left to run:", num_generations_to_run - len(self.max_payoffs))
+            print(
+                "Generations left to run:",
+                num_generations_to_run - len(self.max_payoffs),
+            )
             self.current_generation = i
             print(i)
             print("adding next gen")
@@ -118,7 +128,12 @@ class Fogel:
 def start(num_trials, num_nets, num_gens):
     completed_trials_data = get_completed_trials_data()
     num_completed_trials = len(completed_trials_data)
-    print("Number of trials completed:", num_completed_trials, "; Number of trials to go:", num_trials - num_completed_trials)
+    print(
+        "Number of trials completed:",
+        num_completed_trials,
+        "; Number of trials to go:",
+        num_trials - num_completed_trials,
+    )
     fogels = [Fogel(num_nets) for _ in range(num_trials - num_completed_trials)]
     for fogel in fogels:
         print("fogel numer", fogels.index(fogel))
@@ -134,6 +149,7 @@ def get_completed_trials_data():
             completed_trials_data = pickle.load(f)
     except (FileNotFoundError, EOFError):
         completed_trials_data = []
+    print(completed_trials_data)
     return completed_trials_data
 
 
@@ -142,6 +158,9 @@ def dump_completed_trials_data(completed_trials_data):
         pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
 
 
-start(5, 25, 400)
+# start(5, 25, 400)
 
 # print([sum([fogel.max_payoffs[i] for fogel in fogels]) / len(fogels) for i in range(1)])
+
+bruh = get_completed_trials_data()
+print([sum(trial[i] for trial in bruh) / 5 for i in range(400)])
