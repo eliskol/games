@@ -1,6 +1,7 @@
 import sys
 import pickle
 import numpy as np
+import pandas as pd
 
 sys.path.insert(1, sys.path[0].removesuffix("fogel"))
 from tic_tac_toe import Game
@@ -13,7 +14,7 @@ rng = np.random.default_rng()
 activation_functions_and_derivatives = [[sigmoid, sigmoid_prime] for _ in range(2)]
 
 
-class Fogel:
+class FogelTrial:
     def __init__(self, num_players) -> None:
         self.num_players = num_players
         self.neural_net_players = [
@@ -25,6 +26,7 @@ class Fogel:
     def run_games(self):
         for neural_net_player in self.neural_net_players:
             neural_net_player.payoff = 0
+            neural_net_player.score = 0
         for i in range(32):
             for neural_net_player in self.neural_net_players:
                 game = Game(neural_net_player, NearPerfectPlayer())
@@ -35,7 +37,7 @@ class Fogel:
         for neural_net_player in self.neural_net_players:
             random_network_indexes = rng.integers(low=1, high=self.num_players, size=10)
             for i in random_network_indexes:
-                neural_net_player.payoff += (
+                neural_net_player.score += (
                     neural_net_player.payoff > self.neural_net_players[i].payoff
                 )
         for i in range(self.num_players):
@@ -134,7 +136,7 @@ def start(num_trials, num_nets, num_gens):
         "; Number of trials to go:",
         num_trials - num_completed_trials,
     )
-    fogels = [Fogel(num_nets) for _ in range(num_trials - num_completed_trials)]
+    fogels = [FogelTrial(num_nets) for _ in range(num_trials - num_completed_trials)]
     for fogel in fogels:
         print("fogel numer", fogels.index(fogel))
         fogel.run(num_gens)
@@ -158,9 +160,17 @@ def dump_completed_trials_data(completed_trials_data):
         pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
 
 
-# start(5, 25, 400)
+# start(1, 25, 50)
+get_completed_trials_data()
 
 # print([sum([fogel.max_payoffs[i] for fogel in fogels]) / len(fogels) for i in range(1)])
 
-bruh = get_completed_trials_data()
-print([sum(trial[i] for trial in bruh) / 5 for i in range(400)])
+# bruh = get_completed_trials_data()
+# df = pd.DataFrame(
+#     {
+#         0: [i for i in range(400)],
+#         1: [sum(trial[i] for trial in bruh) / 5 for i in range(400)],
+#     }
+# )
+# plot = df.plot(x=0, y=1, kind="line")
+# plot.figure.savefig("bruh.png")
