@@ -27,7 +27,7 @@ class FogelTrial:
         for neural_net_player in self.neural_net_players:
             neural_net_player.payoff = 0
             neural_net_player.score = 0
-        for i in range(32):
+        for _ in range(32):
             for neural_net_player in self.neural_net_players:
                 game = Game(neural_net_player, NearPerfectPlayer())
                 game.run()
@@ -44,6 +44,7 @@ class FogelTrial:
             neural_net_players_by_score = [
                 neural_net_player.score for neural_net_player in self.neural_net_players
             ]
+            print("getting rid of player with score", min(neural_net_players_by_score))
             del self.neural_net_players[
                 neural_net_players_by_score.index(min(neural_net_players_by_score))
             ]
@@ -106,11 +107,19 @@ class FogelTrial:
                 num_generations_to_run - len(self.max_payoffs),
             )
             self.current_generation = i
-            print(i)
             print("adding next gen")
             self.create_next_gen()
             print("running games")
             self.run_games()
+            print(
+                "Highest payoff was",
+                max(
+                    [
+                        neural_net_player.payoff
+                        for neural_net_player in self.neural_net_players
+                    ]
+                ),
+            )
             self.max_payoffs.append(
                 max(
                     [
@@ -138,7 +147,7 @@ def start(num_trials, num_nets, num_gens):
     )
     fogels = [FogelTrial(num_nets) for _ in range(num_trials - num_completed_trials)]
     for fogel in fogels:
-        print("fogel numer", fogels.index(fogel))
+        print("Trial number", fogels.index(fogel))
         fogel.run(num_gens)
         completed_trials_data = get_completed_trials_data()
         completed_trials_data.append(fogel.max_payoffs)
@@ -160,7 +169,7 @@ def dump_completed_trials_data(completed_trials_data):
         pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
 
 
-# start(1, 25, 50)
+start(5, 25, 400)
 get_completed_trials_data()
 
 # print([sum([fogel.max_payoffs[i] for fogel in fogels]) / len(fogels) for i in range(1)])
