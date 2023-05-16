@@ -108,6 +108,8 @@ class FogelTrial:
             )
             self.current_generation = i
             print("adding next gen")
+            if i > 0:
+                assert self.former_best_player in self.neural_net_players
             self.create_next_gen()
             print("running games")
             self.run_games()
@@ -120,16 +122,32 @@ class FogelTrial:
                     ]
                 ),
             )
-            self.max_payoffs.append(
-                max(
+            print(
+                "Average payoff was",
+                sum(
                     [
                         neural_net_player.payoff
                         for neural_net_player in self.neural_net_players
                     ]
                 )
+                / self.num_players,
             )
+            max_payoff = max(
+                [
+                    neural_net_player.payoff
+                    for neural_net_player in self.neural_net_players
+                ]
+            )
+            self.max_payoffs.append(max_payoff)
+            self.former_best_player = self.neural_net_players[
+                [
+                    neural_net_player.payoff
+                    for neural_net_player in self.neural_net_players
+                ].index(max_payoff)
+            ]
             print("pruning off players")
             self.select_best_players()
+            assert self.former_best_player in self.neural_net_players, f'Former best player score was {self.former_best_player.score}; {max([nn_player.payoff for nn_player in self.neural_net_players])}'
             if (i + 1) % 10 == 0:
                 self.save_in_progress()
         with open("in_prog_trial.pickle", "wb") as f:
@@ -169,8 +187,8 @@ def dump_completed_trials_data(completed_trials_data):
         pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
 
 
-start(5, 25, 400)
-get_completed_trials_data()
+start(1, 25, 400)
+# get_completed_trials_data()
 
 # print([sum([fogel.max_payoffs[i] for fogel in fogels]) / len(fogels) for i in range(1)])
 

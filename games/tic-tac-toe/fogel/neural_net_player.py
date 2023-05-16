@@ -62,18 +62,16 @@ class NeuralNetPlayer:
         if roll > 0.5:
             second_roll = rng.random()
             if second_roll < 0.5 and self.H > 1:
-                new_H = self.H - 1
-                np.delete(new_A[0], -1, 0)
-                np.delete(new_A[1], -1, 1)
-                np.delete(new_b[0], -1, 0)
+                new_A[0] = np.delete(new_A[0], -1, 0)
+                new_A[1] = np.delete(new_A[1], -1, 1)
+                new_b[0] = np.delete(new_b[0], -1, 0)
 
             elif second_roll > 0.5 and self.H < 10:
-                new_H = self.H + 1
                 new_A[0] = np.vstack([new_A[0], np.matrix([0 for _ in range(9)])])
                 new_A[1] = np.hstack([new_A[1], np.matrix([[0] for _ in range(9)])])
                 new_b[0] = np.vstack([new_b[0], np.matrix(0)])
-        return self.from_neural_net(
-            NeuralNet(
-                new_A, new_b, self.activation_functions_and_derivatives, None, 0.01
-            )
+        neural_net = NeuralNet(
+            new_A, new_b, self.activation_functions_and_derivatives, None, 0.01
         )
+        # print(self.H, neural_net.num_nodes_by_layer[1])
+        return self.from_neural_net(neural_net)
