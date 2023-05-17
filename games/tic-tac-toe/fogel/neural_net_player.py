@@ -58,6 +58,7 @@ class NeuralNetPlayer:
                 weight_matrix
                 + np.matrix(rng.normal(0, 0.05**2, size=weight_matrix.shape))
             )
+        assert (new_A[0] != self.neural_net.A[0]).all()
         roll = rng.random()
         if roll > 0.5:
             second_roll = rng.random()

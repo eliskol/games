@@ -27,8 +27,8 @@ class FogelTrial:
         for neural_net_player in self.neural_net_players:
             neural_net_player.payoff = 0
             neural_net_player.score = 0
-        for _ in range(32):
-            for neural_net_player in self.neural_net_players:
+        for neural_net_player in self.neural_net_players:
+            for i in range(32):
                 game = Game(neural_net_player, NearPerfectPlayer())
                 game.run()
                 neural_net_player.payoff += {1: 1, 2: -10, "Tie": 0}[game.winner]
@@ -44,12 +44,23 @@ class FogelTrial:
             neural_net_players_by_score = [
                 neural_net_player.score for neural_net_player in self.neural_net_players
             ]
-            print("getting rid of player with score", min(neural_net_players_by_score))
+            # print("getting rid of player with score", min(neural_net_players_by_score))
             del self.neural_net_players[
                 neural_net_players_by_score.index(min(neural_net_players_by_score))
             ]
 
     def create_next_gen(self):
+        print(
+            "2Average payoff was",
+            sum(
+                [
+                    neural_net_player.payoff
+                    for neural_net_player in self.neural_net_players
+                ]
+            )
+            / self.num_players,
+        )
+
         for i in range(len(self.neural_net_players)):
             self.neural_net_players.append(self.neural_net_players[i].replicate())
 
@@ -69,7 +80,6 @@ class FogelTrial:
                 )
             )
         with open("in_prog_trial.pickle", "wb") as f:
-            print(neural_net_params)
             pickle.dump(
                 (self.max_payoffs, list(neural_net_params)),
                 f,
@@ -130,7 +140,7 @@ class FogelTrial:
                         for neural_net_player in self.neural_net_players
                     ]
                 )
-                / self.num_players,
+                / (2 * self.num_players),
             )
             max_payoff = max(
                 [
@@ -147,7 +157,9 @@ class FogelTrial:
             ]
             print("pruning off players")
             self.select_best_players()
-            assert self.former_best_player in self.neural_net_players, f'Former best player score was {self.former_best_player.score}; {max([nn_player.payoff for nn_player in self.neural_net_players])}'
+            assert (
+                self.former_best_player in self.neural_net_players
+            ), f"Former best player score was {self.former_best_player.score}; {max([nn_player.payoff for nn_player in self.neural_net_players])}"
             if (i + 1) % 10 == 0:
                 self.save_in_progress()
         with open("in_prog_trial.pickle", "wb") as f:
