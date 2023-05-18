@@ -24,25 +24,23 @@ class FogelTrial:
         self.max_payoffs = []
 
     def run_games(self):
-        for neural_net_player in self.neural_net_players:
-            neural_net_player.payoff = 0
-            neural_net_player.score = 0
-        for neural_net_player in self.neural_net_players:
+        for nn_player in self.neural_net_players:
+            nn_player.payoff = 0
+            nn_player.score = 0
+        for nn_player in self.neural_net_players:
             for i in range(32):
-                game = Game(neural_net_player, NearPerfectPlayer())
+                game = Game(nn_player, NearPerfectPlayer())
                 game.run()
-                neural_net_player.payoff += {1: 1, 2: -10, "Tie": 0}[game.winner]
+                nn_player.payoff += {1: 1, 2: -10, "Tie": 0}[game.winner]
 
     def select_best_players(self):
-        for neural_net_player in self.neural_net_players:
+        for nn_player in self.neural_net_players:
             random_network_indexes = rng.integers(low=1, high=self.num_players, size=10)
             for i in random_network_indexes:
-                neural_net_player.score += (
-                    neural_net_player.payoff > self.neural_net_players[i].payoff
-                )
+                nn_player.score += nn_player.payoff > self.neural_net_players[i].payoff
         for i in range(self.num_players):
             neural_net_players_by_score = [
-                neural_net_player.score for neural_net_player in self.neural_net_players
+                nn_player.score for nn_player in self.neural_net_players
             ]
             # print("getting rid of player with score", min(neural_net_players_by_score))
             del self.neural_net_players[
@@ -52,31 +50,27 @@ class FogelTrial:
     def create_next_gen(self):
         print(
             "2Average payoff was",
-            sum(
-                [
-                    neural_net_player.payoff
-                    for neural_net_player in self.neural_net_players
-                ]
-            )
+            sum([nn_player.payoff for nn_player in self.neural_net_players])
             / self.num_players,
         )
 
-        for i in range(len(self.neural_net_players)):
-            self.neural_net_players.append(self.neural_net_players[i].replicate())
+        self.neural_net_players += [
+            nn_player.replicate() for nn_player in self.neural_net_players
+        ]
 
     def save_in_progress(self):
         print("saving trial in progress")
         neural_net_params = []
-        for neural_net_player in self.neural_net_players:
+        for nn_player in self.neural_net_players:
             neural_net_params.append(
                 (
-                    list(neural_net_player.neural_net.A),
-                    list(neural_net_player.neural_net.b),
+                    list(nn_player.neural_net.A),
+                    list(nn_player.neural_net.b),
                     # list(
                     #     neural_net_player.neural_net.activation_functions_and_derivatives
                     # ),
                     None,
-                    float(neural_net_player.neural_net.learning_rate),
+                    float(nn_player.neural_net.learning_rate),
                 )
             )
         with open("in_prog_trial.pickle", "wb") as f:
@@ -109,14 +103,12 @@ class FogelTrial:
             pass
 
     def run(self, num_generations_to_run):
-        self.num_generations_to_run = num_generations_to_run
         self.resume_in_progress()
         for i in range(num_generations_to_run - len(self.max_payoffs)):
             print(
                 "Generations left to run:",
                 num_generations_to_run - len(self.max_payoffs),
             )
-            self.current_generation = i
             print("adding next gen")
             if i > 0:
                 assert self.former_best_player in self.neural_net_players
@@ -125,35 +117,21 @@ class FogelTrial:
             self.run_games()
             print(
                 "Highest payoff was",
-                max(
-                    [
-                        neural_net_player.payoff
-                        for neural_net_player in self.neural_net_players
-                    ]
-                ),
+                max([nn_player.payoff for nn_player in self.neural_net_players]),
             )
             print(
                 "Average payoff was",
-                sum(
-                    [
-                        neural_net_player.payoff
-                        for neural_net_player in self.neural_net_players
-                    ]
-                )
+                sum([nn_player.payoff for nn_player in self.neural_net_players])
                 / (2 * self.num_players),
             )
             max_payoff = max(
-                [
-                    neural_net_player.payoff
-                    for neural_net_player in self.neural_net_players
-                ]
+                [nn_player.payoff for nn_player in self.neural_net_players]
             )
             self.max_payoffs.append(max_payoff)
             self.former_best_player = self.neural_net_players[
-                [
-                    neural_net_player.payoff
-                    for neural_net_player in self.neural_net_players
-                ].index(max_payoff)
+                [nn_player.payoff for nn_player in self.neural_net_players].index(
+                    max_payoff
+                )
             ]
             print("pruning off players")
             self.select_best_players()
