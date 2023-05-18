@@ -49,9 +49,7 @@ class FogelTrial:
 
     def create_next_gen(self):
         print(
-            "2Average payoff was",
-            sum([nn_player.payoff for nn_player in self.neural_net_players])
-            / self.num_players,
+            f"2Average payoff was {sum([nn_player.payoff for nn_player in self.neural_net_players]) / self.num_players}"
         )
 
         self.neural_net_players += [
@@ -84,7 +82,6 @@ class FogelTrial:
         try:
             with open("in_prog_trial.pickle", "rb") as f:
                 self.max_payoffs = pickle.load(f)[0]
-                print(pickle.load(f))
                 if pickle.load(f)[1] != []:
                     neural_net_params = pickle.load(f)[1]
                     self.neural_net_players = [
@@ -106,8 +103,7 @@ class FogelTrial:
         self.resume_in_progress()
         for i in range(num_generations_to_run - len(self.max_payoffs)):
             print(
-                "Generations left to run:",
-                num_generations_to_run - len(self.max_payoffs),
+                f"Generations left to run: {num_generations_to_run - len(self.max_payoffs)}"
             )
             print("adding next gen")
             if i > 0:
@@ -116,13 +112,10 @@ class FogelTrial:
             print("running games")
             self.run_games()
             print(
-                "Highest payoff was",
-                max([nn_player.payoff for nn_player in self.neural_net_players]),
+                f"Highest payoff was {max([nn_player.payoff for nn_player in self.neural_net_players])}"
             )
             print(
-                "Average payoff was",
-                sum([nn_player.payoff for nn_player in self.neural_net_players])
-                / (2 * self.num_players),
+                f"Average payoff was {sum([nn_player.payoff for nn_player in self.neural_net_players]) / (2 * self.num_players)}"
             )
             max_payoff = max(
                 [nn_player.payoff for nn_player in self.neural_net_players]
@@ -148,14 +141,11 @@ def start(num_trials, num_nets, num_gens):
     completed_trials_data = get_completed_trials_data()
     num_completed_trials = len(completed_trials_data)
     print(
-        "Number of trials completed:",
-        num_completed_trials,
-        "; Number of trials to go:",
-        num_trials - num_completed_trials,
+        f"Number of trials completed: {num_completed_trials}; Number of trials to go: {num_trials - num_completed_trials}",
     )
     fogels = [FogelTrial(num_nets) for _ in range(num_trials - num_completed_trials)]
     for fogel in fogels:
-        print("Trial number", fogels.index(fogel))
+        print(f"Trial number {fogels.index(fogel)}")
         fogel.run(num_gens)
         completed_trials_data = get_completed_trials_data()
         completed_trials_data.append(fogel.max_payoffs)
