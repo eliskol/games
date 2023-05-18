@@ -48,10 +48,6 @@ class FogelTrial:
             ]
 
     def create_next_gen(self):
-        print(
-            f"2Average payoff was {sum([nn_player.payoff for nn_player in self.neural_net_players]) / self.num_players}"
-        )
-
         self.neural_net_players += [
             nn_player.replicate() for nn_player in self.neural_net_players
         ]
@@ -134,12 +130,18 @@ class FogelTrial:
             print("pruning off players")
             self.select_best_players()
 
+            print(
+                f"Average payoff after pruning is {sum([nn_player.payoff for nn_player in self.neural_net_players]) / self.num_players}"
+            )
+
             assert (
                 self.former_best_player in self.neural_net_players
             ), f"Former best player score was {self.former_best_player.score}; {max([nn_player.payoff for nn_player in self.neural_net_players])}"
 
             if (i + 1) % 10 == 0:
                 self.save_in_progress()
+
+            print()
         with open("in_prog_trial.pickle", "wb") as f:
             pickle.dump(([], []), f, pickle.HIGHEST_PROTOCOL)
 
