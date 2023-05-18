@@ -23,6 +23,10 @@ class FogelTrial:
         ]
         self.max_payoffs = []
 
+    def set_initial_nn_player_ids(self):
+        for i in range(self.num_players):
+            self.neural_net_players[i].id = i + 1
+
     def run_games(self):
         for nn_player in self.neural_net_players:
             nn_player.payoff = 0
@@ -33,11 +37,18 @@ class FogelTrial:
                 game.run()
                 nn_player.payoff += {1: 1, 2: -10, "Tie": 0}[game.winner]
 
-    def select_best_players(self):
+    def score_players(self):
         for nn_player in self.neural_net_players:
-            random_network_indexes = rng.integers(low=1, high=self.num_players, size=10)
+            other_network_indexes = [i for i in range(2 * self.num_players)]
+            other_network_indexes.remove(self.neural_net_players.index(nn_player))
+            random_network_indexes = rng.choice(other_network_indexes, 10)
             for i in random_network_indexes:
-                nn_player.score += nn_player.payoff > self.neural_net_players[i].payoff
+                if nn_player.payoff > self.neural_net_players[i].payoff:
+                    nn_player.score += 1
+
+    def select_best_players(self):
+        self.score_players()
+
         for i in range(self.num_players):
             neural_net_players_by_score = [
                 nn_player.score for nn_player in self.neural_net_players
@@ -152,7 +163,9 @@ def start(num_trials, num_nets, num_gens):
     print(
         f"Number of trials completed: {num_completed_trials}; Number of trials to go: {num_trials - num_completed_trials}",
     )
-    fogel_trials = [FogelTrial(num_nets) for _ in range(num_trials - num_completed_trials)]
+    fogel_trials = [
+        FogelTrial(num_nets) for _ in range(num_trials - num_completed_trials)
+    ]
     for fogel_trial in fogel_trials:
         print(f"Trial number {fogel_trials.index(fogel_trial)}")
         fogel_trial.run(num_gens)
