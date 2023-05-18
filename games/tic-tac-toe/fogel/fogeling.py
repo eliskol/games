@@ -105,18 +105,22 @@ class FogelTrial:
             print(
                 f"Generations left to run: {num_generations_to_run - len(self.max_payoffs)}"
             )
-            print("adding next gen")
             if i > 0:
                 assert self.former_best_player in self.neural_net_players
+
+            print("adding next gen")
             self.create_next_gen()
+
             print("running games")
             self.run_games()
+
             print(
                 f"Highest payoff was {max([nn_player.payoff for nn_player in self.neural_net_players])}"
             )
             print(
                 f"Average payoff was {sum([nn_player.payoff for nn_player in self.neural_net_players]) / (2 * self.num_players)}"
             )
+
             max_payoff = max(
                 [nn_player.payoff for nn_player in self.neural_net_players]
             )
@@ -126,11 +130,14 @@ class FogelTrial:
                     max_payoff
                 )
             ]
+
             print("pruning off players")
             self.select_best_players()
+
             assert (
                 self.former_best_player in self.neural_net_players
             ), f"Former best player score was {self.former_best_player.score}; {max([nn_player.payoff for nn_player in self.neural_net_players])}"
+
             if (i + 1) % 10 == 0:
                 self.save_in_progress()
         with open("in_prog_trial.pickle", "wb") as f:
@@ -143,12 +150,12 @@ def start(num_trials, num_nets, num_gens):
     print(
         f"Number of trials completed: {num_completed_trials}; Number of trials to go: {num_trials - num_completed_trials}",
     )
-    fogels = [FogelTrial(num_nets) for _ in range(num_trials - num_completed_trials)]
-    for fogel in fogels:
-        print(f"Trial number {fogels.index(fogel)}")
-        fogel.run(num_gens)
+    fogel_trials = [FogelTrial(num_nets) for _ in range(num_trials - num_completed_trials)]
+    for fogel_trial in fogel_trials:
+        print(f"Trial number {fogel_trials.index(fogel_trial)}")
+        fogel_trial.run(num_gens)
         completed_trials_data = get_completed_trials_data()
-        completed_trials_data.append(fogel.max_payoffs)
+        completed_trials_data.append(fogel_trial.max_payoffs)
         dump_completed_trials_data(completed_trials_data)
 
 
