@@ -2,6 +2,7 @@
 import math
 import numpy as np
 from numpy.random import normal as N
+from numpy.random import random as rand
 from neural_net import NeuralNet
 
 
@@ -22,10 +23,37 @@ class NeuralNetPlayer:
             None,
             0.01,
         )
+        self.min_weight = min(
+            [
+                weight_matrix.min()
+                for weight_matrix in self.neural_net.A + self.neural_net.b
+            ]
+        )
+        self.max_weight = max(
+            [
+                weight_matrix.max()
+                for weight_matrix in self.neural_net.A + self.neural_net.b
+            ]
+        )
+        self.avg_weight = sum(
+            [
+                weight_matrix.mean() * (weight_matrix.shape[0] * weight_matrix.shape[1])
+                for weight_matrix in self.neural_net.A + self.neural_net.b
+            ]
+        ) / sum(
+            [
+                weight_matrix.shape[0] * weight_matrix.shape[1]
+                for weight_matrix in self.neural_net.A + self.neural_net.b
+            ]
+        )
         self.payoff = 0
         self.score = 0
         self.id = None
         self.parent_id = None
+        self.is_parent = None
+        self.selected = False
+        self.record = [0, 0, 0]
+        self.opponents = [[], [], []]
 
     @classmethod
     def from_neural_net(cls, neural_net):
@@ -47,20 +75,19 @@ class NeuralNetPlayer:
         return [[-1] if board[i] == 2 else [board[i]] for i in range(9)]
 
     def replicate(self):
-        rng = np.random.default_rng()
         new_A = []
         new_b = []
         for weight_matrix in self.neural_net.A:
             new_A.append(
-                weight_matrix + np.matrix(rng.normal(0, 0.05, size=weight_matrix.shape))
+                weight_matrix + np.matrix(N(0, 0.05, size=weight_matrix.shape))
             )
         for weight_matrix in self.neural_net.b:
             new_b.append(
-                weight_matrix + np.matrix(rng.normal(0, 0.05, size=weight_matrix.shape))
+                weight_matrix + np.matrix(N(0, 0.05, size=weight_matrix.shape))
             )
-        roll = rng.random()
+        roll = rand()
         if roll > 0.5:
-            second_roll = rng.random()
+            second_roll = rand()
             if second_roll < 0.5 and self.H > 1:
                 new_A[0] = np.delete(new_A[0], -1, 0)
                 new_A[1] = np.delete(new_A[1], -1, 1)
@@ -73,7 +100,10 @@ class NeuralNetPlayer:
         neural_net = NeuralNet(
             new_A, new_b, self.activation_functions_and_derivatives, None, 0.01
         )
-        # print(self.H, neural_net.num_nodes_by_layer[1])
+        if neural_net.num_nodes_by_layer[1] != self.H:
+            print("Number of hidden nodes was changed!")
         nn_player = self.from_neural_net(neural_net)
         nn_player.parent_id = self.id
+        nn_player.is_parent = False
+        assert nn_player != self
         return nn_player

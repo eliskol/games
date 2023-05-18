@@ -22,20 +22,26 @@ class FogelTrial:
             for _ in range(num_players)
         ]
         self.max_payoffs = []
+        self.current_generation = 0
 
     def set_initial_nn_player_ids(self):
         for i in range(self.num_players):
             self.neural_net_players[i].id = i + 1
 
-    def run_games(self):
+    def reset_nn_players(self):
         for nn_player in self.neural_net_players:
             nn_player.payoff = 0
             nn_player.score = 0
+            nn_player.record = [0, 0, 0]
+            nn_player.is_parent = True
+
+    def run_games(self):
         for nn_player in self.neural_net_players:
             for i in range(32):
                 game = Game(nn_player, NearPerfectPlayer())
                 game.run()
                 nn_player.payoff += {1: 1, 2: -10, "Tie": 0}[game.winner]
+                nn_player.record[game.winner - 1] += 1
 
     def score_players(self):
         for nn_player in self.neural_net_players:
@@ -46,17 +52,13 @@ class FogelTrial:
                 if nn_player.payoff > self.neural_net_players[i].payoff:
                     nn_player.score += 1
 
-    def select_best_players(self):
+    def identify_best_players(self):
         self.score_players()
 
-        for i in range(self.num_players):
-            neural_net_players_by_score = [
-                nn_player.score for nn_player in self.neural_net_players
-            ]
+        neural_net_players_by_score = self.neural_net_players.sort(key=lambda player: player.score)
             # print("getting rid of player with score", min(neural_net_players_by_score))
-            del self.neural_net_players[
-                neural_net_players_by_score.index(min(neural_net_players_by_score))
-            ]
+        for nn_player in neural_net_players_by_score[self.num_players:]:
+            nn_player.selected = True
 
     def create_next_gen(self):
         self.neural_net_players += [
@@ -106,20 +108,36 @@ class FogelTrial:
         except EOFError:
             pass
 
+    def print_log_key(self):
+        print("HYPERPARAMETERS")
+        print(f"Networks per generation: {self.num_players}")
+        print("ABBREVIATIONS")
+        print("star (*) if selected")
+        print("H = number of non-bias neurons in the hidden layer")
+        print("[min weight, mean weight, max weight]")
+        print("(wins : losses : ties)")
+        print("(IDs won against | IDs lost against | IDs tied against)")
+
+    def print_log_info(self):
+        for nn_player in self.neural_net_players:
+            print(f"NN {nn_player.id} ()")
+
     def run(self, num_generations_to_run):
         self.resume_in_progress()
-        for i in range(num_generations_to_run - len(self.max_payoffs)):
-            print(
-                f"Generations left to run: {num_generations_to_run - len(self.max_payoffs)}"
-            )
-            if i > 0:
-                assert self.former_best_player in self.neural_net_players
+        for i in range(len(self.max_payoffs), num_generations_to_run):
+            self.current_generation += 1
+
+            self.reset_nn_players()
 
             print("adding next gen")
             self.create_next_gen()
 
             print("running games")
             self.run_games()
+
+            self.identify_best_players()
+
+            self.print_log_info()
 
             print(
                 f"Highest payoff was {max([nn_player.payoff for nn_player in self.neural_net_players])}"
@@ -138,8 +156,6 @@ class FogelTrial:
                 )
             ]
 
-            print("pruning off players")
-            self.select_best_players()
 
             print(
                 f"Average payoff after pruning is {sum([nn_player.payoff for nn_player in self.neural_net_players]) / self.num_players}"
