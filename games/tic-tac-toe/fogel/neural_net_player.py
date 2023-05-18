@@ -24,6 +24,8 @@ class NeuralNetPlayer:
         )
         self.payoff = 0
         self.score = 0
+        self.id = None
+        self.parent_id = None
 
     @classmethod
     def from_neural_net(cls, neural_net):
@@ -50,15 +52,12 @@ class NeuralNetPlayer:
         new_b = []
         for weight_matrix in self.neural_net.A:
             new_A.append(
-                weight_matrix
-                + np.matrix(rng.normal(0, 0.05**2, size=weight_matrix.shape))
+                weight_matrix + np.matrix(rng.normal(0, 0.05, size=weight_matrix.shape))
             )
         for weight_matrix in self.neural_net.b:
             new_b.append(
-                weight_matrix
-                + np.matrix(rng.normal(0, 0.05**2, size=weight_matrix.shape))
+                weight_matrix + np.matrix(rng.normal(0, 0.05, size=weight_matrix.shape))
             )
-        assert (new_A[0] != self.neural_net.A[0]).all()
         roll = rng.random()
         if roll > 0.5:
             second_roll = rng.random()
@@ -75,4 +74,6 @@ class NeuralNetPlayer:
             new_A, new_b, self.activation_functions_and_derivatives, None, 0.01
         )
         # print(self.H, neural_net.num_nodes_by_layer[1])
-        return self.from_neural_net(neural_net)
+        nn_player = self.from_neural_net(neural_net)
+        nn_player.parent_id = self.id
+        return nn_player
