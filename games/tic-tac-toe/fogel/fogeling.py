@@ -41,7 +41,7 @@ class FogelTrial:
                 game = Game(nn_player, NearPerfectPlayer())
                 game.run()
                 nn_player.payoff += {1: 1, 2: -10, "Tie": 0}[game.winner]
-                nn_player.record[game.winner - 1] += 1
+                nn_player.record[{1: 0, 2: 1, "Tie": 2}[game.winner]] += 1
 
     def score_players(self):
         for nn_player in self.neural_net_players:
@@ -55,9 +55,11 @@ class FogelTrial:
     def identify_best_players(self):
         self.score_players()
 
-        neural_net_players_by_score = self.neural_net_players.sort(key=lambda player: player.score)
-            # print("getting rid of player with score", min(neural_net_players_by_score))
-        for nn_player in neural_net_players_by_score[self.num_players:]:
+        neural_net_players_by_score = sorted(
+            self.neural_net_players, key=lambda player: player.score
+        )
+        # print("getting rid of player with score", min(neural_net_players_by_score))
+        for nn_player in neural_net_players_by_score[self.num_players :]:
             nn_player.selected = True
 
     def create_next_gen(self):
@@ -119,10 +121,20 @@ class FogelTrial:
         print("(IDs won against | IDs lost against | IDs tied against)")
 
     def print_log_info(self):
+        print(f"GENERATION {self.current_generation}")
         for nn_player in self.neural_net_players:
-            print(f"NN {nn_player.id} ()")
+            print(
+                f"{'*' if nn_player.selected else ' '} NN {nn_player.id} ({'parent' if nn_player.is_parent else f'child of {nn_player.parent_id}'}, H={nn_player.H}, {[round(weight, 2) for weight in nn_player.weight_info]})"
+            )
+            print(
+                f"payoff {nn_player.payoff} {str(nn_player.record).replace('[', '(').replace(']', ')')}"
+            )
+            print(f"score={nn_player.score}")
+            print()
 
-    def run(self, num_generations_to_run):
+        print()
+
+    def run(self, num_generations_to_run, log=False):
         self.resume_in_progress()
         for i in range(len(self.max_payoffs), num_generations_to_run):
             self.current_generation += 1
@@ -137,14 +149,8 @@ class FogelTrial:
 
             self.identify_best_players()
 
-            self.print_log_info()
-
-            print(
-                f"Highest payoff was {max([nn_player.payoff for nn_player in self.neural_net_players])}"
-            )
-            print(
-                f"Average payoff was {sum([nn_player.payoff for nn_player in self.neural_net_players]) / (2 * self.num_players)}"
-            )
+            if log:
+                self.print_log_info()
 
             max_payoff = max(
                 [nn_player.payoff for nn_player in self.neural_net_players]
@@ -156,10 +162,20 @@ class FogelTrial:
                 )
             ]
 
+            self.neural_net_players.sort(key=lambda player: player.score)
+            self.neural_net_players = self.neural_net_players[self.num_players:]
 
-            print(
-                f"Average payoff after pruning is {sum([nn_player.payoff for nn_player in self.neural_net_players]) / self.num_players}"
-            )
+            # print(
+            #     f"Highest payoff was {max([nn_player.payoff for nn_player in self.neural_net_players])}"
+            # )
+            # print(
+            #     f"Average payoff was {sum([nn_player.payoff for nn_player in self.neural_net_players]) / (2 * self.num_players)}"
+            # )
+
+
+            # print(
+            #     f"Average payoff after pruning is {sum([nn_player.payoff for nn_player in self.neural_net_players]) / self.num_players}"
+            # )
 
             assert (
                 self.former_best_player in self.neural_net_players
@@ -173,7 +189,7 @@ class FogelTrial:
             pickle.dump(([], []), f, pickle.HIGHEST_PROTOCOL)
 
 
-def start(num_trials, num_nets, num_gens):
+def start(num_trials, num_nets, num_gens, log=False):
     completed_trials_data = get_completed_trials_data()
     num_completed_trials = len(completed_trials_data)
     print(
@@ -184,7 +200,7 @@ def start(num_trials, num_nets, num_gens):
     ]
     for fogel_trial in fogel_trials:
         print(f"Trial number {fogel_trials.index(fogel_trial)}")
-        fogel_trial.run(num_gens)
+        fogel_trial.run(num_gens, log)
         completed_trials_data = get_completed_trials_data()
         completed_trials_data.append(fogel_trial.max_payoffs)
         dump_completed_trials_data(completed_trials_data)
@@ -205,7 +221,7 @@ def dump_completed_trials_data(completed_trials_data):
         pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
 
 
-start(1, 25, 400)
+start(1, 25, 400, True)
 # get_completed_trials_data()
 
 # print([sum([fogel.max_payoffs[i] for fogel in fogels]) / len(fogels) for i in range(1)])
