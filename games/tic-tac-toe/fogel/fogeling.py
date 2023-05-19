@@ -251,3 +251,4 @@ start(1, 25, 400, True)
 
 #  todo
 #  add log data to pickle file
+#  add results of scoring round (who the net beat/lost/tied)
