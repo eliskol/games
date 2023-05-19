@@ -21,12 +21,19 @@ class FogelTrial:
             NeuralNetPlayer(rng.integers(low=1, high=10, endpoint=True))
             for _ in range(num_players)
         ]
+        self.set_initial_nn_player_ids()
         self.max_payoffs = []
         self.current_generation = 0
 
     def set_initial_nn_player_ids(self):
         for i in range(self.num_players):
             self.neural_net_players[i].id = i + 1
+
+    def set_child_player_ids(self):
+        for i in range(self.num_players):
+            self.neural_net_players[i + self.num_players].id = (
+                self.current_generation * self.num_players + i
+            )
 
     def reset_nn_players(self):
         for nn_player in self.neural_net_players:
@@ -130,8 +137,15 @@ class FogelTrial:
                 f"payoff {nn_player.payoff} {str(nn_player.record).replace('[', '(').replace(']', ')')}"
             )
             print(f"score={nn_player.score}")
+
             print()
 
+        print(
+            f"Highest payoff was {max([nn_player.payoff for nn_player in self.neural_net_players])}"
+        )
+        print(
+            f"Average payoff was {sum([nn_player.payoff for nn_player in self.neural_net_players]) / (2 * self.num_players)}"
+        )
         print()
 
     def run(self, num_generations_to_run, log=False):
@@ -143,6 +157,8 @@ class FogelTrial:
 
             print("adding next gen")
             self.create_next_gen()
+
+            self.set_child_player_ids()
 
             print("running games")
             self.run_games()
@@ -162,16 +178,12 @@ class FogelTrial:
                 )
             ]
 
+            # sort in order of score, then take upper half
             self.neural_net_players.sort(key=lambda player: player.score)
-            self.neural_net_players = self.neural_net_players[self.num_players:]
+            self.neural_net_players = self.neural_net_players[self.num_players :]
 
-            # print(
-            #     f"Highest payoff was {max([nn_player.payoff for nn_player in self.neural_net_players])}"
-            # )
-            # print(
-            #     f"Average payoff was {sum([nn_player.payoff for nn_player in self.neural_net_players]) / (2 * self.num_players)}"
-            # )
-
+            # resort by id (which players are oldest)
+            self.neural_net_players.sort(key=lambda player: player.id)
 
             # print(
             #     f"Average payoff after pruning is {sum([nn_player.payoff for nn_player in self.neural_net_players]) / self.num_players}"
@@ -235,3 +247,7 @@ start(1, 25, 400, True)
 # )
 # plot = df.plot(x=0, y=1, kind="line")
 # plot.figure.savefig("bruh.png")
+
+
+#  todo
+#  add log data to pickle file
