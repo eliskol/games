@@ -23,6 +23,17 @@ class NeuralNetPlayer:
             None,
             0.01,
         )
+        self.set_weight_info()
+        self.payoff = 0
+        self.score = 0
+        self.id = None
+        self.parent_id = None
+        self.is_parent = False
+        self.selected = False
+        self.record = [0, 0, 0]
+        self.opponents = [[], [], []]
+
+    def set_weight_info(self):
         self.min_weight = min(
             [
                 weight_matrix.min()
@@ -47,20 +58,13 @@ class NeuralNetPlayer:
             ]
         )
         self.weight_info = [self.min_weight, self.mean_weight, self.max_weight]
-        self.payoff = 0
-        self.score = 0
-        self.id = None
-        self.parent_id = None
-        self.is_parent = False
-        self.selected = False
-        self.record = [0, 0, 0]
-        self.opponents = [[], [], []]
 
     @classmethod
     def from_neural_net(cls, neural_net):
         H = neural_net.num_nodes_by_layer[1]
         neural_net_player = cls(H)
         neural_net_player.neural_net = neural_net
+        neural_net_player.set_weight_info()
         return neural_net_player
 
     def choose_move(self, board):
@@ -79,12 +83,14 @@ class NeuralNetPlayer:
         new_A = []
         new_b = []
         for weight_matrix in self.neural_net.A:
+            random_weight_increments = np.matrix(N(0, 0.05, size=weight_matrix.shape))
             new_A.append(
-                weight_matrix + np.matrix(N(0, 0.05, size=weight_matrix.shape))
+                weight_matrix + random_weight_increments
             )
         for weight_matrix in self.neural_net.b:
+            random_weight_increments = np.matrix(N(0, 0.05, size=weight_matrix.shape))
             new_b.append(
-                weight_matrix + np.matrix(N(0, 0.05, size=weight_matrix.shape))
+                weight_matrix + random_weight_increments
             )
         roll = rand()
         if roll > 0.5:

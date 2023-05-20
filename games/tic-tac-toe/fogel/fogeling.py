@@ -32,7 +32,7 @@ class FogelTrial:
     def set_child_player_ids(self):
         for i in range(self.num_players):
             self.neural_net_players[i + self.num_players].id = (
-                self.current_generation * self.num_players + i
+                self.current_generation * self.num_players + i + 1
             )
 
     def reset_nn_players(self):
@@ -40,7 +40,9 @@ class FogelTrial:
             nn_player.payoff = 0
             nn_player.score = 0
             nn_player.record = [0, 0, 0]
+            nn_player.opponents = [[], [], []]
             nn_player.is_parent = True
+            nn_player.selected = False
 
     def run_games(self):
         for nn_player in self.neural_net_players:
@@ -56,8 +58,14 @@ class FogelTrial:
             other_network_indexes.remove(self.neural_net_players.index(nn_player))
             random_network_indexes = rng.choice(other_network_indexes, 10)
             for i in random_network_indexes:
-                if nn_player.payoff > self.neural_net_players[i].payoff:
+                opponent_player = self.neural_net_players[i]
+                if nn_player.payoff > opponent_player.payoff:
+                    nn_player.opponents[0].append(opponent_player.id)
                     nn_player.score += 1
+                elif nn_player.payoff < opponent_player.payoff:
+                    nn_player.opponents[1].append(opponent_player.id)
+                elif nn_player.payoff == opponent_player.payoff:
+                    nn_player.opponents[2].append(opponent_player.id)
 
     def identify_best_players(self):
         self.score_players()
@@ -136,7 +144,7 @@ class FogelTrial:
             print(
                 f"payoff {nn_player.payoff} {str(nn_player.record).replace('[', '(').replace(']', ')')}"
             )
-            print(f"score={nn_player.score}")
+            print(f"score={nn_player.score} {nn_player.opponents}")
 
             print()
 
@@ -232,21 +240,20 @@ def dump_completed_trials_data(completed_trials_data):
     with open("completed_trials_data.pickle", "wb") as f:
         pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
 
+num_gens = 100
+num_trials = 5
 
-start(1, 25, 400, True)
-# get_completed_trials_data()
+start(num_trials, 25, num_gens, True)
 
-# print([sum([fogel.max_payoffs[i] for fogel in fogels]) / len(fogels) for i in range(1)])
-
-# bruh = get_completed_trials_data()
-# df = pd.DataFrame(
-#     {
-#         0: [i for i in range(400)],
-#         1: [sum(trial[i] for trial in bruh) / 5 for i in range(400)],
-#     }
-# )
-# plot = df.plot(x=0, y=1, kind="line")
-# plot.figure.savefig("bruh.png")
+bruh = get_completed_trials_data()
+df = pd.DataFrame(
+    {
+        0: [i for i in range(num_gens)],
+        1: [sum(trial[i] for trial in bruh) / num_trials for i in range(num_gens)],
+    }
+)
+plot = df.plot(x=0, y=1, kind="line")
+plot.figure.savefig("bruh.png")
 
 
 #  todo
