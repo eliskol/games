@@ -1,5 +1,6 @@
 import sys
 import pickle
+import time
 import numpy as np
 import pandas as pd
 
@@ -159,7 +160,11 @@ class FogelTrial:
     def run(self, num_generations_to_run, log=False):
         self.resume_in_progress()
         for i in range(len(self.max_payoffs), num_generations_to_run):
+            start = time.time()
             self.current_generation += 1
+
+            if not log:
+                print(f"Generation {self.current_generation}")
 
             self.reset_nn_players()
 
@@ -201,6 +206,8 @@ class FogelTrial:
                 self.former_best_player in self.neural_net_players
             ), f"Former best player score was {self.former_best_player.score}; {max([nn_player.payoff for nn_player in self.neural_net_players])}"
 
+            print(time.time() - start)
+
             if (i + 1) % 10 == 0:
                 self.save_in_progress()
 
@@ -232,7 +239,7 @@ def get_completed_trials_data():
             completed_trials_data = pickle.load(f)
     except (FileNotFoundError, EOFError):
         completed_trials_data = []
-    print(completed_trials_data)
+    # print(completed_trials_data)
     return completed_trials_data
 
 
@@ -240,16 +247,18 @@ def dump_completed_trials_data(completed_trials_data):
     with open("completed_trials_data.pickle", "wb") as f:
         pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
 
-num_gens = 100
-num_trials = 5
 
-start(num_trials, 25, num_gens, True)
+num_gens = 800
+num_trials = 8
+
+# start(num_trials, 25, num_gens, False)
 
 bruh = get_completed_trials_data()
+print(len(bruh[5]))
 df = pd.DataFrame(
     {
         0: [i for i in range(num_gens)],
-        1: [sum(trial[i] for trial in bruh) / num_trials for i in range(num_gens)],
+        1: [sum(trial[i] for trial in bruh[5:]) / (num_trials - 5) for i in range(num_gens)],
     }
 )
 plot = df.plot(x=0, y=1, kind="line")
@@ -258,4 +267,3 @@ plot.figure.savefig("bruh.png")
 
 #  todo
 #  add log data to pickle file
-#  add results of scoring round (who the net beat/lost/tied)
