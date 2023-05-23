@@ -39,7 +39,7 @@ class Game:
     def make_move(self):
         self.moves += 1
         current_player = self.players[self.next_player - 1]
-        move_to_make = current_player.choose_move(self.board)
+        move_to_make = current_player.choose_move(list(self.board))
         if isinstance(move_to_make, tuple):
             move_to_make = 3 * move_to_make[0] + move_to_make[1]
         validity_of_move = self.check_move_validity(move_to_make)

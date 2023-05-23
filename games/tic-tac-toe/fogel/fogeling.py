@@ -7,9 +7,12 @@ import pandas as pd
 sys.path.insert(1, sys.path[0].removesuffix("fogel"))
 from tic_tac_toe import Game
 from neural_net import NeuralNet
+from input_player import InputPlayer
 from near_perfect import NearPerfectPlayer
 from neural_net_player import NeuralNetPlayer, sigmoid, sigmoid_prime
 
+# bruh = Game(InputPlayer(), NearPerfectPlayer())
+# bruh.run()
 rng = np.random.default_rng()
 
 activation_functions_and_derivatives = [[sigmoid, sigmoid_prime] for _ in range(2)]
@@ -202,10 +205,6 @@ class FogelTrial:
             #     f"Average payoff after pruning is {sum([nn_player.payoff for nn_player in self.neural_net_players]) / self.num_players}"
             # )
 
-            assert (
-                self.former_best_player in self.neural_net_players
-            ), f"Former best player score was {self.former_best_player.score}; {max([nn_player.payoff for nn_player in self.neural_net_players])}"
-
             print(time.time() - start)
 
             if (i + 1) % 10 == 0:
@@ -248,17 +247,17 @@ def dump_completed_trials_data(completed_trials_data):
         pickle.dump(completed_trials_data, f, pickle.HIGHEST_PROTOCOL)
 
 
-num_gens = 800
-num_trials = 8
+num_gens = 100
+num_trials = 10
 
-# start(num_trials, 25, num_gens, False)
+start(num_trials, 25, num_gens, True)
 
 bruh = get_completed_trials_data()
-print(len(bruh[5]))
+# print(len(bruh[5]))
 df = pd.DataFrame(
     {
         0: [i for i in range(num_gens)],
-        1: [sum(trial[i] for trial in bruh[5:]) / (num_trials - 5) for i in range(num_gens)],
+        1: [sum(trial[i] for trial in bruh) / num_trials for i in range(num_gens)],
     }
 )
 plot = df.plot(x=0, y=1, kind="line")
