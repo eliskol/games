@@ -83,15 +83,11 @@ class NeuralNetPlayer:
         new_A = []
         new_b = []
         for weight_matrix in self.neural_net.A:
-            random_weight_increments = np.matrix(N(0, 0.1, size=weight_matrix.shape))
-            new_A.append(
-                weight_matrix + random_weight_increments
-            )
+            random_weight_increments = np.matrix(N(0, 0.05, size=weight_matrix.shape))
+            new_A.append(weight_matrix + random_weight_increments)
         for weight_matrix in self.neural_net.b:
-            random_weight_increments = np.matrix(N(0, 0.1, size=weight_matrix.shape))
-            new_b.append(
-                weight_matrix + random_weight_increments
-            )
+            random_weight_increments = np.matrix(N(0, 0.05, size=weight_matrix.shape))
+            new_b.append(weight_matrix + random_weight_increments)
         roll = rand()
         if roll > 0.5:
             second_roll = rand()
