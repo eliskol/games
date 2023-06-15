@@ -13,12 +13,12 @@ class NearPerfectPlayer:
                 board_copy[i] = 2
                 if self.determine_winner(board_copy) == 2:
                     return i
-                board_copy[i] = board[i]
+                board_copy[i] = 0
             for i in empty_spaces:
                 board_copy[i] = 1
                 if self.determine_winner(board_copy) == 1:
                     return i
-                board_copy[i] = board[i]
+                board_copy[i] = 0
             horizontals = [[i for i in range(9)][i : i + 3] for i in range(3)]
             verticals = [[i for i in range(9)][i::3] for i in range(3)]
             diagonals = [[0, 4, 8], [2, 4, 6]]
@@ -29,7 +29,6 @@ class NearPerfectPlayer:
                     empty_spaces_in_line = self.find_empty_spaces(spaces)
                     return line[random.choice(empty_spaces_in_line)]
         return random.choice(empty_spaces)
-
 
     def find_empty_spaces(self, board):
         empty_spaces = []
