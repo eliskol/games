@@ -248,7 +248,7 @@ def dump_completed_trials_data(completed_trials_data):
 
 
 num_gens = 100
-num_trials = 10
+num_trials = 5
 
 start(num_trials, 25, num_gens, True)
 
