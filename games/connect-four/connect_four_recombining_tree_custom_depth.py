@@ -1,7 +1,5 @@
 import time
-import multiprocessing as mp
-
-
+import pathos.multiprocessing as mp
 
 
 class Queue:
@@ -89,6 +87,7 @@ class Node:
 
 class ConnectFourRecombiningTreeCustomDepth:
     def __init__(self, first_game_state, n):
+        self.n = n
         self.generate_tree(first_game_state, n)
 
     def generate_tree(self, first_game_state, n):
@@ -97,14 +96,14 @@ class ConnectFourRecombiningTreeCustomDepth:
         first_node.depth = 0
         created_game_states = mp.Manager().dict()
         created_game_states[self.deeptuple(first_game_state)] = first_node
-        terminal_nodes = []
+        terminal_nodes = mp.Manager().list()
 
         queue = mp.Queue()
         queue.put(first_node)
 
         while not queue.empty():
 
-            if queue._qsize >= 2:
+            if queue.qsize() >= 2:
                 dequeued_node_1 = queue.get()
                 dequeued_node_2 = queue.get()
 
@@ -119,43 +118,15 @@ class ConnectFourRecombiningTreeCustomDepth:
                 process2.join()
 
             else:
-                dequeued_node = queue.get()
+                dequeued_node_1 = queue.get()
 
-                if dequeued_node.depth == n:
-                    terminal_nodes.append(dequeued_node)
-                    dequeued_node.is_terminal_node = True
-                    continue
+                process1 = mp.Process(
 
-                if dequeued_node.winner is not None and dequeued_node.is_terminal_node is False:
-                    terminal_nodes.append(dequeued_node)
-                    dequeued_node.is_terminal_node = True
-                    continue
+                    target=self.create_child_nodes, args=(dequeued_node_1, created_game_states, queue))
 
-                dequeued_node_board_state = dequeued_node.state
-                next_player = dequeued_node.turn
-                possible_moves = dequeued_node.possible_moves
+                process1.start()
 
-                for move in possible_moves:
-                    new_board_state = self.deeplist(dequeued_node_board_state)
-                    new_board_state = self.drop_token(
-                        next_player, new_board_state, move)
-
-                    if self.deeptuple(new_board_state) in created_game_states:
-                        new_node = created_game_states[self.deeptuple(
-                            new_board_state)]
-                        new_node.parents.append(dequeued_node)
-                        dequeued_node.children.append(new_node)
-                        continue
-
-                    # continue seems to be slightly faster than the regular if/else, not sure if its a fluke
-                    # else:
-                    new_node = Node(new_board_state)
-                    new_node.depth = dequeued_node.depth + 1
-                    new_node.parents.append(dequeued_node)
-                    dequeued_node.children.append(new_node)
-                    queue.enqueue(new_node)
-                    created_game_states[self.deeptuple(
-                        new_board_state)] = new_node
+                process1.join()
 
         end_time = time.time()
         # print(end_time - start_time)
@@ -163,7 +134,17 @@ class ConnectFourRecombiningTreeCustomDepth:
         self.node_dict = created_game_states
         self.terminal_nodes = terminal_nodes
 
-    def create_child_nodes(self, node, created_game_states, queue):
+    def create_child_nodes(self, node, created_game_states, terminal_nodes, queue):
+        if node.depth == self.n:
+            terminal_nodes.append(node)
+            node.is_terminal_node = True
+            return
+
+        if node.winner is not None and node.is_terminal_node is False:
+            terminal_nodes.append(node)
+            node.is_terminal_node = True
+            return
+
         for move in node.possible_moves:
             new_board_state = self.deeplist(node.state)
             new_board_state = self.drop_token(node.turn, new_board_state, move)
