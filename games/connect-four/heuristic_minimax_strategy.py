@@ -196,7 +196,7 @@ class HeuristicMinimaxStrategy:
                         False: [0, -0.1, -0.3, -0.9][positive_diagonal.count(2)],
                     }[
                         positive_diagonal.count(2) == 0
-                    ]  # what is wrong with me
+                    ]
                 if negative_diagonal.count(0) == 0 and (
                     negative_diagonal.count(1) == 0 or negative_diagonal.count(2) == 0
                 ):
@@ -205,5 +205,5 @@ class HeuristicMinimaxStrategy:
                         False: [0, -0.1, -0.3, -0.9][negative_diagonal.count(2)],
                     }[
                         negative_diagonal.count(2) == 0
-                    ]  # what is wrong with me
+                    ]
         return heuristic_value
