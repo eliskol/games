@@ -20,22 +20,22 @@ end_game = None
 
 toLog = True
 
-first_player = HeuristicMinimaxStrategy(4, True)
-# second_player = minim
-outcomes = {"Tie": 0, "c": 0, "r": 0}
-for i in range(4):
+first_player = InputPlayer()
+second_player = HeuristicMinimaxStrategy(4, True)
+outcomes = {"Tie": 0, "1st": 0, "2nd": 0}
+for i in range(10):
     if i % 2 == 0:
-        second_player = minimaxHeuristic(2, 4)
+        # second_player = minimaxHeuristic(2, 4)
         game = Game(first_player, second_player)
         game.run(log=toLog)
         end_game = game.board
-        player_order = {"Tie": "Tie", 1: "c", 2: "r"}
+        player_order = {"Tie": "Tie", 1: "1st", 2: "2nd"}
     elif i % 2 == 1:
-        second_player = minimaxHeuristic(1, 4)
+        # second_player = minimaxHeuristic(1, 4)
         game = Game(second_player, first_player)
         game.run(log=toLog)
         # assert game.board == end_game
-        player_order = {"Tie": "Tie", 1: "r", 2: "c"}
+        player_order = {"Tie": "Tie", 1: "2nd", 2: "1st"}
     outcomes[player_order[game.winner]] += 1
     print("game number", i + 1, "finished")
 print(outcomes)
